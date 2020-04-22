@@ -6,18 +6,35 @@ cache:
   paths:
     - node_modules/
 stages:
-  - build
-  - test
-  - deploy
+  - build-staging
+  - test-staging
+  - deploy-staging
+  - build-live
+  - test-live
+  - deploy-live
 package:
-  stage: build
+  stage: build-staging
   before_script:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv "$SITE_STAGING_ENV" .env.staging
-    - cat .env.staging
+    - mv "$STAGING_ENV" .env.staging
     - yarn run build --mode staging
+    - tar -czvf dist.tar.gz dist/*
+  artifacts:
+    name: $CI_JOB_NAME
+    paths:
+     - dist/*
+  only:
+    - staging
+package:
+  stage: build-live
+  before_script:
+    - echo "Job de empacotamento"
+  script:
+    - yarn install
+    - mv "$LIVE_ENV" .env
+    - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
     name: $CI_JOB_NAME
