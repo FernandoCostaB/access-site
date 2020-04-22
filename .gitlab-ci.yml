@@ -15,7 +15,7 @@ package:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - echo "$SITE_STAGING_ENV" >> .env.staging
+    - mv $SITE_STAGING_ENV >> .env.staging
     - cat .env.staging
     - yarn run build --mode staging
     - tar -czvf dist.tar.gz dist/*
