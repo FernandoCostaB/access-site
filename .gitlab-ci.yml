@@ -23,7 +23,7 @@ package-hom:
   artifacts:
     name: $CI_JOB_NAME
     paths:
-     - dist/*
+     - dist.tar.gz
   only:
     - staging
 deploy:
