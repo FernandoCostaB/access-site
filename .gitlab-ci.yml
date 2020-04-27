@@ -1,7 +1,6 @@
 image: thulioqueiroz/node10:latest
 variables:
-  FULL_PATH: '/var/www/site.com.br'
-  APP_PATH: '/home/ubuntu/aplicacoes'
+  # APP_PATH: ''
 cache:
   paths:
     - node_modules/
@@ -27,6 +26,27 @@ package:
      - dist/*
   only:
     - staging
+deploy:
+  image: thulioqueiroz/debian9-ansible
+  stage: deploy-staging
+  before_script:
+    - echo "antes do deploy"
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIV_KEY_HOM" >> ~/.ssh/id_rsa.pem
+    - chmod 600 ~/.ssh/id_rsa.pem
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa.pem
+  script:
+    - echo "durante do deploy"
+    - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
+    - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
+  dependencies:
+    - package
+  environment:
+    name: homologacao
+    url: http://$IP_SERVER_HOM
+  only:
+  - staging    
 package:
   stage: build-live
   before_script:
