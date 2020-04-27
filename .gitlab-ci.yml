@@ -11,7 +11,7 @@ stages:
   - build-live
   - test-live
   - deploy-live
-package:
+package-hom:
   stage: build-staging
   before_script:
     - echo "Job de empacotamento"
@@ -41,13 +41,13 @@ deploy:
     - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
     - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
   dependencies:
-    - package
+    - package-hom
   environment:
     name: homologacao
     url: http://$IP_SERVER_HOM
   only:
   - staging    
-package:
+package-prod:
   stage: build-live
   before_script:
     - echo "Job de empacotamento"
