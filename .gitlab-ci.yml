@@ -1,6 +1,5 @@
 image: thulioqueiroz/node10:latest
 variables:
-  # APP_PATH: ''
 cache:
   paths:
     - node_modules/
