@@ -61,3 +61,24 @@ package-prod:
      - dist/*
   only:
     - master
+  deploy:
+  image: thulioqueiroz/debian9-ansible
+  stage: deploy-live
+  before_script:
+    - echo "antes do deploy"
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIV_KEY_HOM" >> ~/.ssh/id_rsa.pem
+    - chmod 600 ~/.ssh/id_rsa.pem
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa.pem
+  script:
+    - echo "durante do deploy"
+    - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
+    - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
+  dependencies:
+    - package-prod
+  environment:
+    name: live
+    url: http://$IP_SERVER_HOM
+  only:
+  - master
