@@ -25,7 +25,7 @@ package-hom:
      - dist.tar.gz
   only:
     - staging
-deploy:
+deploy-staging:
   image: thulioqueiroz/debian9-ansible
   stage: deploy-staging
   before_script:
@@ -61,7 +61,7 @@ package-prod:
      - dist/*
   only:
     - master
-  deploy:
+deploy-live:
   image: thulioqueiroz/debian9-ansible
   stage: deploy-live
   before_script:
