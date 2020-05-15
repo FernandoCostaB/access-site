@@ -13,7 +13,7 @@
                   <h1 class="sc-VigVT kRwjjf sc-gqjmRU dwRrHP" style="font-size: 38px;">Crédito para <strong>Seu Negócio Crescer</strong></h1>
                   <!--Div para simulacao-->
                   <div class="media-container-column"> 
-                      <img src="/assets/images/access.png" alt="" style="width: 100%;">                    
+                       <Simulador />                 
                   </div>
                   <div>
               </div>
@@ -311,58 +311,53 @@
       </section>
       
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
-
+        <div class="container">
+            <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Crédito ao microempreendedor de Manaus</h2>
+            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Nos encontre através dos contatos abaixo</h3>
     
-
+            <div class="container pt-4 mt-2">
+                <div class="media-container-row">
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <div class="panel-item p-3" style="background-color: #EFEFEF;">
+                            <div class="card-img pb-3">
+                                <span class="mbr-iconfont socicon-whatsapp socicon" style="color: rgb(76, 237, 105); fill: rgb(76, 237, 105);"></span>
+                            </div>
     
-
-            <div class="container">
-                <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Crédito ao microempreendedor de Manaus</h2>
-                <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Nos encontre através dos contatos abaixo</h3>
-        
-                <div class="container pt-4 mt-2">
-                    <div class="media-container-row">
-                        <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
-                            <div class="panel-item p-3" style="background-color: #EFEFEF;">
-                                <div class="card-img pb-3">
-                                    <span class="mbr-iconfont socicon-whatsapp socicon" style="color: rgb(76, 237, 105); fill: rgb(76, 237, 105);"></span>
+                            <div class="card-text">
+                                <a target="blank" href="https://api.whatsapp.com/send?phone=5592994941733"><button class="button_footer"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">(92)99494-1733</h3></button></a>
                                 </div>
-        
-                                <div class="card-text">
-                                    <a target="blank" href="https://api.whatsapp.com/send?phone=5592994941733"><button class="button_footer"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">(92)99494-1733</h3></button></a>
-                                    </div>
-                            </div>
                         </div>
-        
-        
-                        <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
-                            <div class="panel-item p-3" style="background-color: #EFEFEF;">
-                                <div class="card-img pb-3">
-                                    <span class="mbr-iconfont socicon-viber socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
-                                </div>
-                                <div class="card-text">
-                                    <a href="tel:923307-4550"><button class="button_footer1"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                          (92)3307-4550
-                                    </h3></button></a>
-                                    </div>
+                    </div>
+    
+    
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <div class="panel-item p-3" style="background-color: #EFEFEF;">
+                            <div class="card-img pb-3">
+                                <span class="mbr-iconfont socicon-viber socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
                             </div>
+                            <div class="card-text">
+                                <a href="tel:923307-4550"><button class="button_footer1"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
+                                        (92)3307-4550
+                                </h3></button></a>
+                                </div>
                         </div>
-                        <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
-                            <div class="panel-item p-3" style="background-color: #EFEFEF;">
-                                <div class="card-img pb-3">
-                                    <span class="mbr-iconfont socicon-periscope socicon"></span>
-                                </div>
-                                <div class="card-text">
-                                    <a href="https://g.page/accesscredito?share" target="blank"><button class="button_footer2"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                          Rua Curió, N 1400
-                                    </h3></button></a>
-                                    </div>
+                    </div>
+                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
+                        <div class="panel-item p-3" style="background-color: #EFEFEF;">
+                            <div class="card-img pb-3">
+                                <span class="mbr-iconfont socicon-periscope socicon"></span>
                             </div>
+                            <div class="card-text">
+                                <a href="https://g.page/accesscredito?share" target="blank"><button class="button_footer2"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
+                                        Rua Curió, N 1400
+                                </h3></button></a>
+                                </div>
                         </div>
                     </div>
                 </div>
-           </div>
-        </section>
+            </div>
+        </div>
+      </section>
 
   </div>
 </template>
@@ -370,8 +365,13 @@
 
 <script>
 // @ is an alias to /src
+import Simulador from "@/components/Simulador.vue";
 
 export default {
-  name: "Home"
+  name: "Home",
+  components: {
+    Simulador
+  }
+
 };
 </script>
