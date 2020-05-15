@@ -1,17 +1,34 @@
 <template>
   <div class="simulador">
     <div class="menu-simulador">
-        <ul>
-            <li><a href="#" v-on:click="onSelectPage(1)">1 - Valor</a></li>
-            <li><a href="#" v-on:click="onSelectPage(2)">2 - Parcela</a></li>
-            <li><a href="#" v-on:click="onSelectPage(3)">3 - Dia</a></li>
-            <li><a href="#" v-on:click="onSelectPage(4)">4 - Motivo</a></li>
-            <li><a href="#" v-on:click="onSelectPage(5)">5 - Proposta</a></li>
-            
-        </ul>
+        <div class="item-menu">
+            <p v-bind:class="[page1 || page6 ? 'menu-ativo' : '', 'item-menu-p']" v-on:click="onSelectPage(1)">1-Valor</p> 
+            <spam v-if="page1 || page6" class="seta-menu"></spam>
+        </div>
+
+        <div class="item-menu">
+            <p v-bind:class="[page2 || page7 ? 'menu-ativo' : '', 'item-menu-p']" v-on:click="onSelectPage(2)">2-Parcela</p>
+            <spam v-if="page2 || page7" class="seta-menu"></spam>
+        </div>
+
+        <div class="item-menu">
+            <p v-bind:class="[page3 || page8 ? 'menu-ativo' : '', 'item-menu-p']" v-on:click="onSelectPage(3)">3-Dia</p>
+            <spam v-if="page3 || page8" class="seta-menu"></spam>
+        </div>
+
+        <div class="item-menu">
+           <p  v-bind:class="[page4 || page9 ? 'menu-ativo' : '', 'item-menu-p']" v-on:click="onSelectPage(4)">4-Motivo</p>
+            <spam v-if="page4 || page9" class="seta-menu"></spam>
+        </div>
+
+        <div class="item-menu">
+            <spam v-if="page5" class="seta-menu2"></spam>
+            <p v-bind:class="[page5 ? 'menu-ativo' : '', 'item-menu-p']" v-on:click="onSelectPage(5)">5-Proposta</p>            
+        </div>
      </div>
-     <h3 class="dwRrHP">De quanto voce precisa?</h3>
-    <div class="sc-fYiAbW hfKksW" v-if="page === 1">
+     
+    <div class="sc-fYiAbW hfKksW" v-if="page1">
+        <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">De quanto voce precisa?</h3>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" name="how_much" 
@@ -56,7 +73,8 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 2">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page2">
+        <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Em quantas parcelas?</h3>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" v-on:click="setParcelaPadrao(2)" name="how_much" value="2" label="2x" />
@@ -100,7 +118,8 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 3">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page3">
+        <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Qual dia para pagar?</h3>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" v-on:click="setDiaPadrao(1)" name="how_much" value="1" label="Dia 1" />
@@ -144,7 +163,8 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 4">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page4">
+        <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Qual o motivo  ?</h3>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <div class="p-bt-azul" v-on:click="setMotiPadrao('Capital de giro')"><p>Capital de giro</p></div>
@@ -196,7 +216,42 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 6">
+    <div v-else-if="page5">
+        <div>
+            <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">O resumo da sua proposta ficou assim:</h3>
+            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
+                <div class="sc-giadOv jOhdwi">
+                    <p class="p-label">Você Solicitou: </p>
+                    <div class="p-bt-azul-result"><p>R$ {{valorCredito}}</p></div>
+                </div>
+            </div>
+            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
+                <div class="sc-giadOv jOhdwi" width="100%">
+                    <p class="p-label">Parcelado em: </p>
+                    <div class="p-bt-azul-result"><p>{{valorParcela}}x(vezes)</p></div>
+                </div>
+            </div>
+            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
+                <div class="sc-giadOv jOhdwi" width="100%">
+                <p class="p-label">Para pagar no: </p>
+                    <div class="p-bt-azul-result"><p>{{valorDia}}º dia do mês</p></div>
+                </div>
+            </div>
+            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
+                <div class="sc-giadOv jOhdwi" width="100%">
+                <p class="p-label">Motivo foi: </p>
+                    <div class="p-bt-azul-result"><p>{{valorMotivo}}</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="valor-parcela">
+            <p class="p-label">Você pagaria aproximadamente: (*sujeito a análise) </p>
+            <div class="p-bt-azul-result" style="width:50%"><h2>R$ {{valorParcelaFinal}}</h2></div>
+        </div>
+    </div>
+
+    <div class="sc-fYiAbW hfKksW" v-else-if="page6">
          <div class="slidecontainer">
                 <label class="sc-kUaPvJ bJFiyk">R$ {{valorPersonalizado}}</label>               
          </div>
@@ -212,7 +267,7 @@
             
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 7">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page7">
          <div class="slidecontainer">
                 <label class="sc-kUaPvJ bJFiyk">{{valorParcPersonalizada}} X</label>               
          </div>
@@ -228,7 +283,7 @@
             
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 8">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page8">
          <div class="slidecontainer">
                 <label class="sc-kUaPvJ bJFiyk">Dia {{ValorDiaPersonalizado}}</label>               
          </div>
@@ -244,7 +299,7 @@
             
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page === 9">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page9">
          <div class="slidecontainer" style="width: 80%;">
                 <label class="sc-kUaPvJ bJFiyk">Motivo:
                 <input type="text" v-model="ValorMotiPersonalizado">
@@ -266,7 +321,16 @@ export default {
   name: "Simulador",
   data() {
     return {
-      page: 1,
+      page1: true,
+      page2: false,
+      page3: false,
+      page4: false,
+      page5: false,
+      page6: false,
+      page7: false,
+      page8: false,
+      page9: false,
+      page10: false,
       valorPersonalizado: 3000,
       valorParcPersonalizada: 6,
       ValorDiaPersonalizado: 5,
@@ -275,11 +339,54 @@ export default {
       valorParcela:0,
       valorDia:0,
       valorMotivo: "",
+      valorParcelaFinal: 215
     };
   },
   methods: {
       onSelectPage(valor){
-          this.page = valor;
+
+          switch(valor){
+              case 1: 
+              this.page1= true; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 2: 
+              this.page1= false; this.page2= true; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 3: 
+              this.page1= false; this.page2= false; this.page3= true; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 4: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= true;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 5: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= true; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 6: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= true; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 7: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= true; this.page8= false;
+              this.page9= false; this.page10= false;break;
+              case 8: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= true;
+              this.page9= false; this.page10= false;break;
+              case 9: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= true; this.page10= false;break;
+              case 10: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= true;break;
+          }
       },
       setCreditoPadrao(valor){
           this.valorCredito = valor;
@@ -327,14 +434,61 @@ export default {
 
 <style scoped>
 
-.menu-simulador ul {
-    padding: 0px;
+.menu-simulador{
     width: 100%;
-    height: 30px;
-    border: 1px solid #ccc;
+    height: 30px;   
+    display: flex;
+    border: 1px solid  #00B8D7;
+    text-align: center;
 }
-.menu-simulador ul li {display:inline; }
-.menu-simulador ul li a {width: 103px; padding:2px; margin-right: 1px; float:left;}
+
+.item-menu{
+    color: #fff;
+    width: 120px;
+    display: flex;
+    padding: 0 0 0 0;   
+    margin:0;
+    cursor:pointer;
+}
+.item-menu-p {
+    width: 100px;
+    height: 30px; 
+    color: #00B8D7; padding: 3px 5px 1px 5px;
+    /*background: #007bff;*/
+}
+
+.menu-ativo{
+    width: 100px;
+    height: 28px; 
+    padding: 3px 5px 0px 5px;
+    color: #fff;
+    background: #00B8D7;
+}
+
+.seta-menu{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 14px 15px;
+    border-color: transparent transparent transparent #00B8D7;
+}
+
+.seta-menu3{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 14px 15px;
+    border-color: transparent transparent transparent red;
+}
+
+.seta-menu2{
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 15px 14px 0;
+    border-color: transparent #00B8D7 transparent transparent;
+
+}
 
 .slidecontainer {
   width: 50%; margin: 0 auto;
@@ -402,5 +556,32 @@ export default {
   font-weight: 700;
   padding-top:15px;
   line-height:20px;
+  cursor:pointer;
 }
+
+.p-bt-azul-result{
+  width: 110px;  
+  height: 60px;
+  color: #fff;
+  background: #00B8D7 ;
+  border-radius: 5px;
+  font-size: 15px;
+  text-align: center;
+  font-weight: 700;
+  padding: 10px 3px 0 3px;
+  line-height:20px;
+  cursor:pointer;
+}
+.p-label{
+    color: #6E747F;
+    margin:0;
+    padding:0;
+}
+.valor-parcela{
+    margin-left: 15px
+}
+.valor-parcela > .p-bt-azul-result{
+    margin:0;
+}
+
 </style>
