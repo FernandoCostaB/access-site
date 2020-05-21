@@ -4,33 +4,28 @@
       <section class="engine">
           <a href="https://accesscredito.com.br">portfolio website templates</a>
       </section>
-      <section class="header11 cid-rQ6Qc8AJ31 mbr-fullscreen mbr-parallax-background" id="header11-f">
+      <section class="header11 cid-rQ6Qc8AJ31 mbr-fullscreen mbr-parallax-background" id="header11-f">          
           <!-- Block parameters controls (Blue "Gear" panel) -->
           <!-- End block parameters -->
-          <div class="mbr-overlay" style="opacity: 1.0; background-color: #fff;"></div>
-          <div class="container align-left">
-              <div class="media-container-column mbr-white col-md-12 mt-auto">                  
-                  <h1 class="sc-VigVT kRwjjf sc-gqjmRU dwRrHP" style="font-size: 38px;">Crédito para <strong>Seu Negócio Crescer</strong></h1>
-                  <!--Div para simulacao-->
-                  <div class="media-container-column"> 
-                       <Simulador />                 
-                  </div>
-                  <div>
-              </div>
-              </div>
-              <div class="media-container-column mbr-white col-md-12 mt-auto">
-                  <br class="br">
-                  <br class="br">
-                  <br class="br">
-                  <br class="br">
-                  <br class="br">
-                  <div class="media-container-column">
-                      <img src="/assets/images/access.png" alt="" style="width: 100%;">
-                  </div>
-                  <div>
-              </div>
-              </div>
-          </div>
+            <div class="mbr-overlay" style="opacity: 1.0; background-color: #fff;"></div>
+            <div class="container align-left">
+                <div class="media-container-column mbr-white col-md-12 mt-auto">                 
+                    <h1 class="sc-VigVT kRwjjf sc-gqjmRU dwRrHP" style="font-size: 38px;">
+                        Crédito para <strong>Seu Negócio Crescer</strong></h1>
+                    <!--Div para simulacao-->
+                    <div class="media-container-column"> 
+                        <Simulador />                 
+                    </div>                
+                </div>
+
+                <div class="media-container-column mbr-white col-md-12 mt-auto">
+                    <div class="media-container-column">
+                        <p></p><p></p><p></p><p></p>
+                        <img src="/assets/images/access.png" alt="" style="width: 100%;">
+                    </div>
+                </div>
+
+            </div>
           <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
               <a href="#next"> <i class="mbri-down mbr-iconfont"></i> </a>
           </div>
