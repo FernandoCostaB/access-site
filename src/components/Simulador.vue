@@ -28,51 +28,34 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <div class="row menu-seta" v-on:click="onSelectPage(10)">
-            <img style="width: 25px;" src="/assets/images/back.svg"/>
-            <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
-        </div>
-        <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">De quanto voce precisa?</h3>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" name="how_much" 
-                value="2000" label="R$ 2.000" v-on:click="setValor(1,2000)"/>
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_5000">R$ 2.000</label>
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0;">De quanto voce precisa?</h1>
+        <div class="painel-valores">
+            <div class="row">
+                <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)">
+                    <h3>R$ 2.000</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(1,3000)">
+                    <h3>R$ 3.000</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(1,5000)">
+                    <h3>R$ 5.000</h3>
+                </div>
             </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_10000" name="how_much" value="3000"
-                    label="R$ 3.000" v-on:click="setValor(1,3000)"/>
-                    <label class="sc-kUaPvJ bJFiyk" for="how_much_10000">R$ 3.000</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_20000" name="how_much" value="5000"
-                 label="R$ 5.000" v-on:click="setValor(1,5000)"/>
-                 <label class="sc-kUaPvJ bJFiyk" for="how_much_20000">R$ 5.000</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_30000" name="how_much"
-                value="10000" label="R$ 10.000" v-on:click="setValor(1,10000)"/>
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_30000">R$ 10.000</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_50000" name="how_much" value="20000"
-                label="R$ 20.000" v-on:click="setValor(1,20000)"/>
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_50000">R$ 20.000</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hkIXCy" id="how_much_other_value" name="how_much" 
-                value="other_value" label="Outro valor" v-on:click="onSelectPage(6)"/>
-                <label class="sc-kUaPvJ iVeJis" for="how_much_other_value">Outro Valor</label>
+
+            <div class="row">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(1,10000)">
+                    <h3>R$ 10.000</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(1,20000)">
+                    <h3>R$ 20.000</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="onSelectPage(6)">
+                    <h5></h5><h5>Outro Valor</h5>
+                </div>
             </div>
         </div>
     </div>
@@ -83,45 +66,34 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
         <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Em quantas parcelas?</h3>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" v-on:click="setValor(2,2)" name="how_much" value="2" label="2x" />
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_5000">2x</label>
+
+        <div class="painel-valores">
+            <div class="row">
+                <div class="botao-conteudo-azul" v-on:click="setValor(2,2)">
+                    <h3>2x</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,6)">
+                    <h3>6x</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,8)">
+                    <h3>8x</h3>
+                </div>
             </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_10000" v-on:click="setValor(2,6)" name="how_much" value="6"
-                    label="6x" />
-                    <label class="sc-kUaPvJ bJFiyk" for="how_much_10000">6x</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_20000" v-on:click="setValor(2,8)" name="how_much" value="8"
-                 label="8x" />
-                 <label class="sc-kUaPvJ bJFiyk" for="how_much_20000">8x</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" v-on:click="setValor(2,10)" id="how_much_30000" name="how_much"
-                value="10" label="10x" />
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_30000">10x</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_50000" v-on:click="setValor(2,12)" name="how_much" value="12"
-                label="12x" />
-                <label class="sc-kUaPvJ bJFiyk" for="how_much_50000">12x</label>
-            </div>
-        </div>
-        <div class="sc-eLExRp jQbyzN">
-            <div class="sc-giadOv jOhdwi" width="100%">
-                <input type="radio" class="sc-fONwsr hkIXCy" id="how_much_other_value" name="how_much" 
-                value="other_value" label="Outro Prazo" v-on:click="onSelectPage(7)" />
-                <label class="sc-kUaPvJ iVeJis" for="how_much_other_value">Outro Prazo</label>
+
+            <div class="row">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,10)">
+                    <h3>10x</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,12)">
+                    <h3>12x</h3>
+                </div>
+
+                <div class="botao-conteudo-azul"  v-on:click="onSelectPage(7)">
+                    <h5></h5><h5>Outro Prazo</h5>
+                </div>
             </div>
         </div>
     </div>
@@ -217,43 +189,40 @@
         </div>
     </div>
 
-    <div v-else-if="page5">
-        <div>
-            <div class="row menu-seta" v-on:click="onSelectPage(10)">
-                <img style="width: 25px;" src="/assets/images/back.svg"/>
-                <p class="col-9 item-menu-p " style="padding-top:10px;">Início</p>
-            </div>
-            <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">O resumo da sua proposta ficou assim:</h3>
-            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
-                <div class="sc-giadOv jOhdwi">
-                    <p class="p-label">Você Solicitou: </p>
-                    <div class="p-bt-azul-result"><p>R$ {{valorCredito}}</p></div>
-                </div>
-            </div>
-            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
-                <div class="sc-giadOv jOhdwi" width="100%">
-                    <p class="p-label">Parcelado em: </p>
-                    <div class="p-bt-azul-result"><p>{{valorParcela}}x(vezes)</p></div>
-                </div>
-            </div>
-            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
-                <div class="sc-giadOv jOhdwi" width="100%">
-                <p class="p-label">Para pagar no: </p>
-                    <div class="p-bt-azul-result"><p>{{valorDia}}º dia do mês</p></div>
-                </div>
-            </div>
-            <div class="sc-eLExRp jQbyzN" style="padding: 0 0 1rem 1rem;">
-                <div class="sc-giadOv jOhdwi" width="100%">
-                <p class="p-label">Motivo foi: </p>
-                    <div class="p-bt-azul-result"><p>{{valorMotivo}}</p></div>
-                </div>
-            </div>
-        </div>
+    <div class="sc-fYiAbW hfKksW" v-else-if="page5">
+        <div class="row menu-seta" v-on:click="onSelectPage(11)">
+            <img style="width: 25px;" src="/assets/images/back.svg"/>
+            <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
+        </div>       
 
-        <div class="valor-parcela">
-            <p class="p-label">Você pagaria aproximadamente: (*sujeito a análise) </p>
-            <div class="p-bt-azul-result" style="width:50%"><h2>R$ {{valorParcelaFinal}}</h2></div>
-        </div>
+        <div class="painel-valores">
+            <h3 class="dwRrHP" style="text-align:left; margin: 0 0 5px 0;">
+                {{valorNome.split(' ')[0]}}, o resumo da sua simulação ficou assim:</h3>
+            <div class="row">
+                <div>
+                    <p class="p-label">Você Solicitou: </p>
+                    <div class="botao-conteudo-azul">
+                        <h3>R$ {{valorCredito}}</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="p-label">Parcelado em: </p>
+                    <div class="botao-conteudo-azul">
+                        <h3>{{valorParcela}}x (vezes)</h3>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="p-label">Valor estimado das parcelas: </p>
+                    <div class="botao-conteudo-azul">
+                        <h3>R$ {{valorParcelaFinal}}</h3>
+                    </div>
+                    <p class="p-label">*Considerando uma carência tradicional</p>
+                </div>
+            </div>
+        </div> 
+        
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page6">
@@ -410,27 +379,32 @@
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page11">
-        <div class="row menu-seta" v-on:click="onSelectPage(10)">
+        <div class="row menu-seta" v-on:click="onSelectPage(2)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
 
-        <div class="row" style="margin: 0 0 10px 10px">
-            <div class="col-8">
-                <p class="p-descricao-combo">*Nome Completo </p>
-                <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
+        <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">Preencha abaixo para simular sem compromisso</h1>
+        <div class="painel-valores">
+            <div class="row"  style="margin-bottom:5px;">
+                <div class="col-8">
+                    <p class="p-descricao-combo">*Nome Completo </p>
+                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
+                </div>
             </div>
-        </div>
 
-        <div class="row" style="margin: 0 0 10px 10px">
-            <div class="col-8">
-                <p class="p-descricao-combo">*Telefone </p>
-                <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu contato">
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-descricao-combo">*E-mail </p>
+                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email">
+                </div>
             </div>
-        </div>
-
-        <div class="row" style="margin: 0 0 10px 25px">
-            <button class="botao-azul2" v-on:click="setValor(8,0)"> Continuar </button> 
+            <br>
+            <div class="row">
+                <div class="col-8">
+                   <button class="botao-azul2" v-on:click="setValor(8,0)"> Continuar </button> 
+                </div>                
+            </div>
         </div>
 
     </div>
@@ -443,7 +417,7 @@ export default {
   name: "Simulador",
   data() {
     return {
-      page1: false,
+      page1: true,
       page2: false,
       page3: false,
       page4: false,
@@ -452,7 +426,7 @@ export default {
       page7: false,
       page8: false,
       page9: false,
-      page10: true,
+      page10: false,
       page11: false,
       valorPersonalizado: 3000,
       valorParcPersonalizada: 6,
@@ -536,7 +510,7 @@ export default {
                 case 2:
                     this.valorParcela = valor;
                     console.log('valorParcela: ', this.valorParcela);
-                    this.onSelectPage(3);break;
+                    this.onSelectPage(11);break;
                 case 3:
                     this.valorDia = valor;
                     console.log('valorDia: ', this.valorDia);
@@ -562,7 +536,7 @@ export default {
                 case 8: 
                     this.valorMotivo = this.ValorMotiPersonalizado;
                     console.log('valorMotivo: ', this.valorMotivo);
-                    this.onSelectPage(5);break;
+                    this.enviarSimulacaoRM();break;
            }
       },
       setCreditoManual(tipo){
@@ -600,6 +574,9 @@ export default {
               }
           }
           
+      },
+      enviarSimulacaoRM(){
+           this.onSelectPage(5);
       }
   }
 };
@@ -808,6 +785,32 @@ export default {
     padding: 10px;
     margin-top: 12px;
     cursor:pointer;
+}
+
+/******/
+
+.painel-valores{
+    width: 100%;
+    padding: 0 0 0 30px;
+}
+
+.botao-conteudo-azul{
+    width: 160px;
+    height: 65px;
+    border-radius: 8px;
+    background: #00B8D7;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;  
+    cursor:pointer;  
+}
+
+.botao-conteudo-azul h3, .botao-conteudo-azul h5{
+    font-weight: 600;
+}
+
+.botao-conteudo-azul:hover{
+    background:#009bb5;
 }
 
 </style>
