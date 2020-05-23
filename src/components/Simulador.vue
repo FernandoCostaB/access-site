@@ -200,27 +200,45 @@
                 {{valorNome.split(' ')[0]}}, o resumo da sua simulação ficou assim:</h3>
             <div class="row">
                 <div>
-                    <p class="p-label">Você Solicitou: </p>
-                    <div class="botao-conteudo-azul">
+                    <div class="botao-conteudo-azul" style="margin-top: 0;">
+                        <p style="font-size: 15px; margin:0; padding:0;">Valor do empréstimo</p>
                         <h3>R$ {{valorCredito}}</h3>
                     </div>
                 </div>
 
                 <div>
-                    <p class="p-label">Parcelado em: </p>
-                    <div class="botao-conteudo-azul">
-                        <h3>{{valorParcela}}x (vezes)</h3>
+                    <div class="botao-conteudo-azul" style="margin-top: 0;">
+                        <p style="font-size: 15px; margin:0; padding:0;">Qtd. de parcelas</p>
+                        <h4>{{valorParcela}}x (vezes)</h4>
+                    </div>
+                </div>    
+
+                <div>
+                    
+                    <div class="botao-conteudo-azul" style="margin-top: 0;">
+                        <p style="font-size: 15px; margin:0; padding:0;">Valor estimado*</p>
+                        <h3>R$ {{valorParcelaFinal}}</h3>
+                    </div>
+                </div>             
+            </div>
+
+            <p class="p-label" style="padding:0;">*Considerando uma carência tradicional</p>
+
+            <div class="row" style="margin-top:25px;">
+                <div class="col-7">
+                    <h4 style="color: #6E747F;">Pronto, agora é só finalizar e em seguida enviar sua solicitação!</h4>
+                </div>
+
+                <div class="col-5">
+                    <div>
+                        <div class="botao-conteudo-azul" style="margin-top: 0;" v-on:click="onSelectPage(12)">
+                            <h3>Finalizar</h3>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <p class="p-label">Valor estimado das parcelas: </p>
-                    <div class="botao-conteudo-azul">
-                        <h3>R$ {{valorParcelaFinal}}</h3>
-                    </div>
-                    <p class="p-label">*Considerando uma carência tradicional</p>
-                </div>
             </div>
+
         </div> 
         
     </div>
@@ -379,7 +397,7 @@
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page11">
-        <div class="row menu-seta" v-on:click="onSelectPage(2)">
+        <div class="row menu-seta" v-on:click="onSelectPage(5)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
@@ -388,26 +406,105 @@
         <div class="painel-valores">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
-                    <p class="p-descricao-combo">*Nome Completo </p>
+                    <p class="p-label">*Nome Completo </p>
                     <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-8">
-                    <p class="p-descricao-combo">*E-mail </p>
+                    <p class="p-label">*E-mail </p>
                     <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email">
                 </div>
             </div>
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul2" v-on:click="setValor(8,0)"> Continuar </button> 
+                   <button class="botao-azul" v-on:click="setValor(8,0)"> Continuar </button> 
                 </div>                
             </div>
         </div>
 
     </div>
+
+    <div class="sc-fYiAbW hfKksW" v-else-if="page12">
+        <div class="row menu-seta" v-on:click="onSelectPage(5)">
+            <img style="width: 25px;" src="/assets/images/back.svg"/>
+            <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
+        </div>
+
+        <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">{{valorNome.split(' ')[0]}}, envie sua solicitação e garanta o seu crédito:</h1>
+        <div class="painel-valores">
+            <div class="row"  style="margin-bottom:5px;">
+                <div class="col-8">
+                    <p class="p-label">*Nome Completo </p>
+                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome" readonly>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label">*E-mail </p>
+                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label">*Telefone </p>
+                    <input style="width:100%;" type="text" v-model="valorTelefone" placeholder="Informe seu telefone" >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label">Telefone 2 (opcional) </p>
+                    <input style="width:100%;" type="text" v-model="valorTelefone2" placeholder="Informe seu segundo telefone" >
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label">*Qual a fase do seu negócio? </p>
+                    <select v-model="valorNegocio">
+                        <option value="" selected>Selecione uma opção</option>
+                        <option value="Pensando em começar um negócio">Pensando em começar um negócio</option>
+                        <option value="Iniciei meu negócio há menos de 1 mês">Iniciei meu negócio há menos de 1 mês</option>
+                        <option value="Meu negócio já tem mais de 1 mês">Meu negócio já tem mais de 1 mês</option>
+                    </select>
+                    
+                </div>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="col-8">
+                   <button class="botao-azul" v-on:click="setValor(9,0)"> Continuar </button> 
+                </div>                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sc-fYiAbW hfKksW" v-else-if="page13">
+        <div class="row menu-seta" v-on:click="onSelectPage(1)">
+            <img style="width: 25px;" src="/assets/images/back.svg"/>
+            <p class="col-9 item-menu-p " style="padding-top:10px;">Início</p>
+        </div>
+
+        
+        <div class="painel-valores">
+            <div class="row"  style="margin-bottom:5px;">
+                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;">{{valorNome.split(' ')[0]}} Parabéns!</h1>
+            </div>
+
+            <div class="row">
+                <h4 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 15px 35px;">Seu pedido está em análise, em breve entraremos em contato.</h4>
+            </div>
+        </div>
+
+    </div>
+    
 
   </div>
 </template>
@@ -428,6 +525,8 @@ export default {
       page9: false,
       page10: false,
       page11: false,
+      page12: false,
+      page13: false,
       valorPersonalizado: 3000,
       valorParcPersonalizada: 6,
       ValorDiaPersonalizado: 5,
@@ -439,6 +538,9 @@ export default {
       valorParcelaFinal: 215,
       valorNome: "",
       valorContato:"",
+      valorTelefone: "",
+      valorTelefone2: "",
+      valorNegocio: "",
     };
   },
   methods: {
@@ -448,47 +550,55 @@ export default {
               case 1: 
               this.page1= true; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false; this.page12= false; this.page13= false; break;
               case 2: 
               this.page1= false; this.page2= true; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 3: 
               this.page1= false; this.page2= false; this.page3= true; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 4: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= true;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 5: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= true; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 6: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= true; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 7: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= true; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 8: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= true;
-              this.page9= false; this.page10= false; this.page11= false; break;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 9: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= true; this.page10= false; this.page11= false; break;
+              this.page9= true; this.page10= false; this.page11= false;this.page12= false; this.page13= false; break;
               case 10: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= true; this.page11= false; break;
+              this.page9= false; this.page10= true; this.page11= false;this.page12= false; this.page13= false; break;
               case 11: 
               this.page1= false; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= true;  break;
+              this.page9= false; this.page10= false; this.page11= true;this.page12= false; this.page13= false;  break;
+              case 12: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= true; this.page13= false;  break;
+              case 13: 
+              this.page1= false; this.page2= false; this.page3= false; this.page4= false;
+              this.page5= false; this.page6= false; this.page7= false; this.page8= false;
+              this.page9= false; this.page10= false; this.page11= false;this.page12= false; this.page13= true;  break;
           }
       },
       setComboCredito(valor,qtd, parcela){
@@ -537,6 +647,9 @@ export default {
                     this.valorMotivo = this.ValorMotiPersonalizado;
                     console.log('valorMotivo: ', this.valorMotivo);
                     this.enviarSimulacaoRM();break;
+                case 9: 
+                    console.log('finalizarSimulacao(): ');
+                    this.finalizarSimulacao();break;
            }
       },
       setCreditoManual(tipo){
@@ -576,7 +689,10 @@ export default {
           
       },
       enviarSimulacaoRM(){
-           this.onSelectPage(5);
+        this.onSelectPage(5);
+      },
+      finalizarSimulacao(){
+        this.onSelectPage(13);
       }
   }
 };
@@ -691,79 +807,8 @@ export default {
     margin: 0 auto;
     cursor: pointer;
 }
-.botao-azul:hover, .botao-azul2:hover, .p-bt-azul:hover, .bt-slide:hover, .conteudo-valor-combo:hover {
+.botao-azul:hover, .bt-slide:hover, .conteudo-valor-combo:hover {
     background:#009bb5;
-}
-
-.botao-azul2{
-    padding: 10px 20px 10px 20px;
-    border: none;
-    color: #fff;
-    background: #00B8D7;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.p-bt-azul{
-  width: 150px;  
-  height: 65px;
-  color: #fff;
-  background: #00B8D7;
-  border-radius: 5px;
-  font-size: 20px;
-  text-align: center;
-  font-weight: 700;
-  padding-top:15px;
-  line-height:20px;
-  cursor:pointer;
-}
-
-.p-bt-azul-result{
-  width: 110px;  
-  height: 60px;
-  color: #fff;
-  background: #00B8D7 ;
-  border-radius: 5px;
-  font-size: 15px;
-  text-align: center;
-  font-weight: 700;
-  padding: 10px 3px 0 3px;
-  line-height:20px;
-  cursor:pointer;
-}
-.p-label{
-    color: #6E747F;
-    margin:0;
-    padding:0;
-}
-.valor-parcela{
-    margin-left: 15px
-}
-.valor-parcela > .p-bt-azul-result{
-    margin:0;
-}
-
-.p-descricao-combo{
-    color: #6E747F;
-    margin:0;
-    padding:0;
-    font-size: 15px;
-    font-weight: 600 ;
-}
-
-.p-parcela-combo{
-    margin:0;
-    padding:0;
-    font-size: 15px;
-}
-
-.conteudo-valor-combo{
-    background: #00B8D7;
-    color: #fff;
-    border-radius: 5px;
-    padding: 8px;
-    text-align:center;
-    cursor:pointer;
 }
 
 .menu-seta {
@@ -791,7 +836,8 @@ export default {
 
 .painel-valores{
     width: 100%;
-    padding: 0 0 0 30px;
+    margin-left: 20px;
+    padding: 0 0 0 5px;
 }
 
 .botao-conteudo-azul{
@@ -805,12 +851,18 @@ export default {
     cursor:pointer;  
 }
 
-.botao-conteudo-azul h3, .botao-conteudo-azul h5{
+.botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
     font-weight: 600;
 }
 
 .botao-conteudo-azul:hover{
     background:#009bb5;
+}
+
+.p-label{
+    color: #6E747F;
+    margin:0;
+    padding: 0 0 0 10px;
 }
 
 </style>
