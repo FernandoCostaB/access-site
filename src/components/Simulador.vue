@@ -397,7 +397,7 @@
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page11">
-        <div class="row menu-seta" v-on:click="onSelectPage(5)">
+        <div class="row menu-seta" v-on:click="onSelectPage(2)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
@@ -406,15 +406,25 @@
         <div class="painel-valores">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
-                    <p class="p-label">*Nome Completo </p>
+                    <p class="p-label" 
+                     v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
                     <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-8">
-                    <p class="p-label">*E-mail </p>
+                    <p class="p-label"
+                    v-bind:class="{ 'p-erro': (valorContato == '' ), '': false }">*E-mail </p>
                     <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label p-erro" style="font-size: 14px;"
+                        v-if="(valorContato == '') || (valorNome == '')">
+                        *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
             <br>
@@ -451,7 +461,8 @@
 
             <div class="row">
                 <div class="col-8">
-                    <p class="p-label">*Telefone </p>
+                    <p class="p-label"
+                    v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
                     <input style="width:100%;" type="text" v-model="valorTelefone" placeholder="Informe seu telefone" >
                 </div>
             </div>
@@ -465,14 +476,22 @@
 
             <div class="row">
                 <div class="col-8">
-                    <p class="p-label">*Qual a fase do seu negócio? </p>
+                    <p class="p-label"
+                    v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
                     <select v-model="valorNegocio">
-                        <option value="" selected>Selecione uma opção</option>
                         <option value="Pensando em começar um negócio">Pensando em começar um negócio</option>
                         <option value="Iniciei meu negócio há menos de 1 mês">Iniciei meu negócio há menos de 1 mês</option>
                         <option value="Meu negócio já tem mais de 1 mês">Meu negócio já tem mais de 1 mês</option>
                     </select>
                     
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label p-erro" style="font-size: 14px;"
+                        v-if="(valorNegocio == '') || (valorTelefone == '')">
+                        *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
 
@@ -644,12 +663,22 @@ export default {
                     console.log('valorDia: ', this.valorDia);
                     this.onSelectPage(4);break;
                 case 8: 
-                    this.valorMotivo = this.ValorMotiPersonalizado;
-                    console.log('valorMotivo: ', this.valorMotivo);
-                    this.enviarSimulacaoRM();break;
+                    if( this.valorNome !== '' && this.valorContato !== ''){
+                        //this.valorMotivo = this.ValorMotiPersonalizado;
+                        //console.log('valorMotivo: ', this.valorMotivo);
+                        console.log('valorNome: ', this.valorNome);
+                        console.log('valorContato: ', this.valorContato);
+                        this.enviarSimulacaoRM();
+                    }
+                    break;
                 case 9: 
-                    console.log('finalizarSimulacao(): ');
-                    this.finalizarSimulacao();break;
+                    if(this.valorTelefone !== '' && this.valorNegocio !== ''){
+                        console.log('valorTelefone: ', this.valorTelefone);
+                        console.log('valorTelefone2: ', this.valorTelefone2);
+                        console.log('valorNegocio: ', this.valorNegocio);
+                        console.log('finalizarSimulacao(): ');
+                        this.finalizarSimulacao();
+                    }break;
            }
       },
       setCreditoManual(tipo){
@@ -691,8 +720,26 @@ export default {
       enviarSimulacaoRM(){
         this.onSelectPage(5);
       },
-      finalizarSimulacao(){
+      finalizarSimulacao(){        
         this.onSelectPage(13);
+        this.limparValores(); 
+      },
+      limparValores(){
+          //volta tudo para o padrão
+        this.valorPersonalizado= 3000;
+        this.valorParcPersonalizada= 6;
+        this.ValorDiaPersonalizado= 5;
+        this.ValorMotiPersonalizado= "";
+        this.valorCredito=0;
+        this.valorParcela=0;
+        this.valorDia=0;
+        this.valorMotivo= "";
+        this.valorParcelaFinal= 215;
+        this.valorNome= "";
+        this.valorContato="";
+        this.valorTelefone= "";
+        this.valorTelefone2= "";
+        this.valorNegocio= "";
       }
   }
 };
@@ -863,6 +910,10 @@ export default {
     color: #6E747F;
     margin:0;
     padding: 0 0 0 10px;
+}
+
+.p-erro{
+    color: red;
 }
 
 </style>
