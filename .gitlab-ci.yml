@@ -75,10 +75,11 @@ deploy-live:
     - echo "durante do deploy"
     - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
     - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
+    - ssh $USER_SSH_HOM@$IP_SERVER_HOM "$SCRIPT_DEPLOY" 
   dependencies:
     - package-prod
   environment:
     name: live
-    url: http://$IP_SERVER_HOM
+    url: $DNS_HOMOLOGACAO
   only:
   - master
