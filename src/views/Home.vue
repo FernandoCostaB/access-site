@@ -219,7 +219,7 @@
       </section>
       <!--SECTION QUE MOSTRA DEPOIMENTOS-->
       <section class="carousel slide testimonials-slider cid-rQcqQCmjcM" data-interval="false" id="testimonials-slider1-z">
-        <div class="container text-center">
+        <!--div class="container text-center">
             <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item">
@@ -302,7 +302,8 @@
                     <a class="carousel-control-next" role="button" data-slide="next"> <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span> <span class="sr-only">Next</span> </a>
                 </div>
             </div>
-        </div>
+        </div-->
+        <SlideFotos/>
       </section>
       
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
@@ -361,11 +362,13 @@
 <script>
 // @ is an alias to /src
 import Simulador from "@/components/Simulador.vue";
+import SlideFotos from "@/components/SlideFotos.vue";
 
 export default {
   name: "Home",
   components: {
-    Simulador
+    Simulador,
+    SlideFotos
   }
 
 };
