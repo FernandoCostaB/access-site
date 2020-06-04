@@ -6,7 +6,6 @@
             <div class="title col-12 col-lg-8">
                 <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-2">OUVIDORIA</h2>
                 <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-5">Em caso de seus problemas não terem sido resolvidos através de nosso atendimento, envie-nos uma mensagem pelo formulário abaixo ou ligue.</h3>
-                <p style="text-align: center; font-size: 32px;"> 0800 591 4108 </p>
             </div>
         </div>
       </div>
@@ -38,7 +37,9 @@
                                 <textarea name="message" data-form-field="Message" class="form-control display-7" id="message-form1-2s"></textarea>
                             </div>
                             <div class="col-md-12 input-group-btn align-center"><button type="submit" class="btn btn-primary btn-form display-4">Enviar</button></div>
+                            
                         </div>
+                        <p style="text-align: center; font-size: 32px;"> 0800 591 4108 </p>
                     </form><!---Formbuilder Form-->
                 </div>
             </div>

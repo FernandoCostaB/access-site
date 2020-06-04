@@ -899,7 +899,9 @@ export default {
 }
 
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
-    font-weight: 600;
+    font-weight: 500;
+    display: flex;
+    text-align: center;
 }
 
 .botao-conteudo-azul:hover{
