@@ -903,7 +903,9 @@ export default {
 }
 
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
-    font-weight: 500; 
+    font-weight: 500;
+    font-size: 24px; 
+    padding-top: 1vw;
 }
 
 .botao-conteudo-azul:hover{
