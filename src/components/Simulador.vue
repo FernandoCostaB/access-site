@@ -895,13 +895,15 @@ export default {
     margin: 10px;
     padding: 10px;
     text-align: center;  
-    cursor:pointer;  
+    cursor:pointer;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
 }
 
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
-    font-weight: 500;
-    display: flex;
-    text-align: center;
+    font-weight: 500; 
 }
 
 .botao-conteudo-azul:hover{
