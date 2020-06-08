@@ -1111,7 +1111,65 @@ blockquote {
 
 .row {
   display: -webkit-flex;
-  -webkit-flex-wrap: wrap; }
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  
+
+    /*user-select: none;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    height: 4rem;
+    font-family: "Gotham A", sans-serif;
+    color: rgb(0, 184, 215);
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 184, 215);
+    border-image: initial;
+    border-radius: 6px;
+    padding: 0px;*/
+  
+}
+
+.box {
+  user-select: none;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    height: 4rem;
+    font-family: "Gotham A", sans-serif;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 184, 215);
+    border-image: initial;
+    border-radius: 6px;
+    padding: 0px;
+}
 
 .justify-content-center {
   -webkit-justify-content: center; }

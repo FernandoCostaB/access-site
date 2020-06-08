@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="botao-conteudo-azul"  v-on:click="onSelectPage(6)">
-                    <h5></h5><h5>Outro Valor</h5>
+                    <h5>Outro Valor</h5>
                 </div>
             </div>
         </div>
@@ -69,29 +69,29 @@
 
         <div class="painel-valores">
             <div class="row">
-                <div class="botao-conteudo-azul" v-on:click="setValor(2,2)">
+                <div class="botao-conteudo-azul1" v-on:click="setValor(2,2)">
                     <h3>2x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul"  v-on:click="setValor(2,6)">
+                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,6)">
                     <h3>6x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul"  v-on:click="setValor(2,8)">
+                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,8)">
                     <h3>8x</h3>
                 </div>
             </div>
 
             <div class="row">
-                <div class="botao-conteudo-azul"  v-on:click="setValor(2,10)">
+                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,10)">
                     <h3>10x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul"  v-on:click="setValor(2,12)">
+                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,12)">
                     <h3>12x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul"  v-on:click="onSelectPage(7)">
+                <div class="botao-conteudo-azul1"  v-on:click="onSelectPage(7)">
                     <h5></h5><h5>Outro Prazo</h5>
                 </div>
             </div>
@@ -853,6 +853,8 @@ export default {
     border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
+    display: flex;
+    
 }
 .botao-azul:hover, .bt-slide:hover, .conteudo-valor-combo:hover {
     background:#009bb5;
@@ -885,27 +887,50 @@ export default {
     width: 100%;
     margin-left: 20px;
     padding: 0 0 0 5px;
+    display: flex;
+    flex: 1;
 }
 
 .botao-conteudo-azul{
     width: 160px;
     height: 65px;
-    border-radius: 8px;
+    border-radius: 6px;
     background: #00B8D7;
     margin: 10px;
     padding: 10px;
     text-align: center;  
     cursor:pointer;
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;  
+    justify-content: center;
+    user-select: none;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    height: 4rem;
+    cursor: pointer;
+    width: 85%;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 184, 215);
+    border-image: initial;
+    border-radius: 6px;
+    padding: 0px;
+    
 }
-
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
-    font-weight: 500;
-    font-size: 24px; 
-    padding-top: 1vw;
+    font-weight: 600;
+    font-size: 24px;
+    font-family: "Gotham A", sans-serif;
+    
 }
 
 .botao-conteudo-azul:hover{
