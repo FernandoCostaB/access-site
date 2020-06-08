@@ -1118,6 +1118,7 @@ blockquote {
   width: 100%;
   align-items: center;
   flex-direction: column;
+
   
 
     /*user-select: none;
@@ -1146,6 +1147,11 @@ blockquote {
   
 }
 
+
+.row1 {
+  display: flex;
+  
+}
 .box {
   user-select: none;
     -webkit-box-align: center;

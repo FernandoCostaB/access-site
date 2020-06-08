@@ -61,7 +61,7 @@
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page2">
-        <div class="row menu-seta" v-on:click="onSelectPage(1)">
+        <div class="menu-seta" v-on:click="onSelectPage(1)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
@@ -69,29 +69,30 @@
 
         <div class="painel-valores">
             <div class="row">
-                <div class="botao-conteudo-azul1" v-on:click="setValor(2,2)">
+                <div class="botao-conteudo-azul" v-on:click="setValor(2,2)">
                     <h3>2x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,6)">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,6)">
                     <h3>6x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,8)">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,8)">
                     <h3>8x</h3>
                 </div>
             </div>
+        
 
             <div class="row">
-                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,10)">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,10)">
                     <h3>10x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul1"  v-on:click="setValor(2,12)">
+                <div class="botao-conteudo-azul"  v-on:click="setValor(2,12)">
                     <h3>12x</h3>
                 </div>
 
-                <div class="botao-conteudo-azul1"  v-on:click="onSelectPage(7)">
+                <div class="botao-conteudo-azul"  v-on:click="onSelectPage(7)">
                     <h5></h5><h5>Outro Prazo</h5>
                 </div>
             </div>
@@ -99,7 +100,7 @@
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page3">
-        <div class="row menu-seta" v-on:click="onSelectPage(2)">
+        <div class="menu-seta" v-on:click="onSelectPage(2)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
@@ -863,6 +864,9 @@ export default {
 .menu-seta {
     margin-left:20px;
     cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-seta:hover {
