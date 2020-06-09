@@ -231,7 +231,7 @@
 
                 <div class="col-5">
                     <div>
-                        <div class="botao-conteudo-azul" style="margin-top: 0;" v-on:click="onSelectPage(12)">
+                        <div class="botao-conteudo-azul" style="margin-top: 0; background: #FFCD00;" v-on:click="onSelectPage(12)">
                             <h3>Finalizar</h3>
                         </div>
                     </div>
@@ -430,7 +430,7 @@
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul" v-on:click="setValor(8,0)"> Continuar </button> 
+                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
                 </div>                
             </div>
         </div>
@@ -456,6 +456,14 @@
                 <div class="col-8">
                     <p class="p-label">*E-mail </p>
                     <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label"
+                    v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
+                    <input style="width:100%;" type="text" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" >
                 </div>
             </div>
 
@@ -498,7 +506,7 @@
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul" v-on:click="setValor(9,0)"> Continuar </button> 
+                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(9,0)"> Continuar </button> 
                 </div>                
             </div>
         </div>
@@ -514,7 +522,7 @@
         
         <div class="painel-valores">
             <div class="row"  style="margin-bottom:5px;">
-                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;">{{valorNome.split(' ')[0]}} Parabéns!</h1>
+                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;"><b>{{valorNome.split(' ')[0].toUpperCase()}}</b> Parabéns!</h1>
             </div>
 
             <div class="row">
@@ -560,6 +568,7 @@ export default {
       valorTelefone: "",
       valorTelefone2: "",
       valorNegocio: "",
+      valorCpfCnpj: ""
     };
   },
   methods: {
@@ -569,7 +578,8 @@ export default {
               case 1: 
               this.page1= true; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; this.page12= false; this.page13= false; break;
+              this.page9= false; this.page10= false; this.page11= false; this.page12= false; this.page13= false;               
+              this.limparValores(); break;
               case 2: 
               this.page1= false; this.page2= true; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
@@ -657,7 +667,7 @@ export default {
                     //setValor(6,0) aqui na pega a variavel valor
                     this.valorParcela = this.valorParcPersonalizada;
                     console.log('valorParcela: ', this.valorParcela);
-                    this.onSelectPage(3);break;
+                    this.onSelectPage(11);break;
                 case 7:
                     this.valorDia = this.ValorDiaPersonalizado
                     console.log('valorDia: ', this.valorDia);
@@ -672,7 +682,8 @@ export default {
                     }
                     break;
                 case 9: 
-                    if(this.valorTelefone !== '' && this.valorNegocio !== ''){
+                    if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== ''){
+                        console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                         console.log('valorTelefone: ', this.valorTelefone);
                         console.log('valorTelefone2: ', this.valorTelefone2);
                         console.log('valorNegocio: ', this.valorNegocio);
@@ -722,7 +733,6 @@ export default {
       },
       finalizarSimulacao(){        
         this.onSelectPage(13);
-        this.limparValores(); 
       },
       limparValores(){
           //volta tudo para o padrão
@@ -740,6 +750,7 @@ export default {
         this.valorTelefone= "";
         this.valorTelefone2= "";
         this.valorNegocio= "";
+        this.valorCpfCnpj= "";
       }
   }
 };
