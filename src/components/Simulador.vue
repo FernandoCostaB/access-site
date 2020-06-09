@@ -28,10 +28,10 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0;">De quanto voce precisa?</h1>
-        <div class="painel-valores">
-            <div class="row">
-                <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)">
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:45px">De quanto voce precisa?</h1>
+        <div class="painel-valores"><!--painel-valores1-->
+            <div class="row"><!--painel-valores-->
+                <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
                     <h3>R$ 2.000</h3>
                 </div>
 
@@ -99,12 +99,13 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page3">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page3"><!--sc-fYiAbW hfKksW-->
         <div class="menu-seta" v-on:click="onSelectPage(2)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
         <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Qual dia para pagar?</h3>
+    <div><!--Incluir div-->    
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" v-on:click="setValor(3,1)" name="how_much" value="1" label="Dia 1" />
@@ -124,6 +125,7 @@
                  label="Dia 10" />
                  <label class="sc-kUaPvJ bJFiyk" for="how_much_20000">Dia 10</label>
             </div>
+        </div>
         </div>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi" width="100%">
@@ -196,7 +198,7 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>       
 
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <h3 class="dwRrHP" style="text-align:left; margin: 0 0 5px 0;">
                 {{valorNome.split(' ')[0]}}, o resumo da sua simulação ficou assim:</h3>
             <div class="row">
@@ -404,7 +406,7 @@
         </div>
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">Preencha abaixo para simular sem compromisso</h1>
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
                     <p class="p-label" 
@@ -801,6 +803,7 @@ export default {
     border-style: solid;
     border-width: 15px 15px 14px 0;
     border-color: transparent #00B8D7 transparent transparent;
+    display: flex;
 
 }
 
@@ -854,7 +857,7 @@ export default {
     border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
-    display: flex;
+    
     
 }
 .botao-azul:hover, .bt-slide:hover, .conteudo-valor-combo:hover {
@@ -862,7 +865,7 @@ export default {
 }
 
 .menu-seta {
-    margin-left:20px;
+    /*margin-left:0px;*/
     cursor:pointer;
     display: flex;
     align-items: center;
@@ -870,7 +873,7 @@ export default {
 }
 
 .menu-seta:hover {
-    margin-left:20px;
+    /*margin-left:0px;*/
     color:#009bb5;
     text-decoration:underline;
 }
@@ -892,11 +895,18 @@ export default {
     margin-left: 20px;
     padding: 0 0 0 5px;
     display: flex;
-    flex: 1;
+    position: relative;
+    
+    
 }
-
+.painel-valores1 {
+    width: 100%;
+    margin-left: 20px;
+    padding: 0 0 0 5px;
+    position: relative;
+}
 .botao-conteudo-azul{
-    width: 160px;
+    width: 200px;
     height: 65px;
     border-radius: 6px;
     background: #00B8D7;
@@ -904,9 +914,9 @@ export default {
     padding: 10px;
     text-align: center;  
     cursor:pointer;
-    display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 80%;
     user-select: none;
     -webkit-box-align: center;
     align-items: center;
@@ -914,7 +924,6 @@ export default {
     text-transform: uppercase;
     height: 4rem;
     cursor: pointer;
-    width: 85%;
     text-align: center;
     -webkit-box-pack: center;
     justify-content: center;
@@ -932,9 +941,8 @@ export default {
 }
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
     font-weight: 600;
-    font-size: 24px;
+    font-size: 22px;
     font-family: "Gotham A", sans-serif;
-    
 }
 
 .botao-conteudo-azul:hover{
