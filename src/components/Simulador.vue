@@ -447,7 +447,7 @@
         </div>
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">{{valorNome.split(' ')[0]}}, envie sua solicitação e garanta o seu crédito:</h1>
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
                     <p class="p-label">*Nome Completo </p>
