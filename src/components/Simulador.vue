@@ -523,7 +523,7 @@
         </div>
 
         
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
                 <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;"><b>{{valorNome.split(' ')[0].toUpperCase()}}</b> Parabéns!</h1>
             </div>
@@ -944,7 +944,6 @@ export default {
     line-height: 1.5rem;
     border-width: 2px;
     border-style: solid;
-    border-color: rgb(0, 184, 215);
     border-image: initial;
     border-radius: 6px;
     padding: 0px;
