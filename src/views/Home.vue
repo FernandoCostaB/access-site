@@ -355,7 +355,9 @@
             </div>
         </div>
       </section>
-
+      <div>
+          <Footer></Footer>
+      </div>
   </div>
 </template>
 
@@ -364,12 +366,14 @@
 // @ is an alias to /src
 import Simulador from "@/components/Simulador.vue";
 import SlideFotos from "@/components/SlideFotos.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Home",
   components: {
     Simulador,
-    SlideFotos
+    SlideFotos,
+    Footer
   }
 
 };
