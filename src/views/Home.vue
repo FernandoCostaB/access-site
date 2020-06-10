@@ -85,7 +85,7 @@
             </div>
       </section>
 
-      <!--section class="cid-rTAHB0AZZx2" id="video3-3p">
+      <section class="cid-rTAHB0AZZx2" id="video3-3p">
         <div class="container text-center">
             <figure class="mbr-figure align-center container">
                 <div class="video-block" style="width: 70%;">
@@ -93,7 +93,7 @@
                 </div>
             </figure>
         </div>
-      </section-->
+      </section>
 
       <section class="timeline2 cid-rQcniSR6We" id="timeline2-y">
         <div class="container align-center">
@@ -219,7 +219,7 @@
       </section>
       <!--SECTION QUE MOSTRA DEPOIMENTOS-->
       <section class="carousel slide testimonials-slider cid-rQcqQCmjcM" data-interval="false" id="testimonials-slider1-z">
-        <!--div class="container text-center">
+        <div class="container text-center">
             <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item">
@@ -302,7 +302,7 @@
                     <a class="carousel-control-next" role="button" data-slide="next"> <span aria-hidden="true" class="mbri-arrow-next mbr-iconfont"></span> <span class="sr-only">Next</span> </a>
                 </div>
             </div>
-        </div-->
+        </div>
         <SlideFotos/>
       </section>
       

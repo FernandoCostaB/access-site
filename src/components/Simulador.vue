@@ -28,10 +28,10 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0;">De quanto voce precisa?</h1>
-        <div class="painel-valores">
-            <div class="row">
-                <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)">
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:45px">De quanto voce precisa?</h1>
+        <div class="painel-valores"><!--painel-valores1-->
+            <div class="row"><!--painel-valores-->
+                <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
                     <h3>R$ 2.000</h3>
                 </div>
 
@@ -54,14 +54,14 @@
                 </div>
 
                 <div class="botao-conteudo-azul"  v-on:click="onSelectPage(6)">
-                    <h5></h5><h5>Outro Valor</h5>
+                    <h5>Outro Valor</h5>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page2">
-        <div class="row menu-seta" v-on:click="onSelectPage(1)">
+        <div class="menu-seta" v-on:click="onSelectPage(1)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
@@ -81,6 +81,7 @@
                     <h3>8x</h3>
                 </div>
             </div>
+        
 
             <div class="row">
                 <div class="botao-conteudo-azul"  v-on:click="setValor(2,10)">
@@ -98,12 +99,13 @@
         </div>
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page3">
-        <div class="row menu-seta" v-on:click="onSelectPage(2)">
+    <div class="sc-fYiAbW hfKksW" v-else-if="page3"><!--sc-fYiAbW hfKksW-->
+        <div class="menu-seta" v-on:click="onSelectPage(2)">
             <img style="width: 25px;" src="/assets/images/back.svg"/>
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
         <h3 class="dwRrHP" style="text-align:center; margin: 0 0 5px 0;">Qual dia para pagar?</h3>
+    <div><!--Incluir div-->    
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi">
                 <input type="radio" class="sc-fONwsr hhfPLM" id="how_much_5000" v-on:click="setValor(3,1)" name="how_much" value="1" label="Dia 1" />
@@ -123,6 +125,7 @@
                  label="Dia 10" />
                  <label class="sc-kUaPvJ bJFiyk" for="how_much_20000">Dia 10</label>
             </div>
+        </div>
         </div>
         <div class="sc-eLExRp jQbyzN">
             <div class="sc-giadOv jOhdwi" width="100%">
@@ -195,7 +198,7 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>       
 
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <h3 class="dwRrHP" style="text-align:left; margin: 0 0 5px 0;">
                 {{valorNome.split(' ')[0]}}, o resumo da sua simulação ficou assim:</h3>
             <div class="row">
@@ -231,7 +234,7 @@
 
                 <div class="col-5">
                     <div>
-                        <div class="botao-conteudo-azul" style="margin-top: 0;" v-on:click="onSelectPage(12)">
+                        <div class="botao-conteudo-azul" style="margin-top: 0; background: #FFCD00;" v-on:click="onSelectPage(12)">
                             <h3>Finalizar</h3>
                         </div>
                     </div>
@@ -403,7 +406,7 @@
         </div>
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">Preencha abaixo para simular sem compromisso</h1>
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
                     <p class="p-label" 
@@ -430,7 +433,7 @@
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul" v-on:click="setValor(8,0)"> Continuar </button> 
+                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
                 </div>                
             </div>
         </div>
@@ -444,7 +447,7 @@
         </div>
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">{{valorNome.split(' ')[0]}}, envie sua solicitação e garanta o seu crédito:</h1>
-        <div class="painel-valores">
+        <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
                 <div class="col-8">
                     <p class="p-label">*Nome Completo </p>
@@ -456,6 +459,14 @@
                 <div class="col-8">
                     <p class="p-label">*E-mail </p>
                     <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-8">
+                    <p class="p-label"
+                    v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
+                    <input style="width:100%;" type="text" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" >
                 </div>
             </div>
 
@@ -498,7 +509,7 @@
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul" v-on:click="setValor(9,0)"> Continuar </button> 
+                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(9,0)"> Continuar </button> 
                 </div>                
             </div>
         </div>
@@ -514,7 +525,7 @@
         
         <div class="painel-valores">
             <div class="row"  style="margin-bottom:5px;">
-                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;">{{valorNome.split(' ')[0]}} Parabéns!</h1>
+                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;"><b>{{valorNome.split(' ')[0].toUpperCase()}}</b> Parabéns!</h1>
             </div>
 
             <div class="row">
@@ -560,6 +571,7 @@ export default {
       valorTelefone: "",
       valorTelefone2: "",
       valorNegocio: "",
+      valorCpfCnpj: ""
     };
   },
   methods: {
@@ -569,7 +581,8 @@ export default {
               case 1: 
               this.page1= true; this.page2= false; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
-              this.page9= false; this.page10= false; this.page11= false; this.page12= false; this.page13= false; break;
+              this.page9= false; this.page10= false; this.page11= false; this.page12= false; this.page13= false;               
+              this.limparValores(); break;
               case 2: 
               this.page1= false; this.page2= true; this.page3= false; this.page4= false;
               this.page5= false; this.page6= false; this.page7= false; this.page8= false;
@@ -657,7 +670,7 @@ export default {
                     //setValor(6,0) aqui na pega a variavel valor
                     this.valorParcela = this.valorParcPersonalizada;
                     console.log('valorParcela: ', this.valorParcela);
-                    this.onSelectPage(3);break;
+                    this.onSelectPage(11);break;
                 case 7:
                     this.valorDia = this.ValorDiaPersonalizado
                     console.log('valorDia: ', this.valorDia);
@@ -672,7 +685,8 @@ export default {
                     }
                     break;
                 case 9: 
-                    if(this.valorTelefone !== '' && this.valorNegocio !== ''){
+                    if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== ''){
+                        console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                         console.log('valorTelefone: ', this.valorTelefone);
                         console.log('valorTelefone2: ', this.valorTelefone2);
                         console.log('valorNegocio: ', this.valorNegocio);
@@ -722,7 +736,6 @@ export default {
       },
       finalizarSimulacao(){        
         this.onSelectPage(13);
-        this.limparValores(); 
       },
       limparValores(){
           //volta tudo para o padrão
@@ -740,6 +753,7 @@ export default {
         this.valorTelefone= "";
         this.valorTelefone2= "";
         this.valorNegocio= "";
+        this.valorCpfCnpj= "";
       }
   }
 };
@@ -800,6 +814,7 @@ export default {
     border-style: solid;
     border-width: 15px 15px 14px 0;
     border-color: transparent #00B8D7 transparent transparent;
+    display: flex;
 
 }
 
@@ -853,18 +868,23 @@ export default {
     border-radius: 5px;
     margin: 0 auto;
     cursor: pointer;
+    
+    
 }
 .botao-azul:hover, .bt-slide:hover, .conteudo-valor-combo:hover {
     background:#009bb5;
 }
 
 .menu-seta {
-    margin-left:20px;
+    /*margin-left:0px;*/
     cursor:pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-seta:hover {
-    margin-left:20px;
+    /*margin-left:0px;*/
     color:#009bb5;
     text-decoration:underline;
 }
@@ -885,21 +905,55 @@ export default {
     width: 100%;
     margin-left: 20px;
     padding: 0 0 0 5px;
+    display: flex;
+    position: relative;
+    
+    
 }
-
+.painel-valores1 {
+    width: 100%;
+    margin-left: 20px;
+    padding: 0 0 0 5px;
+    position: relative;
+}
 .botao-conteudo-azul{
-    width: 160px;
+    width: 200px;
     height: 65px;
-    border-radius: 8px;
+    border-radius: 6px;
     background: #00B8D7;
     margin: 10px;
     padding: 10px;
     text-align: center;  
-    cursor:pointer;  
+    cursor:pointer;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    user-select: none;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-transform: uppercase;
+    height: 4rem;
+    cursor: pointer;
+    text-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(0, 184, 215);
+    border-image: initial;
+    border-radius: 6px;
+    padding: 0px;
+    
 }
-
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
     font-weight: 600;
+    font-size: 22px;
+    font-family: "Gotham A", sans-serif;
 }
 
 .botao-conteudo-azul:hover{
