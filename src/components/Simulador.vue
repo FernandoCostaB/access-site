@@ -198,50 +198,47 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>       
 
-        <div class="painel-valores1">
+        <div class="painel-resumo">
             <h3 class="dwRrHP" style="text-align:left; margin: 0 0 5px 0;">
                 {{valorNome.split(' ')[0]}}, o resumo da sua simulação ficou assim:</h3>
-            <div class="row">
-                <div>
-                    <div class="botao-conteudo-azul" style="margin-top: 0;">
-                        <p style="font-size: 15px; margin:0; padding:0;">Valor do empréstimo</p>
-                        <h3>R$ {{valorCredito}}</h3>
-                    </div>
+
+            <div class="row" style="margin-left: 0px;">            
+                <div class="col-5 botao-resumo" style=" margin-top: 0;">
+                    <p style="font-size: 15px; margin:0; padding:0;">Valor do Empréstimo</p>
+                    <h4 style="font-weight:bold">R$ {{valorCredito}}</h4>
                 </div>
 
-                <div>
-                    <div class="botao-conteudo-azul" style="margin-top: 0;">
-                        <p style="font-size: 15px; margin:0; padding:0;">Qtd. de parcelas</p>
-                        <h4>{{valorParcela}}x (vezes)</h4>
-                    </div>
-                </div>    
-
-                <div>
-                    
-                    <div class="botao-conteudo-azul" style="margin-top: 0;">
-                        <p style="font-size: 15px; margin:0; padding:0;">Valor estimado*</p>
-                        <h3>R$ {{valorParcelaFinal}}</h3>
-                    </div>
-                </div>             
+                <div class="col-5 botao-resumo" >
+                    <p style="font-size: 15px; margin:0; padding:0;">Qtd. de parcelas</p>
+                    <h4 style="font-weight:bold">{{valorParcela}}x (vezes)</h4>
+                </div>                         
             </div>
 
-            <p class="p-label" style="padding:0;">*Considerando uma carência tradicional</p>
+            <div class="row" style="margin: 10px 0px;">
+                <div class="col-5 botao-resumo" >
+                    <p style="font-size: 15px; margin:0; padding:0;">Valor estimado*</p>
+                    <h4 style="font-weight:bold">R$ {{valorParcelaFinal}}</h4>
+                </div> 
 
-            <div class="row" style="margin-top:25px;">
-                <div class="col-7">
+                <div class="col-5 botao-resumo" style="background: #FFCD00;" v-on:click="onSelectPage(12)">
+                    <div style="height:15px;"></div>
+                    <h4 style="font-weight:bold">FINALIZAR</h4>
+                </div> 
+
+            </div>
+
+            <div class="row" style="margin-top: 10px;">
+                <div class="col-5 p-label" >
+                *Considerando uma carência tradicional
+                </div> 
+            </div>
+
+            <div class="row"  style="margin-top: 10px;">
+                <div class="col-12" >
                     <h4 style="color: #6E747F;">Pronto, agora é só finalizar e em seguida enviar sua solicitação!</h4>
-                </div>
-
-                <div class="col-5">
-                    <div>
-                        <div class="botao-conteudo-azul" style="margin-top: 0; background: #FFCD00;" v-on:click="onSelectPage(12)">
-                            <h3>Finalizar</h3>
-                        </div>
-                    </div>
-                </div>
+                </div>                
 
             </div>
-
         </div> 
         
     </div>
@@ -526,14 +523,14 @@
             </div>
             <br>
             <div class="row">
-                <div class="col-8">
+                <div class="col-10">
                     <input  type="checkbox" v-model="termoPrivacidade" true-value=true false-value=false>
-                    <p class="p-label"
+                    <label class="p-label"
                      v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
                      Li, compreendi e concordo com a 
                      <router-link to="/politica">Política de Privacidade,</router-link>
                      bem como a consultar quaisquer informações a meu respeito nos sistemas dos serviços de informações e proteção ao 
-                     crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </p>                   
+                     crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </label>                   
                 </div>                
             </div>
         </div>
@@ -549,7 +546,7 @@
         
         <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
-                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;"><b>{{valorNome.split(' ')[0].toUpperCase()}}</b> Parabéns!</h1>
+                <h1 class="col-12 dwRrHP" style="text-align:center;  color: #000; font-weight:bold;">{{valorNome.split(' ')[0].toUpperCase()}} Parabéns!</h1>
             </div>
 
             <div class="row">
@@ -947,15 +944,13 @@ export default {
     margin-left: 20px;
     padding: 0 0 0 5px;
     display: flex;
-    position: relative;
-    
+    position: relative;   
     
 }
-.painel-valores1 {
+.painel-valores1, .painel-resumo {
     width: 100%;
     margin-left: 20px;
     padding: 0 0 0 5px;
-    position: relative;
 }
 .botao-conteudo-azul{
     width: 200px;
@@ -990,13 +985,34 @@ export default {
     padding: 0px;
     
 }
+.botao-conteudo-azul1{
+    width: 80%;
+    height: 65px;
+    border-radius: 6px;
+    background: #00B8D7;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;  
+    cursor:pointer;
+}
+
+.botao-resumo{
+    min-width: 48%;
+    min-height: 65px;
+    border-radius: 6px;
+    background: #00B8D7;
+    margin: 0 0 0 0;
+    padding: 10px;
+    text-align: center;  
+    cursor:pointer;
+}
+
 .botao-conteudo-azul h3, .botao-conteudo-azul h4, .botao-conteudo-azul h5{
     font-weight: 600;
     font-size: 22px;
-    font-family: "Gotham A", sans-serif;
 }
 
-.botao-conteudo-azul:hover, .bt-options:hover, .bt-options-selected{
+.botao-conteudo-azul:hover, .botao-conteudo-azul1:hover, .bt-options:hover, .bt-options-selected{
     background:#009bb5;
 }
 
