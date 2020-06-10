@@ -416,7 +416,7 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorContato == '' ), '': false }">*E-mail </p>
-                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email">
+                    <input style="width:100%;" type="email" v-model="valorContato" placeholder="Informe seu email">
                 </div>
             </div>
 
@@ -463,7 +463,8 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
-                    <input style="width:100%;" type="text" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" >
+                    <the-mask style="width:100%;"  :mask="['###.###.###-##', '##.###.###/####-##']" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" />
+                    
                 </div>
             </div>
 
@@ -471,14 +472,16 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
-                    <input style="width:100%;" type="text" v-model="valorTelefone" placeholder="Informe seu telefone" >
+                    <the-mask style="width:100%;" v-model="valorTelefone" 
+                    placeholder="Informe seu telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-8">
                     <p class="p-label">Telefone 2 (opcional) </p>
-                    <input style="width:100%;" type="text" v-model="valorTelefone2" placeholder="Informe seu segundo telefone" >
+                    <the-mask style="width:100%;" v-model="valorTelefone2" 
+                    placeholder="Informe seu segundo telefone" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
             </div>
 
@@ -561,7 +564,9 @@
 </template>
 
 <script>
+import {TheMask} from 'vue-the-mask'
 export default {
+  components: {TheMask},
   name: "Simulador",
   data() {
     return {
