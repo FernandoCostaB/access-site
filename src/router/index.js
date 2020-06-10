@@ -24,6 +24,12 @@ const routes = [
     name: "Contact",
     component: () =>
       import("../views/Contact.vue")
+  },
+  {
+    path: "/politica",
+    name: "Politica",
+    component: () =>
+      import("../views/Politica.vue")
   }
 ];
 
