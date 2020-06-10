@@ -547,12 +547,9 @@
         </div>
 
         
-        <div class="painel-valores">
-            <div class="row"  style="margin-bottom:5px; text-align:center;">
-                <div class="col-md-auto mx-auto" style=" text-align: center; margin: 0 0 0 0;">
-                    <h1 class="dwRrHP" style="color: #000; padding:0; margin:0 8px 0 0; float:left; font-weight:bold;" >{{valorNome.split(' ')[0].toUpperCase()}}</h1>
-                    <h1 class="dwRrHP" style="float:left; margin: 0;"> Parabéns!</h1>
-                </div>
+        <div class="painel-valores1">
+            <div class="row"  style="margin-bottom:5px;">
+                <h1 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 0 35px;"><b>{{valorNome.split(' ')[0].toUpperCase()}}</b> Parabéns!</h1>
             </div>
 
             <div class="row">
@@ -989,7 +986,6 @@ export default {
     line-height: 1.5rem;
     border-width: 2px;
     border-style: solid;
-    border-color: rgb(0, 184, 215);
     border-image: initial;
     border-radius: 6px;
     padding: 0px;

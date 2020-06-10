@@ -218,7 +218,7 @@
         </div>
       </section>
       <!--SECTION QUE MOSTRA DEPOIMENTOS-->
-      <section class="carousel slide testimonials-slider cid-rQcqQCmjcM" data-interval="false" id="testimonials-slider1-z">
+      <!--<section class="carousel slide testimonials-slider cid-rQcqQCmjcM" data-interval="false" id="testimonials-slider1-z">
         <div class="container text-center">
             <div class="carousel slide" role="listbox" data-pause="true" data-keyboard="false" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
@@ -303,8 +303,9 @@
                 </div>
             </div>
         </div>
+        </section>-->
         <SlideFotos/>
-      </section>
+      
       
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">

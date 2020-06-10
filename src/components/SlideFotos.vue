@@ -21,7 +21,6 @@
     <p class="next" @click="next" >&#10095;</p>
   </div>
 </template>
-
 <script>
 export default {
   name: "SlideFotos",
