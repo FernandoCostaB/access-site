@@ -1,13 +1,13 @@
 <template>
   <div>
     <transition-group tag="div">
-      <div class="conteudo-clientes row" v-for="i in [currentIndex]" :key="i">
+      <div class="conteudo-clientes row1" v-for="i in [currentIndex]" :key="i">
         <!--img :src="currentImg" /-->
         <div class=" col-md-6" style="margin: 0 auto;">      
             <img class="foto-cliente" :src="currentImg" alt="" title="">
         </div>   
 
-        <div class="col-12 row" style=" margin: 0 auto;">
+        <div class="col-12 row1" style=" margin: 0 auto;">
             <div class="col-md-6" style="margin: 0 auto; text-align:center">
                 <p>{{currentDescription}}</p>
                 <h6 style="margin:0;padding:0; font-weigth: bold; color: #000;">{{currentName}}</h6>

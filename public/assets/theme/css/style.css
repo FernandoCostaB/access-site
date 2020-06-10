@@ -1149,6 +1149,12 @@ blockquote {
 
 .row1 {
   display: flex;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+
   
 }
 .box {
