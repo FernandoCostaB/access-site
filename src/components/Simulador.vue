@@ -488,17 +488,17 @@
                     v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
                     <div class="row">
                         
-                        <div class="col-12 " 
+                        <div class="col-11 " 
                          v-bind:class="[op1 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(1)">
                             <h6>Pensando em começar um negócio</h6>                           
                         </div>
 
-                        <div class="col-12 "
+                        <div class="col-11 "
                          v-bind:class="[op2 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(2)">
                             <h6>Iniciei meu negócio há menos de 1 mês</h6>                           
                         </div>
 
-                        <div class="col-12"
+                        <div class="col-11"
                          v-bind:class="[op3 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(3)">
                             <h6>Meu negócio já tem mais de 1 mês</h6>                           
                         </div>
