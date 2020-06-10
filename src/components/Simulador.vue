@@ -489,11 +489,23 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
-                    <select v-model="valorNegocio">
-                        <option value="Pensando em começar um negócio">Pensando em começar um negócio</option>
-                        <option value="Iniciei meu negócio há menos de 1 mês">Iniciei meu negócio há menos de 1 mês</option>
-                        <option value="Meu negócio já tem mais de 1 mês">Meu negócio já tem mais de 1 mês</option>
-                    </select>
+                    <div class="row">
+                        
+                        <div class="col-11 " 
+                         v-bind:class="[op1 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(1)">
+                            <h6>Pensando em começar um negócio</h6>                           
+                        </div>
+
+                        <div class="col-11 "
+                         v-bind:class="[op2 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(2)">
+                            <h6>Iniciei meu negócio há menos de 1 mês</h6>                           
+                        </div>
+
+                        <div class="col-11"
+                         v-bind:class="[op3 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(3)">
+                            <h6>Meu negócio já tem mais de 1 mês</h6>                           
+                        </div>
+                    </div>
                     
                 </div>
             </div>
@@ -501,7 +513,7 @@
             <div class="row">
                 <div class="col-8">
                     <p class="p-label p-erro" style="font-size: 14px;"
-                        v-if="(valorNegocio == '') || (valorTelefone == '')">
+                        v-if="(valorNegocio == '') || (valorTelefone == '') || (valorCpfCnpj == '') || (termoPrivacidade != true && termoPrivacidade != 'true')">
                         *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
@@ -509,7 +521,19 @@
             <br>
             <div class="row">
                 <div class="col-8">
-                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(9,0)"> Continuar </button> 
+                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(9,0)"> Enviar Solicitação </button> 
+                </div>                
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-8">
+                    <input  type="checkbox" v-model="termoPrivacidade" true-value=true false-value=false>
+                    <p class="p-label"
+                     v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
+                     Li, compreendi e concordo com a 
+                     <router-link to="/politica">Política de Privacidade,</router-link>
+                     bem como a consultar quaisquer informações a meu respeito nos sistemas dos serviços de informações e proteção ao 
+                     crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </p>                   
                 </div>                
             </div>
         </div>
@@ -529,7 +553,7 @@
             </div>
 
             <div class="row">
-                <h4 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 15px 35px;">Seu pedido está em análise, em breve entraremos em contato.</h4>
+                <h4 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 15px 0;">Seu pedido está em análise, em breve entraremos em contato.</h4>
             </div>
         </div>
     </div>
@@ -570,7 +594,11 @@ export default {
       valorTelefone: "",
       valorTelefone2: "",
       valorNegocio: "",
-      valorCpfCnpj: ""
+      valorCpfCnpj: "",
+      op1: false,
+      op2: false,
+      op3: false,
+      termoPrivacidade: true
     };
   },
   methods: {
@@ -684,7 +712,8 @@ export default {
                     }
                     break;
                 case 9: 
-                    if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== ''){
+                console.log('termoPrivacidade ', this.termoPrivacidade);
+                    if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== '' && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
                         console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                         console.log('valorTelefone: ', this.valorTelefone);
                         console.log('valorTelefone2: ', this.valorTelefone2);
@@ -729,6 +758,19 @@ export default {
               }
           }
           
+      },
+      setNegocio(op){
+
+          switch(op){
+              case 1: 
+              this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false;break;
+              case 2: 
+              this.valorNegocio = 'Iniciei meu negócio há menos de 1 mês'; this.op1=false; this.op2=true; this.op3=false;break;
+              case 3: 
+              this.valorNegocio = 'Meu negócio já tem mais de 1 mês'; this.op1=false;this.op2=false; this.op3=true;break;
+          }
+          console.log("valorNegocio ", this.valorNegocio);
+           console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
       },
       enviarSimulacaoRM(){
         this.onSelectPage(5);
@@ -954,7 +996,7 @@ export default {
     font-family: "Gotham A", sans-serif;
 }
 
-.botao-conteudo-azul:hover{
+.botao-conteudo-azul:hover, .bt-options:hover, .bt-options-selected{
     background:#009bb5;
 }
 
@@ -967,5 +1009,19 @@ export default {
 .p-erro{
     color: red;
 }
+
+.bt-options, .bt-options-selected{
+    width: 90%;
+    background: #00B8D7;
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    margin: 0 0 5px 15px;
+    cursor:pointer;
+}
+.bt-options-selected{
+    background:#009bb5;
+}
+
 
 </style>
