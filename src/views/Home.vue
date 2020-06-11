@@ -304,6 +304,7 @@
             </div>
         </div>
         </section>-->
+        <Gallery/>
         <SlideFotos/>
       
       
@@ -368,13 +369,15 @@
 import Simulador from "@/components/Simulador.vue";
 import SlideFotos from "@/components/SlideFotos.vue";
 import Footer from "@/components/Footer.vue";
+import Gallery from "@/components/Gallery.vue";
 
 export default {
   name: "Home",
   components: {
     Simulador,
     SlideFotos,
-    Footer
+    Footer,
+    Gallery
   }
 
 };

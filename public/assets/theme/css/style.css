@@ -10,6 +10,11 @@ body {
   line-height: 1.5; 
 }
 
+#mktzap {
+  position: fixed;
+  background-color: black;
+}
+
 section,
 .container,
 .container-fluid {
@@ -40,7 +45,7 @@ blockquote {
 
 .button_footer{
 text-align: center;
-border-radius: 100px;
+border-radius: 6px;
 border: none;
 width: 250px;
 background-color: rgb(76, 237, 105);
@@ -319,14 +324,14 @@ background-color: rgb(76, 237, 105);
 
 .button_footer1{
   text-align: center;
-  border-radius: 100px;
+  border-radius: 6px;
   border: none;
   width: 250px;
   background-color:#DDDDDD;
   }
 .button_footer2{
   text-align: center;
-  border-radius: 100px;
+  border-radius: 6px;
   border: none;
   width: 250px;
   background-color:#149DCC;
@@ -472,6 +477,7 @@ section {
   .mbr-section-btn,
   .mbr-section-title {
     text-align: center;
+    align-items: center;
     margin-top: 40px; } }
 /*! Font-weight  */
 .mbr-light {
@@ -516,7 +522,8 @@ section {
   align-content: center;
   -webkit-align-items: start;
   -ms-flex-align: start;
-  align-items: start; }
+  align-items: start;
+   align-items: center}
   .media-container-row .media-size-item {
     width: 400px; }
 
@@ -636,7 +643,8 @@ section {
   }
 }
 .img-footer{
-  padding-left: 50%;
+  padding-left: 0%;
+  border-radius: 6px
 }
 @media only  screen and (max-width:982px){
   .img-footer{ 

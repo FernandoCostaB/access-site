@@ -5,7 +5,7 @@
                     <div class="media-container-row content text-white">
                         <div class="col-12 col-md-3">
                             <div class="media-wrap">
-                                <a href="index.html"><img class="img-footer" src="/assets/images/res/mipmap-xxxhdpi/profile-picture.png" alt="AccessCrédito" title="AccessCrédito"> </a>
+                                <a href=""><img  style="border-radius: 60px," class="img-footer" src="/assets/images/logo.jpg" alt="AccessCrédito" title="AccessCrédito"> </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
@@ -16,16 +16,17 @@
                             <h5 class="pb-3">
                     Email</h5>
                             <p class="mbr-text"><a href="mailto:sac@accesscredito.com.br" target="blank">sac@accesscredito.com.br&nbsp;</a></p>
-                        </div>
+                            <h5 class="pb-3">
+                    Acesse Nosso Blog</h5>
+                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="" target="blank">Blog</a></button>
+                    </div>
+                        
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3"></h5>
                             <p class="mbr-text">Oi! Leu até aqui? Você se preocupa com os mínimos detalhes, mesmo. A gente também. Por isso o time da AccessCrédito está sempre
                             trabalhando para trazer o melhor Crédito para seu negócio, vamos crescer Juntos ; )</p>
                         </div>
-                        <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                            <h5 class="pb-3"></h5>
-                            <p class="mbr-text"></p>
-                        </div>
+                        
                     </div>
                     <div class="footer-lower">
                         <div class="media-container-row">

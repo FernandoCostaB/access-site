@@ -2,19 +2,19 @@
   <div>
     <transition-group tag="div">
       <div class="conteudo-clientes row1" v-for="i in [currentIndex]" :key="i">
-        <!--img :src="currentImg" /-->
-        <div class=" col-md-6" style="margin: 0 auto;">      
+        <!--img :src="currentImg" nao importar /-->
+        <div class=" col-md-6" id="item-1" style="margin: 0 auto;">     
             <img class="foto-cliente" :src="currentImg" alt="" title="">
         </div>   
 
-        <div class="col-12 row1" style=" margin: 0 auto;">
+        <div class="col-12 row1 gallery items-3" style=" margin: 0 auto;">
             <div class="col-md-6" style="margin: 0 auto; text-align:center">
                 <p>{{currentDescription}}</p>
                 <h6 style="margin:0;padding:0; font-weigth: bold; color: #000;">{{currentName}}</h6>
             </div>
         </div>
-
       </div>
+      
     </transition-group>
 
     <p class="prev" @click="prev" >&#10094;</p>
@@ -108,6 +108,25 @@ export default {
     opacity: 1;
     }
 
+    .fotos-conteudos {
+      position: absolute;
+      opacity: 0;
+      animation-name: animacao;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes animacao {
+
+      25% {
+        opacity: 1;
+        transform:scale(1.1,1.1);
+      }
+      50% {
+        opacity: 0;
+      }
+    }
+
     .fade-enter,
     .fade-leave-to {
     visibility: hidden;
@@ -123,7 +142,7 @@ export default {
     .prev, .next {
     cursor: pointer;
     position: absolute;
-    top: 40%;
+    top: 80%;
     width: auto;
     padding: 16px;
     color: #585858;;
