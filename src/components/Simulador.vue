@@ -250,11 +250,11 @@
         </div>
          <div class="row slidecontainer">
 
-            <img class="bt-slide" v-on:click="setCreditoManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>         
+            <img class="bt-slide" v-on:click="setCreditoManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>         
                     
             <label class="col-8 sc-kUaPvJ bJFiyk">R$ {{valorPersonalizado}}</label>
 
-             <img class="bt-slide" v-on:click="setCreditoManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setCreditoManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
          <br>
          <div class="conteudo-slide">            
@@ -277,9 +277,9 @@
         </div>
 
          <div class="row slidecontainer">
-            <img class="bt-slide" v-on:click="setParcelaManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>                          
+            <img class="bt-slide" v-on:click="setParcelaManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>                          
             <label class="col-8 sc-kUaPvJ bJFiyk">{{valorParcPersonalizada}} X</label> 
-             <img class="bt-slide" v-on:click="setParcelaManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setParcelaManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
 
          <br>
@@ -300,9 +300,9 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
          <div class="row slidecontainer">
-            <img class="bt-slide" v-on:click="setDiaManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>                          
+            <img class="bt-slide" v-on:click="setDiaManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>                          
             <label class="col-8 sc-kUaPvJ bJFiyk">Dia {{ValorDiaPersonalizado}}</label> 
-             <img class="bt-slide" v-on:click="setDiaManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setDiaManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
 
          <br>
