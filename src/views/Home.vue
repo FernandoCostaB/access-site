@@ -346,7 +346,7 @@
                             </div>
                             <div class="card-text">
                                 <a href="https://g.page/accesscredito?share" target="blank"><button class="button_footer2"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                        Rua Curió, N 1400
+                                        Rua Curió, N71
                                 </h3></button></a>
                                 </div>
                         </div>
