@@ -471,7 +471,8 @@ section {
   .align-right,
   .mbr-section-btn,
   .mbr-section-title {
-    text-align: center; } }
+    text-align: center;
+    margin-top: 40px; } }
 /*! Font-weight  */
 .mbr-light {
   font-weight: 300; }
