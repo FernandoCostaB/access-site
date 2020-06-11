@@ -10,7 +10,7 @@
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">Endereço</h5>
-                            <p class="mbr-text">ACCESSCRÉDITO – CNPJ 13.058.743/0001-64 – R. Curió, 1400 – Cidade Nova, Manaus – AM – © AccessCrédito</p>
+                            <p class="mbr-text">ACCESSCRÉDITO – CNPJ 13.058.743/0001-64 – R. Curió N71 – Cidade Nova, Manaus - AM | © AccessCrédito</p>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">
@@ -44,11 +44,12 @@
                                         <a href="https://www.facebook.com/accesscreditobrasil" target="_blank"> <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span> </a>
                                     </div>
                                     <div class="soc-item">
-                                        <a href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="_blank"> <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span> </a>
-                                    </div>
-                                    <div class="soc-item">
                                         <a href="https://www.instagram.com/accesscredito/" target="_blank"><span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span> </a>
                                     </div>
+                                    <div class="soc-item">
+                                        <a href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="_blank"> <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span> </a>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
