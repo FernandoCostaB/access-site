@@ -250,11 +250,11 @@
         </div>
          <div class="row slidecontainer">
 
-            <img class="bt-slide" v-on:click="setCreditoManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>         
+            <img class="bt-slide" v-on:click="setCreditoManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>         
                     
             <label class="col-8 sc-kUaPvJ bJFiyk">R$ {{valorPersonalizado}}</label>
 
-             <img class="bt-slide" v-on:click="setCreditoManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setCreditoManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
          <br>
          <div class="conteudo-slide">            
@@ -277,9 +277,9 @@
         </div>
 
          <div class="row slidecontainer">
-            <img class="bt-slide" v-on:click="setParcelaManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>                          
+            <img class="bt-slide" v-on:click="setParcelaManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>                          
             <label class="col-8 sc-kUaPvJ bJFiyk">{{valorParcPersonalizada}} X</label> 
-             <img class="bt-slide" v-on:click="setParcelaManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setParcelaManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
 
          <br>
@@ -300,9 +300,9 @@
             <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
         </div>
          <div class="row slidecontainer">
-            <img class="bt-slide" v-on:click="setDiaManual(true)" style="margin-right: 15px;" src="/assets/images/menos.svg"/>                          
+            <img class="bt-slide" v-on:click="setDiaManual(true)" style="margin-right: 5px;" src="/assets/images/menos.svg"/>                          
             <label class="col-8 sc-kUaPvJ bJFiyk">Dia {{ValorDiaPersonalizado}}</label> 
-             <img class="bt-slide" v-on:click="setDiaManual(false)" style="margin-left: 15px;" src="/assets/images/mais.svg"/>         
+             <img class="bt-slide" v-on:click="setDiaManual(false)" style="margin-left: 5px;" src="/assets/images/mais.svg"/>         
          </div>
 
          <br>
@@ -415,8 +415,8 @@
             <div class="row">
                 <div class="col-8">
                     <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorContato == '' ), '': false }">*E-mail </p>
-                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email">
+                    v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
+                    <input style="width:100%;" @input="validarEmail()" type="email" v-model="valorContato" placeholder="Informe seu email">
                 </div>
             </div>
 
@@ -425,6 +425,9 @@
                     <p class="p-label p-erro" style="font-size: 14px;"
                         v-if="(valorContato == '') || (valorNome == '')">
                         *Você precisa preencher os campos obrigatórios </p>
+                    <p class="p-label p-erro" style="font-size: 14px;"
+                        v-if="(emailValido == false)">
+                        *Você precisa preencher um e-mail válido</p>
                 </div>
             </div>
             <br>
@@ -463,7 +466,8 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
-                    <input style="width:100%;" type="text" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" >
+                    <the-mask style="width:100%;"  :mask="['###.###.###-##', '##.###.###/####-##']" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" />
+                    
                 </div>
             </div>
 
@@ -471,14 +475,16 @@
                 <div class="col-8">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
-                    <input style="width:100%;" type="text" v-model="valorTelefone" placeholder="Informe seu telefone" >
+                    <the-mask style="width:100%;" v-model="valorTelefone" 
+                    placeholder="Informe seu telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-8">
                     <p class="p-label">Telefone 2 (opcional) </p>
-                    <input style="width:100%;" type="text" v-model="valorTelefone2" placeholder="Informe seu segundo telefone" >
+                    <the-mask style="width:100%;" v-model="valorTelefone2" 
+                    placeholder="Informe seu segundo telefone" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
             </div>
 
@@ -561,7 +567,9 @@
 </template>
 
 <script>
+import {TheMask} from 'vue-the-mask'
 export default {
+  components: {TheMask},
   name: "Simulador",
   data() {
     return {
@@ -596,7 +604,8 @@ export default {
       op1: false,
       op2: false,
       op3: false,
-      termoPrivacidade: true
+      termoPrivacidade: true,
+      emailValido: false
     };
   },
   methods: {
@@ -701,12 +710,13 @@ export default {
                     console.log('valorDia: ', this.valorDia);
                     this.onSelectPage(4);break;
                 case 8: 
-                    if( this.valorNome !== '' && this.valorContato !== ''){
+                    this.validarEmail();
+                    if( this.valorNome !== '' && this.emailValido == true){
                         //this.valorMotivo = this.ValorMotiPersonalizado;
                         //console.log('valorMotivo: ', this.valorMotivo);
                         console.log('valorNome: ', this.valorNome);
-                        console.log('valorContato: ', this.valorContato);
-                        this.enviarSimulacaoRM();
+                        console.log('valorContato: ', this.valorContato);                        
+                        this.enviarSimulacaoRM();                                              
                     }
                     break;
                 case 9: 
@@ -793,6 +803,11 @@ export default {
         this.valorTelefone2= "";
         this.valorNegocio= "";
         this.valorCpfCnpj= "";
+      },
+      validarEmail(){
+        var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+          if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  true;} 
+          else {console.log("falhou");this.emailValido =  false;}
       }
   }
 };
