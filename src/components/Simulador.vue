@@ -415,8 +415,8 @@
             <div class="row">
                 <div class="col-8">
                     <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorContato == '' ), '': false }">*E-mail </p>
-                    <input style="width:100%;" type="email" v-model="valorContato" placeholder="Informe seu email">
+                    v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
+                    <input style="width:100%;" @input="validarEmail()" type="email" v-model="valorContato" placeholder="Informe seu email">
                 </div>
             </div>
 
@@ -425,6 +425,9 @@
                     <p class="p-label p-erro" style="font-size: 14px;"
                         v-if="(valorContato == '') || (valorNome == '')">
                         *Você precisa preencher os campos obrigatórios </p>
+                    <p class="p-label p-erro" style="font-size: 14px;"
+                        v-if="(emailValido == false)">
+                        *Você precisa preencher um e-mail válido</p>
                 </div>
             </div>
             <br>
@@ -601,7 +604,8 @@ export default {
       op1: false,
       op2: false,
       op3: false,
-      termoPrivacidade: true
+      termoPrivacidade: true,
+      emailValido: false
     };
   },
   methods: {
@@ -706,12 +710,13 @@ export default {
                     console.log('valorDia: ', this.valorDia);
                     this.onSelectPage(4);break;
                 case 8: 
-                    if( this.valorNome !== '' && this.valorContato !== ''){
+                    this.validarEmail();
+                    if( this.valorNome !== '' && this.emailValido == true){
                         //this.valorMotivo = this.ValorMotiPersonalizado;
                         //console.log('valorMotivo: ', this.valorMotivo);
                         console.log('valorNome: ', this.valorNome);
-                        console.log('valorContato: ', this.valorContato);
-                        this.enviarSimulacaoRM();
+                        console.log('valorContato: ', this.valorContato);                        
+                        this.enviarSimulacaoRM();                                              
                     }
                     break;
                 case 9: 
@@ -798,6 +803,11 @@ export default {
         this.valorTelefone2= "";
         this.valorNegocio= "";
         this.valorCpfCnpj= "";
+      },
+      validarEmail(){
+        var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+          if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  true;} 
+          else {console.log("falhou");this.emailValido =  false;}
       }
   }
 };
