@@ -305,8 +305,7 @@
         </div>
         </section>-->
         <Gallery/>
-        <SlideFotos/>
-      
+        <SlideFotosSimples/>      
       
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">
@@ -367,7 +366,7 @@
 <script>
 // @ is an alias to /src
 import Simulador from "@/components/Simulador.vue";
-import SlideFotos from "@/components/SlideFotos.vue";
+import SlideFotosSimples from "@/components/SlideFotosSimples.vue";
 import Footer from "@/components/Footer.vue";
 import Gallery from "@/components/Gallery.vue";
 
@@ -375,7 +374,7 @@ export default {
   name: "Home",
   components: {
     Simulador,
-    SlideFotos,
+    SlideFotosSimples,
     Footer,
     Gallery
   }
