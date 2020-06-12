@@ -33,10 +33,10 @@
                           <a class="nav-link link text-black display-4" href="https://bit.ly/2OZHsAn" target="blank"><span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
+                          <a class="nav-link link text-black display-4" href="https://bit.ly/32dHjyI" target="blank"><span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://bit.ly/32dHjyI" target="blank"><span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span></a>
+                          <a class="nav-link link text-black display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
                           <button class="minhaconta"><a class="nav-link link text-black display-4" href="" target="blank">Blog</a></button>

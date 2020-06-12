@@ -559,7 +559,6 @@
                 <h4 class="col-12 dwRrHP" style="text-align:center; margin: 0 0 15px 0;">Seu pedido está em análise, em breve entraremos em contato.</h4>
             </div>
         </div>
-
     </div>
     
 

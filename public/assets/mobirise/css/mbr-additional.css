@@ -543,7 +543,7 @@ a:hover {
 }
 /* Scroll to top button*/
 #scrollToTop a {
-  border-radius: 100px;
+  border-radius: 6px;
 }
 .form-control {
   font-family: 'Rubik', sans-serif;

@@ -304,6 +304,7 @@
             </div>
         </div>
         </section>-->
+        <Gallery/>
         <SlideFotos/>
       
       
@@ -346,7 +347,7 @@
                             </div>
                             <div class="card-text">
                                 <a href="https://g.page/accesscredito?share" target="blank"><button class="button_footer2"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                        Rua Curió, N 1400
+                                        Rua Curió, N71
                                 </h3></button></a>
                                 </div>
                         </div>
@@ -355,7 +356,10 @@
             </div>
         </div>
       </section>
-
+      
+      <div>
+          <Footer></Footer>
+      </div>
   </div>
 </template>
 
@@ -364,12 +368,16 @@
 // @ is an alias to /src
 import Simulador from "@/components/Simulador.vue";
 import SlideFotos from "@/components/SlideFotos.vue";
+import Footer from "@/components/Footer.vue";
+import Gallery from "@/components/Gallery.vue";
 
 export default {
   name: "Home",
   components: {
     Simulador,
-    SlideFotos
+    SlideFotos,
+    Footer,
+    Gallery
   }
 
 };
