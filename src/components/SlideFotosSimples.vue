@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     startSlide: function() {
-      this.timer = setInterval(this.next, 2000);
+      this.timer = setInterval(this.next, 20000);
     },
     next: function() {
       if(this.page == 6){
