@@ -642,6 +642,11 @@ section {
 
   }
 }
+
+.text-ouvidoria {
+  color: #149DCC;
+  font-weight: 500;
+}
 .img-footer{
   padding-left: 0%;
   border-radius: 6px;

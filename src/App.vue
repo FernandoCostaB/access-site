@@ -27,7 +27,7 @@
                           <router-link class="nav-link link text-black display-4" to="/about">Sobre</router-link>                        
                       </li>
                       <li class="nav-item">
-                          <router-link class="nav-link link text-black display-4" to="/contact">Ouvidoria</router-link>    
+                          <router-link class="nav-link link text-black display-4" to="/contact"></router-link>    
                       </li>
                       <li class="nav-item">
                           <a class="nav-link link text-black display-4" href="https://www.facebook.com/accesscreditobrasil" target="blank"><span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span></a>
