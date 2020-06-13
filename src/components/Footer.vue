@@ -5,7 +5,7 @@
                     <div class="media-container-row content text-white">
                         <div class="col-12 col-md-3">
                             <div class="media-wrap">
-                                <a href=""><img  style="border-radius: 60px," class="img-footer" src="/assets/images/logo.jpg" alt="AccessCrédito" title="AccessCrédito"> </a>
+                                <a href=""><img class="img-footer" src="/assets/images/logo.jpg" alt="AccessCrédito" title="AccessCrédito"> </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
