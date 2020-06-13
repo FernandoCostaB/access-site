@@ -41,7 +41,7 @@
                       <li class="nav-item">
                           <button class="minhaconta"><a class="nav-link link text-black display-4" href="" target="blank">Blog</a></button>
                       </li>
-                      
+                    
                   </ul>
               </div>
           </nav>
