@@ -220,7 +220,7 @@
                     <h4 style="font-weight:bold">R$ {{valorParcelaFinal}}</h4>
                 </div> 
 
-                <div class="col-5 botao-resumo" style="background: #FFCD00;" v-on:click="onSelectPage(12)">
+                <div class="col-5 botao-resumo animated infinite pulse" style="background: #FFCD00;" v-on:click="onSelectPage(12)">
                     <div style="height:15px;"></div>
                     <h4 style="font-weight:bold">FINALIZAR</h4>
                      <div style="height:7px;"></div>

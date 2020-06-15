@@ -321,7 +321,7 @@
                             </div>
     
                             <div class="card-text">
-                                <a target="blank" href="https://api.whatsapp.com/send?phone=5592994941733"><button class="button_footer"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">(92)99494-1733</h3></button></a>
+                                <a target="_blank" href="https://api.whatsapp.com/send?phone=5592994941733"><button class="button_footer"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">(92)99494-1733</h3></button></a>
                                 </div>
                         </div>
                     </div>

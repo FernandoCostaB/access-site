@@ -650,7 +650,7 @@ section {
 .img-footer{
   padding-left: 0%;
   border-radius: 6px;
-  width: 75%;
+  /*width: 75%;*/
 }
 @media only  screen and (max-width:982px){
   .img-footer{ 
@@ -969,7 +969,8 @@ blockquote {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  text-align: center;}
+  text-align: center;
+  }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
   .mbr-arrow-up a i {
