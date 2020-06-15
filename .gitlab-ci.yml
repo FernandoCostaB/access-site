@@ -52,7 +52,7 @@ package-prod:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv "$ENV" .env
+    - echo "$ENV" >> .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
