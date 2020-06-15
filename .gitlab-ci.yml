@@ -79,7 +79,7 @@ deploy-live:
   dependencies:
     - package-prod
   environment:
-    name: homologacao
+    name: live
     url: $DNS
   only:
   - master
