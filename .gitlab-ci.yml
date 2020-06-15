@@ -74,7 +74,7 @@ deploy-live:
   script:
     - echo "durante do deploy"
     - ssh-keyscan -H $IP_SERVER >> ~/.ssh/known_hosts
-    - scp -r producao.yml producao.dockerfile dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
+    - scp -r producao.yml producao.dockerfile accesscredito.com.br.conf dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
     - ssh $USER_SSH@$IP_SERVER "$SCRIPT_DEPLOY" 
   dependencies:
     - package-prod
