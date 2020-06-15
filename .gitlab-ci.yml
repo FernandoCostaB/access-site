@@ -52,7 +52,7 @@ package-prod:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv "$LIVE_ENV" .env
+    - mv "$ENV" .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
@@ -67,19 +67,19 @@ deploy-live:
   before_script:
     - echo "antes do deploy"
     - mkdir -p ~/.ssh
-    - echo "$SSH_PRIV_KEY_HOM" >> ~/.ssh/id_rsa.pem
+    - echo "$SSH_PRIV_KEY" >> ~/.ssh/id_rsa.pem
     - chmod 600 ~/.ssh/id_rsa.pem
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa.pem
   script:
     - echo "durante do deploy"
-    - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
-    - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
-    - ssh $USER_SSH_HOM@$IP_SERVER_HOM "$SCRIPT_DEPLOY" 
+    - ssh-keyscan -H $IP_SERVER >> ~/.ssh/known_hosts
+    - scp -r dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
+    - ssh $USER_SSH@$IP_SERVER "$SCRIPT_DEPLOY" 
   dependencies:
     - package-prod
   environment:
-    name: live
-    url: $DNS_HOMOLOGACAO
+    name: homologacao
+    url: $DNS
   only:
   - master
