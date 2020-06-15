@@ -650,7 +650,7 @@ section {
 .img-footer{
   padding-left: 0%;
   border-radius: 6px;
-  width: 75%;
+  /*width: 75%;*/
 }
 @media only  screen and (max-width:982px){
   .img-footer{ 
