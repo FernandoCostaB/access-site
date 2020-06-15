@@ -1,0 +1,12 @@
+
+version: "3"
+services:
+    site:
+      build:
+        context: ./
+        dockerfile: producao.dockerfile
+      container_name: site.accesscredito.com.br
+      restart: always
+      ports: 
+        - "8080:80"
+      working_dir: /var/www/accesscredito.com.br
