@@ -21,7 +21,7 @@ package:
     paths:
      - dist.tar.gz
   only:
-    - tags
+    - master
 deploy:
   image: thulioqueiroz/debian9-ansible
   stage: deploy-live
@@ -43,4 +43,4 @@ deploy:
     name: live
     url: $DNS
   only:
-  - tags
+  - master
