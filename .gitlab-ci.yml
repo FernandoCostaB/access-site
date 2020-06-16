@@ -41,7 +41,7 @@ deploy-hom:
     - scp -r producao.yml producao.dockerfile accesscredito.com.br.conf dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
     - ssh $USER_SSH@$IP_SERVER "$SCRIPT_DEPLOY" 
   dependencies:
-    - package-prod
+    - package-hom
   environment:
     name: homologacao
     url: $DNS
