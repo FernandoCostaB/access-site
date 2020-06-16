@@ -1039,8 +1039,12 @@ blockquote {
     -webkit-transform: translateY(0px); } }
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: auto; /*Alinhamento do botao solicite aqui*/
-    right: 3%;
+    left: 0; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
     transform: translateX(-50%) rotate(360deg);
     -webkit-transform: translateX(-50%) rotate(360deg); } }
 /*Gradients animation*/
