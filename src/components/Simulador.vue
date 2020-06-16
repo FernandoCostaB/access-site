@@ -204,7 +204,7 @@
 
             <div class="row" style="margin-left: 0px;">            
                 <div class="col-5 botao-resumo" style=" margin-top: 0;">
-                    <p style="font-size: 15px; margin:0; padding:0;">Valor do Empréstimo</p>
+                    <p style="font-size: 15px; margin:0; padding:0;">Empréstimo</p>
                     <h4 style="font-weight:bold">R$ {{valorCredito}}</h4>
                 </div>
 
@@ -223,12 +223,13 @@
                 <div class="col-5 botao-resumo animated infinite pulse" style="background: #FFCD00;" v-on:click="onSelectPage(12)">
                     <div style="height:15px;"></div>
                     <h4 style="font-weight:bold">FINALIZAR</h4>
+                     <div style="height:7px;"></div>
                 </div> 
 
             </div>
 
             <div class="row" style="margin-top: 10px;">
-                <div class="col-5 p-label" >
+                <div class="col-12 p-label" style="font-size: 11px;">
                 *Considerando uma carência tradicional
                 </div> 
             </div>
@@ -405,7 +406,7 @@
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
             <div class="row"  style="margin-bottom:5px;">
-                <div class="col-8">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label" 
                      v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
                     <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
@@ -413,7 +414,7 @@
             </div>
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
                     <input style="width:100%;" @input="validarEmail()" type="email" v-model="valorContato" placeholder="Informe seu email">
@@ -421,11 +422,11 @@
             </div>
 
             <div class="row">
-                <div class="col-8">
-                    <p class="p-label p-erro" style="font-size: 14px;"
+                <div class="col-md-8 col-xs-12">
+                    <p class="p-label p-erro" style="font-size: 11px;"
                         v-if="(valorContato == '') || (valorNome == '')">
                         *Você precisa preencher os campos obrigatórios </p>
-                    <p class="p-label p-erro" style="font-size: 14px;"
+                    <p class="p-label p-erro" style="font-size: 11px;"
                         v-if="(emailValido == false)">
                         *Você precisa preencher um e-mail válido</p>
                 </div>
@@ -448,90 +449,82 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 35px;">{{valorNome.split(' ')[0]}}, envie sua solicitação e garanta o seu crédito:</h1>
         <div class="painel-valores1">
-            <div class="row"  style="margin-bottom:5px;">
-                <div class="col-8">
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label">*Nome Completo </p>
                     <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome" readonly>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-8">
+            </div> 
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label">*E-mail </p>
                     <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-8">
+            </div> 
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
                     <the-mask style="width:100%;"  :mask="['###.###.###-##', '##.###.###/####-##']" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" />
                     
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-8">
+            </div> 
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
                     <the-mask style="width:100%;" v-model="valorTelefone" 
                     placeholder="Informe seu telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
                 </div>
             </div>
-
-            <div class="row">
-                <div class="col-8">
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label">Telefone 2 (opcional) </p>
                     <the-mask style="width:100%;" v-model="valorTelefone2" 
                     placeholder="Informe seu segundo telefone" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-8">
+            </div> 
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label"
                     v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
                     <div class="row">
                         
-                        <div class="col-11 " 
+                        <div class="col-12 " 
                          v-bind:class="[op1 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(1)">
                             <h6>Pensando em começar um negócio</h6>                           
                         </div>
 
-                        <div class="col-11 "
+                        <div class="col-12 "
                          v-bind:class="[op2 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(2)">
                             <h6>Iniciei meu negócio há menos de 1 mês</h6>                           
                         </div>
 
-                        <div class="col-11"
+                        <div class="col-12"
                          v-bind:class="[op3 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(3)">
                             <h6>Meu negócio já tem mais de 1 mês</h6>                           
                         </div>
                     </div>
                     
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-8">
+            </div> 
+            <div class="row" style="margin-bottom:10px;">
+                <div class="col-md-8 col-xs-12">
                     <p class="p-label p-erro" style="font-size: 14px;"
                         v-if="(valorNegocio == '') || (valorTelefone == '') || (valorCpfCnpj == '') || (termoPrivacidade != true && termoPrivacidade != 'true')">
                         *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
-
-            <br>
             <div class="row">
-                <div class="col-8">
-                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(9,0)"> Enviar Solicitação </button> 
+                <div class="col-md-8 col-xs-12">
+                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 28px; font-weight: bold;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
                 </div>                
             </div>
             <br>
             <div class="row">
-                <div class="col-10">
+                <div class="col-md-8 col-xs-12">
                     <input  type="checkbox" v-model="termoPrivacidade" true-value=true false-value=false>
-                    <label class="p-label"
+                    <label class="p-label" style="font-size: 11px;"
                      v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
                      Li, compreendi e concordo com a 
                      <router-link to="/politica">Política de Privacidade,</router-link>

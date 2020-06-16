@@ -16,43 +16,7 @@ package-hom:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv "$STAGING_ENV" .env.staging
-    - yarn run build --mode staging
-    - tar -czvf dist.tar.gz dist/*
-  artifacts:
-    name: $CI_JOB_NAME
-    paths:
-     - dist.tar.gz
-  only:
-    - staging
-deploy-staging:
-  image: thulioqueiroz/debian9-ansible
-  stage: deploy-staging
-  before_script:
-    - echo "antes do deploy"
-    - mkdir -p ~/.ssh
-    - echo "$SSH_PRIV_KEY_HOM" >> ~/.ssh/id_rsa.pem
-    - chmod 600 ~/.ssh/id_rsa.pem
-    - eval "$(ssh-agent -s)"
-    - ssh-add ~/.ssh/id_rsa.pem
-  script:
-    - echo "durante do deploy"
-    - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
-    - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
-  dependencies:
-    - package-hom
-  environment:
-    name: homologacao
-    url: http://$IP_SERVER_HOM
-  only:
-  - staging    
-package-prod:
-  stage: build-live
-  before_script:
-    - echo "Job de empacotamento"
-  script:
-    - yarn install
-    - mv "$LIVE_ENV" .env
+    - echo "$ENV" >> .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
@@ -61,25 +25,62 @@ package-prod:
      - dist.tar.gz
   only:
     - master
+deploy-hom:
+  image: thulioqueiroz/debian9-ansible
+  stage: deploy-staging
+  before_script:
+    - echo "antes do deploy"
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIV_KEY" >> ~/.ssh/id_rsa.pem
+    - chmod 600 ~/.ssh/id_rsa.pem
+    - eval "$(ssh-agent -s)"
+    - ssh-add ~/.ssh/id_rsa.pem
+  script:
+    - echo "durante do deploy"
+    - ssh-keyscan -H $IP_SERVER >> ~/.ssh/known_hosts
+    - scp -r producao.yml producao.dockerfile accesscredito.com.br.conf dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
+    - ssh $USER_SSH@$IP_SERVER "$SCRIPT_DEPLOY" 
+  dependencies:
+    - package-hom
+  environment:
+    name: live
+    url: $DNS
+  only:
+  - master    
+package-prod:
+  stage: build-live
+  before_script:
+    - echo "Job de empacotamento"
+  script:
+    - yarn install
+    - echo "$ENV" >> .env
+    - yarn run build
+    - tar -czvf dist.tar.gz dist/*
+  artifacts:
+    name: $CI_JOB_NAME
+    paths:
+     - dist.tar.gz
+  only:
+    - staging
 deploy-live:
   image: thulioqueiroz/debian9-ansible
   stage: deploy-live
   before_script:
     - echo "antes do deploy"
     - mkdir -p ~/.ssh
-    - echo "$SSH_PRIV_KEY_HOM" >> ~/.ssh/id_rsa.pem
+    - echo "$SSH_PRIV_KEY" >> ~/.ssh/id_rsa.pem
     - chmod 600 ~/.ssh/id_rsa.pem
     - eval "$(ssh-agent -s)"
     - ssh-add ~/.ssh/id_rsa.pem
   script:
     - echo "durante do deploy"
-    - ssh-keyscan -H $IP_SERVER_HOM >> ~/.ssh/known_hosts
-    - scp -r dist.tar.gz $USER_SSH_HOM@$IP_SERVER_HOM:$APP_PATH
-    - ssh $USER_SSH_HOM@$IP_SERVER_HOM "$SCRIPT_DEPLOY" 
+    - ssh-keyscan -H $IP_SERVER >> ~/.ssh/known_hosts
+    - scp -r producao.yml producao.dockerfile accesscredito.com.br.conf dist.tar.gz $USER_SSH@$IP_SERVER:$APP_PATH
+    - ssh $USER_SSH@$IP_SERVER "$SCRIPT_DEPLOY" 
   dependencies:
     - package-prod
   environment:
-    name: live
-    url: $DNS_HOMOLOGACAO
+    name: homologacao
+    url: $DNS
   only:
-  - master
+  - staging
