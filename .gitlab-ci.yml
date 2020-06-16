@@ -47,7 +47,7 @@ deploy-live:
     url: $DNS
   only:
   - master
-  package-hom:
+package-hom:
     stage: build-hom
     before_script:
       - echo "Job de empacotamento"
@@ -62,7 +62,7 @@ deploy-live:
       - dist.tar.gz
     only:
       - staging
-  deploy-hom:
+deploy-hom:
     image: thulioqueiroz/debian9-ansible
     stage: deploy-hom
     before_script:
