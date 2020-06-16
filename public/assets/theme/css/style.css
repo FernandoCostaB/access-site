@@ -1045,8 +1045,8 @@ blockquote {
     flex: 1;
     justify-content: center;
     width: 100%;
-    transform: translateX(-50%) rotate(360deg);
-    -webkit-transform: translateX(-50%) rotate(360deg); } }
+    /*transform: translateX(-50%) rotate(360deg);
+    -webkit-transform: translateX(-50%) rotate(360deg);*/ } }
 /*Gradients animation*/
 @keyframes gradient-animation {
   from {
