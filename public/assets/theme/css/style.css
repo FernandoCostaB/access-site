@@ -1044,7 +1044,7 @@ blockquote {
     display: flex;
     flex: 1;
     justify-content: center;
-    width: 100%;
+    width: 90%;
     /*transform: translateX(-50%) rotate(360deg);
     -webkit-transform: translateX(-50%) rotate(360deg);*/ } }
 /*Gradients animation*/
