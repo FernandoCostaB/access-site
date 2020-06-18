@@ -359,6 +359,7 @@
       <div>
           <Footer></Footer>
       </div>
+       <FloatButton/>
   </div>
 </template>
 
@@ -369,6 +370,7 @@ import Simulador from "@/components/Simulador.vue";
 import SlideFotosSimples from "@/components/SlideFotosSimples.vue";
 import Footer from "@/components/Footer.vue";
 import Gallery from "@/components/Gallery.vue";
+import FloatButton from "@/components/FloatButton.vue";
 
 export default {
   name: "Home",
@@ -376,7 +378,8 @@ export default {
     Simulador,
     SlideFotosSimples,
     Footer,
-    Gallery
+    Gallery,
+    FloatButton
   }
 
 };
