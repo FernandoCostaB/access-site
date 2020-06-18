@@ -359,7 +359,7 @@
       <div>
           <Footer></Footer>
       </div>
-       <FloatButton/>
+      <FloatButton/>
   </div>
 </template>
 
