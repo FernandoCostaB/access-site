@@ -45,7 +45,7 @@ blockquote {
 
 .button_footer{
 text-align: center;
-border-radius: 6px;
+border-radius: 100px;
 border: none;
 width: 250px;
 background-color: rgb(76, 237, 105);
@@ -324,14 +324,14 @@ background-color: rgb(76, 237, 105);
 
 .button_footer1{
   text-align: center;
-  border-radius: 6px;
+  border-radius: 100px;
   border: none;
   width: 250px;
   background-color:#DDDDDD;
   }
 .button_footer2{
   text-align: center;
-  border-radius: 6px;
+  border-radius: 100px;
   border: none;
   width: 250px;
   background-color:#149DCC;
@@ -342,7 +342,7 @@ background-color: rgb(76, 237, 105);
 }
 .minhaconta{
   background-color: #00B8D7;
-  border-radius: 10px;
+  border-radius: 100px;
   border: none;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   }
@@ -642,9 +642,15 @@ section {
 
   }
 }
+
+.text-ouvidoria {
+  color: #149DCC;
+  font-weight: 500;
+}
 .img-footer{
   padding-left: 0%;
-  border-radius: 6px
+  border-radius: 6px;
+  /*width: 75%;*/
 }
 @media only  screen and (max-width:982px){
   .img-footer{ 
@@ -954,7 +960,6 @@ blockquote {
 
 .mbr-arrow-up a {
   background: #FFC900;
-  border-radius: 16px;
   color: black;
   display: inline-block;
   height: 60px;
@@ -964,7 +969,8 @@ blockquote {
   text-decoration: none;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  text-align: center;}
+  text-align: center;
+  }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
   .mbr-arrow-up a i {
@@ -1033,10 +1039,14 @@ blockquote {
     -webkit-transform: translateY(0px); } }
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%) rotate(360deg);
-    -webkit-transform: translateX(-50%) rotate(360deg); } }
+    left: 0; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    width: 100%;
+    /*transform: translateX(-50%) rotate(360deg);
+    -webkit-transform: translateX(-50%) rotate(360deg);*/ } }
 /*Gradients animation*/
 @keyframes gradient-animation {
   from {

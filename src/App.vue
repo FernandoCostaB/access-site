@@ -27,7 +27,7 @@
                           <router-link class="nav-link link text-black display-4" to="/about">Sobre</router-link>                        
                       </li>
                       <li class="nav-item">
-                          <router-link class="nav-link link text-black display-4" to="/contact">Ouvidoria</router-link>    
+                          <a class="nav-link link text-black display-4" href="https://api.whatsapp.com/send?phone=5592994941733" target="blank"><span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span></a>    
                       </li>
                       <li class="nav-item">
                           <a class="nav-link link text-black display-4" href="https://www.facebook.com/accesscreditobrasil" target="blank"><span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span></a>
@@ -39,9 +39,9 @@
                           <a class="nav-link link text-black display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="" target="blank">Blog</a></button>
+                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="http://blog.homologacao.accesscredito.com.br/" target="blank">Blog</a></button>
                       </li>
-                      
+                    
                   </ul>
               </div>
           </nav>
