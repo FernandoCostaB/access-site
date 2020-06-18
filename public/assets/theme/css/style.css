@@ -1039,7 +1039,7 @@ blockquote {
     -webkit-transform: translateY(0px); } }
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 0; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    left: 4%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
     right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
     display: flex;
     flex: 1;
