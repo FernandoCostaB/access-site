@@ -53,10 +53,8 @@ package-hom:
       - echo "Job de empacotamento"
     script:
       - yarn install
-      - echo $ENV
-      - echo $ENV >> .env
-      - cat .env
-      - yarn run build
+      - echo $ENV_STAGING >> .env.staging
+      - yarn run build--mode staging
       - tar -czvf dist.tar.gz dist/*
     artifacts:
       name: $CI_JOB_NAME
