@@ -16,7 +16,7 @@ package-live:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv $ENV .env
+    - mv "$ENV" .env
     - ls -la
     - cat .env
     - yarn run build
