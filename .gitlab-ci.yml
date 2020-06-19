@@ -14,11 +14,13 @@ package-live:
   stage: build-live
   before_script:
     - echo "Job de empacotamento"
+    - echo $ENV
+    - echo $ENV >> .env
+    - cat .env
+    - ls -la
   script:
     - yarn install
-    - mv "$ENV" .env
-    - ls -la
-    - cat .env
+    - echo $ENV >> .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
