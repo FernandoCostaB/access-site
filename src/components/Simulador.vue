@@ -407,38 +407,41 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <div class="row"  style="margin-bottom:5px;">
-                <div class="col-md-8 col-xs-12">
-                    <p class="p-label" 
-                     v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
-                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome">
-                </div>
-            </div>
+            <form>
 
-            <div class="row">
-                <div class="col-md-8 col-xs-12">
-                    <p class="p-label"
-                    v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
-                    <input style="width:100%;" @input="validarEmail()" type="email" v-model="valorContato" placeholder="Informe seu email">
+                <div class="row"  style="margin-bottom:5px;">
+                    <div class="col-md-8 col-xs-12">
+                        <p class="p-label" 
+                        v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
+                        <input style="width:100%;" type="text" name="nome_Completo"  v-model="valorNome" placeholder="Informe seu nome">
+                    </div>
                 </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-8 col-xs-12">
-                    <p class="p-label p-erro" style="font-size: 11px;"
-                        v-if="(valorContato == '') || (valorNome == '')">
-                        *Você precisa preencher os campos obrigatórios </p>
-                    <p class="p-label p-erro" style="font-size: 11px;"
-                        v-if="(emailValido == false)">
-                        *Você precisa preencher um e-mail válido</p>
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <p class="p-label"
+                        v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
+                        <input style="width:100%;" @input="validarEmail()" name="email" type="email" v-model="valorContato" placeholder="Informe seu email">
+                    </div>
                 </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="col-8">
-                   <button class="botao-azul" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
-                </div>                
-            </div>
+
+                <div class="row">
+                    <div class="col-md-8 col-xs-12">
+                        <p class="p-label p-erro" style="font-size: 11px;"
+                            v-if="(valorContato == '') || (valorNome == '')">
+                            *Você precisa preencher os campos obrigatórios </p>
+                        <p class="p-label p-erro" style="font-size: 11px;"
+                            v-if="(emailValido == false)">
+                            *Você precisa preencher um e-mail válido</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-8">
+                    <button class="botao-azul" type="submit" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
+                    </div>                
+                </div>
+            </form>
         </div>
 
     </div>
