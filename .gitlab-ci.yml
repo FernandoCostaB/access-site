@@ -16,7 +16,9 @@ package-live:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - echo "$ENV" >> .env
+    - cp $ENV .env
+    - ls -la
+    - cat .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
