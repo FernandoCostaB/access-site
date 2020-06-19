@@ -37,8 +37,9 @@
                         </div>
                         <div class="media-container-row mbr-white">
                             <div class="col-sm-6 copyright">
-                                <p class="mbr-text mbr-fonts-style display-7">
-                        © AccessCrédito &nbsp;- Brasil Grupo Access</p>
+                            <p class="mbr-text mbr-fonts-style display-7">
+                                {{ nota_rodape }} - {{ version }} 
+                            </p>
                             </div>
                             <div class="col-md-6">
                                 <div class="social-list align-right">
@@ -65,7 +66,13 @@
 export default {
     name: "Footer",
     data () {
-        return {}        
+        return { 
+            url: process.env.VUE_APP_ROOT_API, 
+            title: process.env.VUE_APP_TITLE,
+            version: process.env.VUE_APP_VERSION,
+            nota_rodape: process.env.VUE_APP_EMPRESA,
+            ano: process.env.VUE_APP_ANO,
+        }        
     }
 }
 </script>
