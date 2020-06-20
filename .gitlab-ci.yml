@@ -16,7 +16,7 @@ package-live:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - echo $ENV >> .env
+    - mv $ENV .env
     - yarn run build
     - tar -czvf dist.tar.gz dist/*
   artifacts:
@@ -51,13 +51,9 @@ package-hom:
     stage: build-hom
     before_script:
       - echo "Job de empacotamento"
-      - echo $ENV_STAGING
-      - echo "$ENV_STAGING"
-      - echo $ENV_STAGING >> .env.staging
-      - cat .env.staging
     script:
       - yarn install
-      - echo "$ENV_STAGING" >> .env.staging
+      - mv $ENV_STAGING .env.staging
       - yarn run build --mode staging
       - tar -czvf dist.tar.gz dist/*
     artifacts:
