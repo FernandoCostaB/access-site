@@ -16,8 +16,8 @@ package-live:
     - echo "Job de empacotamento"
   script:
     - yarn install
-    - mv $ENV .env
-    - yarn run build
+    - mv $ENV .env.production
+    - yarn run build --mode production
     - tar -czvf dist.tar.gz dist/*
   artifacts:
     name: $CI_JOB_NAME
