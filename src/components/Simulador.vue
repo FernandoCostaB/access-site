@@ -261,7 +261,7 @@
          </div>
          <br>
          <div class="conteudo-slide">            
-            <input type="range" class="slider" step="50" min="1000" v-model="valorPersonalizado" max="5000">          
+            <input type="range" class="slider" step="500" min="500" v-model="valorPersonalizado" max="20000">          
          </div>
          <br>
          <br>
@@ -286,7 +286,7 @@
          </div>
 
          <br>
-         <input type="RANGE"  class="slider"  min="1"  v-model="valorParcPersonalizada" max="12">
+         <input type="RANGE"  class="slider"  min="1"  v-model="valorParcPersonalizada" max="24">
          <br>
          <br>
          <br>
@@ -726,12 +726,12 @@
         },
         setCreditoManual(tipo){
             if(tipo){
-                if(this.valorPersonalizado >1000){
-                this.valorPersonalizado = Number(this.valorPersonalizado) - 50;
+                if(this.valorPersonalizado >500){
+                this.valorPersonalizado = Number(this.valorPersonalizado) - 500;
                 }          
             }else{ 
-                if(this.valorPersonalizado <5000){
-                this.valorPersonalizado = Number(this.valorPersonalizado) + 50;
+                if(this.valorPersonalizado <20000){
+                this.valorPersonalizado = Number(this.valorPersonalizado) + 500;
                 }
             }
             
@@ -742,7 +742,7 @@
                 this.valorParcPersonalizada = Number(this.valorParcPersonalizada) - 1;
                 }          
             }else{ 
-                if(this.valorParcPersonalizada <12){
+                if(this.valorParcPersonalizada <24){
                 this.valorParcPersonalizada = Number(this.valorParcPersonalizada) + 1;
                 }
             }
