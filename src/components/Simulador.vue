@@ -407,12 +407,12 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <form>
+            <form action="#">
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
                         <p class="p-label" 
-                        v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
+                        v-bind:class="{ 'p-erro': (nomeValido == 3 ), '': false }">*Nome Completo </p>
                         <input style="width:100%;" type="text" name="nome_Completo"  v-model="valorNome" placeholder="Informe seu nome">
                     </div>
                 </div>
@@ -420,25 +420,25 @@
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <p class="p-label"
-                        v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
-                        <input style="width:100%;" @input="validarEmail()" name="email" type="email" v-model="valorContato" placeholder="Informe seu email">
+                        v-bind:class="{ 'p-erro': (emailValido == 3), '': false }">*E-mail </p>
+                        <input style="width:100%;" name="email" type="email" v-model="valorContato" placeholder="Informe seu email">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(valorContato == '') || (valorNome == '')">
+                            v-if="(nomeValido == 3) || (emailValido == 3)">
                             *Você precisa preencher os campos obrigatórios </p>
                         <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(emailValido == false)">
+                            v-if="(emailValido == 3)">
                             *Você precisa preencher um e-mail válido</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-8">
-                    <button class="botao-azul" type="submit" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
+                    <div class="col-md-8 col-xs-12">
+                    <button class="botao-azul" type="submit" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
                     </div>                
                 </div>
             </form>
@@ -598,7 +598,8 @@
         op2: false,
         op3: false,
         termoPrivacidade: true,
-        emailValido: false
+        emailValido: 1, //1-neutro 2-ok 3 erro
+        nomeValido: 1
         };
     },
     methods: {
@@ -703,8 +704,8 @@
                         console.log('valorDia: ', this.valorDia);
                         this.onSelectPage(4);break;
                     case 8: 
-                        this.validarEmail();
-                        if( this.valorNome !== '' && this.emailValido == true){
+                        this.validarEmailNome();
+                        if( this.nomeValido == true && this.emailValido == true){
                             //this.valorMotivo = this.ValorMotiPersonalizado;
                             //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
@@ -797,10 +798,19 @@
             this.valorNegocio= "";
             this.valorCpfCnpj= "";
         },
-        validarEmail(){
-            var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+        validarEmailNome(){
+            //validador de email separado para o evento de input do form
+             var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+           
             if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  true;} 
             else {console.log("falhou");this.emailValido =  false;}
+
+            if(this.valorNome !== '' ){
+                this.nomeValido == true
+            }else{
+                this.nomeValido == false
+            }
+            
         }
     }
     };
