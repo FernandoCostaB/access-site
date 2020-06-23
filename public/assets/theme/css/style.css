@@ -956,7 +956,8 @@ blockquote {
   color: black;
   font-size: 32px;
   transform: rotate(360deg);
-  -webkit-transform: rotate(360deg); }
+  -webkit-transform: rotate(360deg);
+  right: 145px; }
 
 .mbr-arrow-up a {
   background: #FFC900;
@@ -964,7 +965,7 @@ blockquote {
   display: inline-block;
   font-weight: 400;
   height: 60px;
-  width: 350px;
+  width: 330px;
   outline-style: none !important;
   position: relative;
   text-decoration: none;
@@ -972,7 +973,6 @@ blockquote {
   cursor: pointer;
   text-align: center;
   bottom: 0px;
-  right: 130px;
   }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
@@ -1044,16 +1044,15 @@ blockquote {
     
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 38%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
-    right: 0px; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    left: 0; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    right: auto; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
     display: flex;
     position: fixed;
-    width: 70%;
+    width: 75%;
     z-index: 12;
-    transform: translateY(40px);
     bottom: 24px;
-    /*transform: translateX(-50%) rotate(360deg);
-    -webkit-transform: translateX(-50%) rotate(360deg);*/ } }
+    transform: translateX(-50%) rotate(360deg);
+    -webkit-transform: translateX(-50%) rotate(360deg); } }
 /*Gradients animation*/
 @keyframes gradient-animation {
   from {
