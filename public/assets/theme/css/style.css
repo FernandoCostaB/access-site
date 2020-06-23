@@ -962,6 +962,7 @@ blockquote {
   background: #FFC900;
   color: black;
   display: inline-block;
+  font-weight: 400;
   height: 60px;
   width: 350px;
   outline-style: none !important;
@@ -970,6 +971,8 @@ blockquote {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   text-align: center;
+  bottom: 0px;
+  right: 130px;
   }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
@@ -1041,8 +1044,8 @@ blockquote {
     
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 4%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
-    /*right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    left: 38%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    right: 0px; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
     display: flex;
     position: fixed;
     width: 70%;
