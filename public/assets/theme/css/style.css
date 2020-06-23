@@ -1037,14 +1037,18 @@ blockquote {
   100% {
     transform: translateY(0px);
     -webkit-transform: translateY(0px); } }
+
+    
 @media (max-width: 500px) {
   .mbr-arrow-up {
     left: 4%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
-    right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    /*right: 0; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
     display: flex;
-    flex: 1;
-    justify-content: center;
-    width: 90%;
+    position: fixed;
+    width: 70%;
+    z-index: 12;
+    transform: translateY(40px);
+    bottom: 24px;
     /*transform: translateX(-50%) rotate(360deg);
     -webkit-transform: translateX(-50%) rotate(360deg);*/ } }
 /*Gradients animation*/
