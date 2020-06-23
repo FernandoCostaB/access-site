@@ -649,7 +649,7 @@
                     $window = $(window);
                 $scroller.css('display', 'none');
                 $window.scroll(function() {
-                    if ($(this).scrollTop() > 350) {
+                    if ($(this).scrollTop() > 700) { 
                         $scroller.fadeIn();
                     } else {
                         $scroller.fadeOut();
