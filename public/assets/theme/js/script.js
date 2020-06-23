@@ -641,7 +641,7 @@
             }
         }
 
-        // Scroll to Top Button
+        // Scroll to Top Button - Solicite Aqui
         $(document).ready(function() {
             if ($('.mbr-arrow-up').length) {
                 var $scroller = $('#scrollToTop'),
@@ -658,7 +658,7 @@
                 $scroller.click(function() {
                     $main.animate({
                         scrollTop: 0
-                    }, 400);
+                    }, 500);
                     return false;
                 });
             }

@@ -972,7 +972,7 @@ blockquote {
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   text-align: center;
-  bottom: 0px;
+  bottom: 20px;
   }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
@@ -1050,7 +1050,6 @@ blockquote {
     position: fixed;
     width: 75%;
     z-index: 12;
-    bottom: 24px;
     transform: translateX(-50%) rotate(360deg);
     -webkit-transform: translateX(-50%) rotate(360deg); } }
 /*Gradients animation*/
