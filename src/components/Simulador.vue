@@ -261,7 +261,7 @@
          </div>
          <br>
          <div class="conteudo-slide">            
-            <input type="range" class="slider" step="50" min="1000" v-model="valorPersonalizado" max="5000">          
+            <input type="range" class="slider" step="500" min="500" v-model="valorPersonalizado" max="20000">          
          </div>
          <br>
          <br>
@@ -286,7 +286,7 @@
          </div>
 
          <br>
-         <input type="RANGE"  class="slider"  min="1"  v-model="valorParcPersonalizada" max="12">
+         <input type="RANGE"  class="slider"  min="1"  v-model="valorParcPersonalizada" max="24">
          <br>
          <br>
          <br>
@@ -407,41 +407,40 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <form>
+            <!--form action="#"-->
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
-                        <p class="p-label" 
-                        v-bind:class="{ 'p-erro': (valorNome == '' ), '': false }">*Nome Completo </p>
-                        <input style="width:100%;" type="text" name="nome_Completo"  v-model="valorNome" placeholder="Informe seu nome">
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }"  type="text" name="nome_Completo"  
+                        v-model="valorNome" placeholder="Nome Completo">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-8 col-xs-12">
-                        <p class="p-label"
-                        v-bind:class="{ 'p-erro': (emailValido == false), '': false }">*E-mail </p>
-                        <input style="width:100%;" @input="validarEmail()" name="email" type="email" v-model="valorContato" placeholder="Informe seu email">
+                    <div class="col-md-8 col-xs-12">                        
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" 
+                        name="email" type="email" 
+                        v-model="valorContato" placeholder="E-mail">
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
                         <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(valorContato == '') || (valorNome == '')">
+                            v-if="(nomeValido == 3) || (emailValido == 3)">
                             *Você precisa preencher os campos obrigatórios </p>
                         <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(emailValido == false)">
+                            v-if="(emailValido == 3)">
                             *Você precisa preencher um e-mail válido</p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="col-8">
-                    <button class="botao-azul" type="submit" style="background: #FFCD00;" v-on:click="setValor(8,0)"> Simular </button> 
+                    <div class="col-md-8 col-xs-12">
+                    <button class="botao-azul" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
                     </div>                
                 </div>
-            </form>
+            <!--/form-->
         </div>
 
     </div>
@@ -456,43 +455,41 @@
         <div class="painel-valores1">
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">*Nome Completo </p>
-                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome" readonly>
+                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Nome Completo" readonly>
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">*E-mail </p>
-                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
+                    <input style="width:100%;" type="email" v-model="valorContato" placeholder="E-mail" readonly>
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
-                    <the-mask style="width:100%;"  :mask="['###.###.###-##', '##.###.###/####-##']" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" />
+                    <the-mask style="width:100%;"  type="tel"
+                    v-bind:class="{ 'b-erro': (cpfCnpjValido == 3 ), '': false }"  
+                    :mask="['###.###.###-##', '##.###.###/####-##']" 
+                    v-model="valorCpfCnpj" placeholder="CPF ou CNPJ" />
                     
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
-                    <the-mask style="width:100%;" v-model="valorTelefone" 
-                    placeholder="Informe seu telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
+                    <the-mask style="width:100%;" type="tel"
+                    v-bind:class="{ 'b-erro': (telefoneValido == 3 ), '': false }"
+                    v-model="valorTelefone" 
+                    placeholder="Telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
                 </div>
             </div>
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">Telefone 2 (opcional) </p>
-                    <the-mask style="width:100%;" v-model="valorTelefone2" 
-                    placeholder="Informe seu segundo telefone" :mask="['(##) ####-####', '(##) #####-####']" /> 
+                    <the-mask style="width:100%;" v-model="valorTelefone2"  type="tel"
+                    placeholder="Telefone 2 (opcional)" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
                     <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
+                    v-bind:class="{ 'p-erro': (negocioValido == 3 ), '': false }">*Qual a fase do seu negócio? </p>
                     <div class="row">
                         
                         <div class="col-12 " 
@@ -502,12 +499,12 @@
 
                         <div class="col-12 "
                          v-bind:class="[op2 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(2)">
-                            <h6>Iniciei meu negócio há menos de 1 mês</h6>                           
+                            <h6>Iniciei há poucos dias</h6>                           
                         </div>
 
                         <div class="col-12"
                          v-bind:class="[op3 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(3)">
-                            <h6>Meu negócio já tem mais de 1 mês</h6>                           
+                            <h6>Já tenho mais de 1 mês</h6>                           
                         </div>
                     </div>
                     
@@ -515,14 +512,15 @@
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label p-erro" style="font-size: 14px;"
-                        v-if="(valorNegocio == '') || (valorTelefone == '') || (valorCpfCnpj == '') || (termoPrivacidade != true && termoPrivacidade != 'true')">
+                    <p class="p-label p-erro" style="font-size: 11px;"
+                        v-if="(negocioValido == 3) || (telefoneValido == 3) || (cpfCnpjValido == 3) 
+                        || (termoPrivacidade != true && termoPrivacidade != 'true')">
                         *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 28px; font-weight: bold;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
+                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 15px 10px; font-weight: bold; font-size: 1.5rem;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
                 </div>                
             </div>
             <br>
@@ -598,7 +596,11 @@
         op2: false,
         op3: false,
         termoPrivacidade: true,
-        emailValido: false
+        emailValido: 1, //1-neutro 2-ok 3 erro
+        nomeValido: 1,
+        cpfCnpjValido:1,
+        telefoneValido: 1,
+        negocioValido: 1,
         };
     },
     methods: {
@@ -703,8 +705,8 @@
                         console.log('valorDia: ', this.valorDia);
                         this.onSelectPage(4);break;
                     case 8: 
-                        this.validarEmail();
-                        if( this.valorNome !== '' && this.emailValido == true){
+                        this.validarEmailNome();
+                        if( this.nomeValido == 2 && this.emailValido == 2){
                             //this.valorMotivo = this.ValorMotiPersonalizado;
                             //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
@@ -713,8 +715,10 @@
                         }
                         break;
                     case 9: 
-                    console.log('termoPrivacidade ', this.termoPrivacidade);
-                        if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== '' && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
+                        this.validarCpfCnpjTelefone();
+                        console.log('termoPrivacidade ', this.termoPrivacidade);
+                        if(this.telefoneValido == 2 && this.valorNegocio !== '' && this.cpfCnpjValido == 2 
+                            && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
                             console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                             console.log('valorTelefone: ', this.valorTelefone);
                             console.log('valorTelefone2: ', this.valorTelefone2);
@@ -726,12 +730,12 @@
         },
         setCreditoManual(tipo){
             if(tipo){
-                if(this.valorPersonalizado >1000){
-                this.valorPersonalizado = Number(this.valorPersonalizado) - 50;
+                if(this.valorPersonalizado >500){
+                this.valorPersonalizado = Number(this.valorPersonalizado) - 500;
                 }          
             }else{ 
-                if(this.valorPersonalizado <5000){
-                this.valorPersonalizado = Number(this.valorPersonalizado) + 50;
+                if(this.valorPersonalizado <20000){
+                this.valorPersonalizado = Number(this.valorPersonalizado) + 500;
                 }
             }
             
@@ -742,7 +746,7 @@
                 this.valorParcPersonalizada = Number(this.valorParcPersonalizada) - 1;
                 }          
             }else{ 
-                if(this.valorParcPersonalizada <12){
+                if(this.valorParcPersonalizada <24){
                 this.valorParcPersonalizada = Number(this.valorParcPersonalizada) + 1;
                 }
             }
@@ -764,12 +768,15 @@
 
             switch(op){
                 case 1: 
-                this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false;break;
+                this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false; break;
                 case 2: 
-                this.valorNegocio = 'Iniciei meu negócio há menos de 1 mês'; this.op1=false; this.op2=true; this.op3=false;break;
+                this.valorNegocio = 'Iniciei há poucos dias'; this.op1=false; this.op2=true; this.op3=false;break;
                 case 3: 
-                this.valorNegocio = 'Meu negócio já tem mais de 1 mês'; this.op1=false;this.op2=false; this.op3=true;break;
+                this.valorNegocio = 'Iniciei há poucos dias'; this.op1=false;this.op2=false; this.op3=true;break;
             }
+            //valida o campo como certo
+            this.negocioValido = 2; 
+
             console.log("valorNegocio ", this.valorNegocio);
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
@@ -797,10 +804,34 @@
             this.valorNegocio= "";
             this.valorCpfCnpj= "";
         },
-        validarEmail(){
-            var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
-            if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  true;} 
-            else {console.log("falhou");this.emailValido =  false;}
+        validarEmailNome(){
+            //validador de email separado para o evento de input do form
+             var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
+           
+            if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  2;} 
+            else {console.log("falhou");this.emailValido =  3;}
+
+            if(this.valorNome != '' ){
+                this.nomeValido = 2
+            }else{
+                this.nomeValido = 3
+            }            
+        },
+        validarCpfCnpjTelefone(){
+            if(this.valorTelefone.length == 11) {console.log("passou"); this.telefoneValido =  2;} 
+            else {console.log("falhou");this.telefoneValido =  3;}
+
+            if(this.valorCpfCnpj.length == 11 ||  this.valorCpfCnpj.length == 14){
+                this.cpfCnpjValido = 2
+            }else{
+                this.cpfCnpjValido = 3
+            }
+
+            if(this.valorNegocio != ''){
+                this.negocioValido = 2
+            }else{
+                this.negocioValido = 3
+            }                        
         }
     }
     };
@@ -1027,10 +1058,9 @@
         font-size: 22px;
     }
 
-    .botao-conteudo-azul:hover, .botao-conteudo-azul1:hover, .bt-options:hover, .bt-options-selected{
+    .botao-conteudo-azul:hover, .botao-conteudo-azul1:hover, .bt-options:hover, .bt-options-selected:hover{
         background:#009bb5;
     }
-
     .p-label{
         color: #6E747F;
         margin:0;
@@ -1052,7 +1082,11 @@
     }
 
     .bt-options-selected{
-        background:#009bb5;
+        background:#4C516D;
+    }
+
+    .b-erro{
+        border: 1px solid red;
     }
 
 
