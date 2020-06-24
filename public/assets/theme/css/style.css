@@ -1004,7 +1004,7 @@ blockquote {
   width: 60px;
   height: 60px;
   cursor: pointer;
-  /*background-color: rgba(80, 80, 80, 0.5);*/
+  background-color: rgba(80, 80, 80, 0.5);
   border-radius: 50%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%); }
@@ -1017,7 +1017,7 @@ blockquote {
     .mbr-arrow > a > i {
       position: absolute;
       top: -2px;
-      left: 15px;
+      left: -13px;
       font-size: 2rem; }
 
 @keyframes arrowdown {

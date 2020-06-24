@@ -664,7 +664,7 @@
             }
         });
 
-        // arrow down
+        // arrow down - botao central descida scroll
         if (!isBuilder) {
             $('.mbr-arrow').on('click', function(e) {
                 var $next = $(e.target).closest('section').next();
