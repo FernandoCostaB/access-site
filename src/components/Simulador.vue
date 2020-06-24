@@ -407,21 +407,19 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <form action="#">
+            <!--form action="#"-->
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
-                        <p class="p-label" 
-                        v-bind:class="{ 'p-erro': (nomeValido == 3 ), '': false }">*Nome Completo </p>
-                        <input style="width:100%;" type="text" name="nome_Completo"  v-model="valorNome" placeholder="Informe seu nome">
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }"  type="text" name="nome_Completo"  
+                        v-model="valorNome" placeholder="Nome Completo">
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-8 col-xs-12">
-                        <p class="p-label"
-                        v-bind:class="{ 'p-erro': (emailValido == 3), '': false }">*E-mail </p>
-                        <input style="width:100%;" name="email" type="email" v-model="valorContato" placeholder="Informe seu email">
+                    <div class="col-md-8 col-xs-12">                        
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" name="email" type="email" 
+                        v-model="valorContato" placeholder="E-mail">
                     </div>
                 </div>
 
@@ -438,10 +436,10 @@
                 <br>
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
-                    <button class="botao-azul" type="submit" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
+                    <button class="botao-azul" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
                     </div>                
                 </div>
-            </form>
+            <!--/form-->
         </div>
 
     </div>
@@ -705,7 +703,7 @@
                         this.onSelectPage(4);break;
                     case 8: 
                         this.validarEmailNome();
-                        if( this.nomeValido == true && this.emailValido == true){
+                        if( this.nomeValido == 2 && this.emailValido == 2){
                             //this.valorMotivo = this.ValorMotiPersonalizado;
                             //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
@@ -802,13 +800,13 @@
             //validador de email separado para o evento de input do form
              var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
            
-            if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  true;} 
-            else {console.log("falhou");this.emailValido =  false;}
+            if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  2;} 
+            else {console.log("falhou");this.emailValido =  3;}
 
-            if(this.valorNome !== '' ){
-                this.nomeValido == true
+            if(this.valorNome != '' ){
+                this.nomeValido = 2
             }else{
-                this.nomeValido == false
+                this.nomeValido = 3
             }
             
         }
@@ -1063,6 +1061,10 @@
 
     .bt-options-selected{
         background:#009bb5;
+    }
+
+    .b-erro{
+        border: 1px solid red;
     }
 
 
