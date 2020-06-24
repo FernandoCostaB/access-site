@@ -999,7 +999,7 @@ blockquote {
 /*! Arrow Down */
 .mbr-arrow {
   position: absolute;
-  bottom: 45px;
+  bottom: 65px;
   left: 50%;
   width: 60px;
   height: 60px;
@@ -1017,7 +1017,7 @@ blockquote {
     .mbr-arrow > a > i {
       position: absolute;
       top: -2px;
-      left: -13px;
+      left: -14px;
       font-size: 2rem; }
 
 @keyframes arrowdown {

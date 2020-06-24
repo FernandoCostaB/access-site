@@ -674,7 +674,7 @@
                 var offset = $next.offset();
                 $('html, body').stop().animate({
                     scrollTop: offset.top
-                }, 800, 'linear');
+                }, 1000, 'linear');
             });
         }
 
