@@ -418,7 +418,8 @@
 
                 <div class="row">
                     <div class="col-md-8 col-xs-12">                        
-                        <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" name="email" type="email" 
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" 
+                        name="email" type="email" 
                         v-model="valorContato" placeholder="E-mail">
                     </div>
                 </div>
@@ -459,12 +460,12 @@
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="E-mail" readonly>
+                    <input style="width:100%;" type="email" v-model="valorContato" placeholder="E-mail" readonly>
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <the-mask style="width:100%;"  
+                    <the-mask style="width:100%;"  type="tel"
                     v-bind:class="{ 'b-erro': (cpfCnpjValido == 3 ), '': false }"  
                     :mask="['###.###.###-##', '##.###.###/####-##']" 
                     v-model="valorCpfCnpj" placeholder="CPF ou CNPJ" />
@@ -473,7 +474,7 @@
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <the-mask style="width:100%;" 
+                    <the-mask style="width:100%;" type="tel"
                     v-bind:class="{ 'b-erro': (telefoneValido == 3 ), '': false }"
                     v-model="valorTelefone" 
                     placeholder="Telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
@@ -481,14 +482,14 @@
             </div>
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <the-mask style="width:100%;" v-model="valorTelefone2" 
+                    <the-mask style="width:100%;" v-model="valorTelefone2"  type="tel"
                     placeholder="Telefone 2 (opcional)" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
                     <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorNegocio == '' ), '': false }">*Qual a fase do seu negócio? </p>
+                    v-bind:class="{ 'p-erro': (negocioValido == 3 ), '': false }">*Qual a fase do seu negócio? </p>
                     <div class="row">
                         
                         <div class="col-12 " 
@@ -512,7 +513,7 @@
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
                     <p class="p-label p-erro" style="font-size: 11px;"
-                        v-if="(valorNegocio == '') || (telefoneValido == 3) || (cpfCnpjValido == 3) 
+                        v-if="(negocioValido == 3) || (telefoneValido == 3) || (cpfCnpjValido == 3) 
                         || (termoPrivacidade != true && termoPrivacidade != 'true')">
                         *Você precisa preencher os campos obrigatórios </p>
                 </div>
@@ -599,6 +600,7 @@
         nomeValido: 1,
         cpfCnpjValido:1,
         telefoneValido: 1,
+        negocioValido: 1,
         };
     },
     methods: {
@@ -766,12 +768,15 @@
 
             switch(op){
                 case 1: 
-                this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false;break;
+                this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false; break;
                 case 2: 
                 this.valorNegocio = 'Iniciei meu negócio há menos de 1 mês'; this.op1=false; this.op2=true; this.op3=false;break;
                 case 3: 
                 this.valorNegocio = 'Meu negócio já tem mais de 1 mês'; this.op1=false;this.op2=false; this.op3=true;break;
             }
+            //valida o campo como certo
+            this.negocioValido = 2; 
+            
             console.log("valorNegocio ", this.valorNegocio);
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
@@ -820,7 +825,13 @@
                 this.cpfCnpjValido = 2
             }else{
                 this.cpfCnpjValido = 3
-            }            
+            }
+
+            if(this.valorNegocio != ''){
+                this.negocioValido = 2
+            }else{
+                this.negocioValido = 3
+            }                        
         }
     }
     };
