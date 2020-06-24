@@ -499,12 +499,12 @@
 
                         <div class="col-12 "
                          v-bind:class="[op2 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(2)">
-                            <h6>Iniciei meu negócio há menos de 1 mês</h6>                           
+                            <h6>Iniciei há poucos dias</h6>                           
                         </div>
 
                         <div class="col-12"
                          v-bind:class="[op3 ? 'bt-options-selected' : '', 'bt-options']" v-on:click="setNegocio(3)">
-                            <h6>Meu negócio já tem mais de 1 mês</h6>                           
+                            <h6>Já tenho mais de 1 mês</h6>                           
                         </div>
                     </div>
                     
@@ -770,13 +770,13 @@
                 case 1: 
                 this.valorNegocio = 'Pensando em começar um negócio'; this.op1=true; this.op2=false; this.op3=false; break;
                 case 2: 
-                this.valorNegocio = 'Iniciei meu negócio há menos de 1 mês'; this.op1=false; this.op2=true; this.op3=false;break;
+                this.valorNegocio = 'Iniciei há poucos dias'; this.op1=false; this.op2=true; this.op3=false;break;
                 case 3: 
-                this.valorNegocio = 'Meu negócio já tem mais de 1 mês'; this.op1=false;this.op2=false; this.op3=true;break;
+                this.valorNegocio = 'Iniciei há poucos dias'; this.op1=false;this.op2=false; this.op3=true;break;
             }
             //valida o campo como certo
             this.negocioValido = 2; 
-            
+
             console.log("valorNegocio ", this.valorNegocio);
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
