@@ -454,37 +454,35 @@
         <div class="painel-valores1">
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">*Nome Completo </p>
-                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Informe seu nome" readonly>
+                    <input style="width:100%;" type="text" v-model="valorNome" placeholder="Nome Completo" readonly>
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">*E-mail </p>
-                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="Informe seu email" readonly>
+                    <input style="width:100%;" type="text" v-model="valorContato" placeholder="E-mail" readonly>
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorCpfCnpj == '' ), '': false }">*CPF ou CNPJ </p>
-                    <the-mask style="width:100%;"  :mask="['###.###.###-##', '##.###.###/####-##']" v-model="valorCpfCnpj" placeholder="Informe seu CPF ou CNPJ" />
+                    <the-mask style="width:100%;"  
+                    v-bind:class="{ 'b-erro': (cpfCnpjValido == 3 ), '': false }"  
+                    :mask="['###.###.###-##', '##.###.###/####-##']" 
+                    v-model="valorCpfCnpj" placeholder="CPF ou CNPJ" />
                     
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label"
-                    v-bind:class="{ 'p-erro': (valorTelefone == '' ), '': false }">*Telefone </p>
-                    <the-mask style="width:100%;" v-model="valorTelefone" 
-                    placeholder="Informe seu telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
+                    <the-mask style="width:100%;" 
+                    v-bind:class="{ 'b-erro': (telefoneValido == 3 ), '': false }"
+                    v-model="valorTelefone" 
+                    placeholder="Telefone" :mask="['(##) ####-####', '(##) #####-####']" />                   
                 </div>
             </div>
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label">Telefone 2 (opcional) </p>
                     <the-mask style="width:100%;" v-model="valorTelefone2" 
-                    placeholder="Informe seu segundo telefone" :mask="['(##) ####-####', '(##) #####-####']" /> 
+                    placeholder="Telefone 2 (opcional)" :mask="['(##) ####-####', '(##) #####-####']" /> 
                 </div>
             </div> 
             <div class="row" style="margin-bottom:10px;">
@@ -513,14 +511,15 @@
             </div> 
             <div class="row" style="margin-bottom:10px;">
                 <div class="col-md-8 col-xs-12">
-                    <p class="p-label p-erro" style="font-size: 14px;"
-                        v-if="(valorNegocio == '') || (valorTelefone == '') || (valorCpfCnpj == '') || (termoPrivacidade != true && termoPrivacidade != 'true')">
+                    <p class="p-label p-erro" style="font-size: 11px;"
+                        v-if="(valorNegocio == '') || (telefoneValido == 3) || (cpfCnpjValido == 3) 
+                        || (termoPrivacidade != true && termoPrivacidade != 'true')">
                         *Você precisa preencher os campos obrigatórios </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 28px; font-weight: bold;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
+                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 15px 10px; font-weight: bold; font-size: 1.5rem;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
                 </div>                
             </div>
             <br>
@@ -597,7 +596,9 @@
         op3: false,
         termoPrivacidade: true,
         emailValido: 1, //1-neutro 2-ok 3 erro
-        nomeValido: 1
+        nomeValido: 1,
+        cpfCnpjValido:1,
+        telefoneValido: 1,
         };
     },
     methods: {
@@ -712,8 +713,10 @@
                         }
                         break;
                     case 9: 
-                    console.log('termoPrivacidade ', this.termoPrivacidade);
-                        if(this.valorTelefone !== '' && this.valorNegocio !== '' && this.valorCpfCnpj !== '' && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
+                        this.validarCpfCnpjTelefone();
+                        console.log('termoPrivacidade ', this.termoPrivacidade);
+                        if(this.telefoneValido == 2 && this.valorNegocio !== '' && this.cpfCnpjValido == 2 
+                            && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
                             console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                             console.log('valorTelefone: ', this.valorTelefone);
                             console.log('valorTelefone2: ', this.valorTelefone2);
@@ -807,8 +810,17 @@
                 this.nomeValido = 2
             }else{
                 this.nomeValido = 3
-            }
-            
+            }            
+        },
+        validarCpfCnpjTelefone(){
+            if(this.valorTelefone.length == 11) {console.log("passou"); this.telefoneValido =  2;} 
+            else {console.log("falhou");this.telefoneValido =  3;}
+
+            if(this.valorCpfCnpj.length == 11 ||  this.valorCpfCnpj.length == 14){
+                this.cpfCnpjValido = 2
+            }else{
+                this.cpfCnpjValido = 3
+            }            
         }
     }
     };
@@ -1035,10 +1047,9 @@
         font-size: 22px;
     }
 
-    .botao-conteudo-azul:hover, .botao-conteudo-azul1:hover, .bt-options:hover, .bt-options-selected{
+    .botao-conteudo-azul:hover, .botao-conteudo-azul1:hover, .bt-options:hover, .bt-options-selected:hover{
         background:#009bb5;
     }
-
     .p-label{
         color: #6E747F;
         margin:0;
@@ -1060,7 +1071,7 @@
     }
 
     .bt-options-selected{
-        background:#009bb5;
+        background:#4C516D;
     }
 
     .b-erro{
