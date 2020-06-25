@@ -641,7 +641,7 @@
             }
         }
 
-        // Scroll to Top Button
+        // Scroll to Top Button - Solicite Aqui
         $(document).ready(function() {
             if ($('.mbr-arrow-up').length) {
                 var $scroller = $('#scrollToTop'),
@@ -649,7 +649,7 @@
                     $window = $(window);
                 $scroller.css('display', 'none');
                 $window.scroll(function() {
-                    if ($(this).scrollTop() > 350) {
+                    if ($(this).scrollTop() > 700) { 
                         $scroller.fadeIn();
                     } else {
                         $scroller.fadeOut();
@@ -658,13 +658,13 @@
                 $scroller.click(function() {
                     $main.animate({
                         scrollTop: 0
-                    }, 400);
+                    }, 500);
                     return false;
                 });
             }
         });
 
-        // arrow down
+        // arrow down - botao central descida scroll
         if (!isBuilder) {
             $('.mbr-arrow').on('click', function(e) {
                 var $next = $(e.target).closest('section').next();
@@ -674,7 +674,7 @@
                 var offset = $next.offset();
                 $('html, body').stop().animate({
                     scrollTop: offset.top
-                }, 800, 'linear');
+                }, 1000, 'linear');
             });
         }
 
