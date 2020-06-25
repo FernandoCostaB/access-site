@@ -26,12 +26,13 @@
                 </div>
 
             </div>
-          <div class="mbr-arrow hidden-sm-down" aria-hidden="true">
+            <ScrollButtonDown></ScrollButtonDown>
+          <!--<div class="mbr-arrow hidden-sm-down" aria-hidden="true">
               <a href="#next"> <i class="mbri-down mbr-iconfont"></i> </a>
-          </div>
+          </div>-->
       </section>
 
-      <section class="cid-rTAHB0AZZx" id="video3-3p">
+      <section class="cid-rTAHB0AZZx" id="next"> <!--id="video3-3p"-->
           <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2 texto-header">AccessCrédito: a empresa que transforma a realidade do empreendedor!</h2>
           <figure class="mbr-figure align-center container">
               <div class="video-block" style="width: 60%;">
@@ -371,7 +372,7 @@ import SlideFotosSimples from "@/components/SlideFotosSimples.vue";
 import Footer from "@/components/Footer.vue";
 import Gallery from "@/components/Gallery.vue";
 import FloatButton from "@/components/FloatButton.vue";
-
+import ScrollButtonDown from "@/components/ScrollButtonDown.vue";
 export default {
   name: "Home",
   components: {
@@ -379,7 +380,8 @@ export default {
     SlideFotosSimples,
     Footer,
     Gallery,
-    FloatButton
+    FloatButton,
+    ScrollButtonDown
   }
 
 };
