@@ -121,14 +121,14 @@ export default {
 <style scoped>
   .fab-container{
       position:  fixed;
-      bottom: 70px;
+      bottom: 23px;
       right: 15px;
       z-index: 9999;
       cursor: pointer;
   }
   .fab-icon-holder{
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      height: 60px;
       border-radius: 100%;
       background: rgb(255, 205, 0);
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
@@ -162,11 +162,11 @@ export default {
       position: absolute;
       bottom: 70px;
       right: 0;
-      opacity: 0;
+      display: none;
   }
 
-  /*.fab:hover + .fab-options, .fab-options:hover,*/ .mostrar{
-      opacity: 1;
+  .mostrar{
+     display: block;
   }
 
   .fab-options li{
