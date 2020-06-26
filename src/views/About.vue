@@ -19,18 +19,18 @@
           </div>
       </div>
     </section>
-    <FloatButton/>
+    <FloatActionButton/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import FloatButton from "@/components/FloatButton.vue";
+import FloatActionButton from "@/components/FloatActionButton.vue";
 
 export default {
   name: "About",
   components: {
-    FloatButton
+    FloatActionButton
   }
 
 };
