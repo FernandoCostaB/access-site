@@ -4,6 +4,7 @@ LABEL mainteiner="Thulio Queiroz" email="t.queiroz@accesscredito.com.br"
 # Instalação
 RUN apt-get update -y
 RUN apt-get install -y apache2
+RUN a2enmod rewrite
 # Configuração
 ENV app_name accesscredito.com.br
 ENV full_path /var/www
