@@ -517,9 +517,12 @@ a.text-black:focus {
 .nav-tabs .nav-link {
   border-radius: 100px !important;
 }
+.button-solicite:hover {
+  color: #000000;
+}
 a,
 a:hover {
-  color: #232323;
+  color: #149dcc;
 }
 .mbr-plan-header.bg-primary .mbr-plan-subtitle,
 .mbr-plan-header.bg-primary .mbr-plan-price-desc {
