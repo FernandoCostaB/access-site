@@ -649,7 +649,7 @@ section {
 }
 .img-footer{
   padding-left: 0%;
-  border-radius: 6px;
+  border-radius: 4px;
   width: 90%;
 }
 @media only  screen and (max-width:982px){
