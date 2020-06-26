@@ -19,6 +19,10 @@
           </div>
       </div>
     </section>
+    <div id="scrollToTop" class="scrollToTop mbr-arrow-up animated infinite pulse">
+
+        <a style="text-align: center;" href="/">Solicite Aqui<i class=" "></i></a>
+    </div>
     <FloatActionButton/>
   </div>
 </template>
