@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import About from "../views/About.vue";
 import Contact from "../views/Contact.vue";
 import Politica from "../views/Politica.vue";
+import Hello from "../views/Hello.vue";
 
 Vue.use(VueRouter);
 
@@ -13,9 +14,10 @@ const routes = [
     name: "Home",
     component: Home
   },
+  { path: "/hello", name: "Hello", component: Hello },
   {
-    path: "/about",
-    name: "About",    
+    path: "/about", 
+    name: "About",
     component: About
   },
   {
@@ -27,8 +29,6 @@ const routes = [
     path: "/politica",
     name: "Politica",
     component: Politica
-   /* component: () =>
-      import("../views/Politica.vue")*/
   }
 ];
 

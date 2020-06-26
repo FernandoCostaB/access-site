@@ -1,9 +1,11 @@
 <template>
+
   <div class="hello">
     <h1>{{ msg }}</h1>
     <h1> URL_API: {{ url }} </h1>
     <h1> Title: {{ title }} </h1>
     <h1> Version: {{ version }} </h1>
+    
   </div>
 </template>
 
