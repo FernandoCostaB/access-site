@@ -1,44 +1,50 @@
 <template>
 <div class="fab-container">
-    <div class="fab1 fab-icon-holder">
+    <div class="fab1 fab-icon-holder cor-bt-primario">
         <i class="fas fa-comments" @click="abrirMenu()"></i>
 
-        <ul class="fab-options"  v-bind:class="{ 'mostrar': expandir, '': false }">
-            <li @click="wts()" >
-                <span class="fab-label"> Whatsapp</span>
-                <div class="fab-icon-holder">          
-                    <i class="fab fa-whatsapp"></i>
-                </div>
-            </li>
-            <li @click="chat()">
-                <span class="fab-label"> Fale Conosco</span>
-                <div class="fab-icon-holder">
-                    <i class="far fa-comments"></i>
-                </div>
-            </li>
-            <li @click="facebook()">
-                <span class="fab-label"> Facebook</span>
-                <div class="fab-icon-holder">
-                    <i class="fab fa-facebook-square"></i>
-                </div>
-            </li>
+        <ul class="fab-options"  v-bind:class="{ 'mostrar': expandir, '': false }">            
+         
+            
             <li @click="tel()">
                 <span class="fab-label"> Ligar</span>
-                <div class="fab-icon-holder">
+                <div class="fab-icon-holder cor-num">
                     <i class="fas fa-phone-alt"></i>
                 </div>
             </li>
+
+            <li @click="facebook()">
+                <span class="fab-label"> Facebook</span>
+                <div class="fab-icon-holder cor-fb">
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+            </li>
+
             <li @click="email()">
                 <span class="fab-label"> E-mail</span>
-                <div class="fab-icon-holder">
+                <div class="fab-icon-holder cor-email">
                     <i class="fas fa-envelope"></i>
                 </div>
             </li>
 
             <li @click="numero()">
                 <span class="fab-label"> Deixe seu Número</span>
-                <div class="fab-icon-holder">
+                <div class="fab-icon-holder cor-call">
                     <i class="fas fa-mobile-alt"></i>
+                </div>
+            </li>
+
+            <li @click="chat()">
+                <span class="fab-label">Chat Online</span>
+                <div class="fab-icon-holder cor-chat">
+                    <i class="far fa-comments"></i>
+                </div>
+            </li>
+
+            <li @click="wts()" >
+                <span class="fab-label"> Whatsapp</span>
+                <div class="fab-icon-holder cor-wts">          
+                    <i class="fab fa-whatsapp"></i>
                 </div>
             </li>
         </ul>
@@ -144,8 +150,8 @@ export default {
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100%;
-      font-style: 25px;
+      height: 3.7rem;
+      font-size: 1.7em;
       color: #ffffff;
       cursor: pointer;
   }
@@ -188,6 +194,35 @@ export default {
       margin-right: 10px;
 
   }
+
+   .cor-bt-primario{
+      background: #26c2f0;
+  }
+
+  .cor-wts{
+      background: #34af23;
+  }
+
+  .cor-chat{
+      background: #ff0000;
+  }
+
+  .cor-email{
+      background: #ff8c00;
+  }
+
+  .cor-fb{
+      background: #3b5998;
+  }
+
+  .cor-num{
+      background: #0039ff;
+  }
+
+  .cor-call{
+      background: #666666;
+  }
+
 
 </style>
 
