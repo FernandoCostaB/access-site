@@ -1,10 +1,10 @@
 <template>
   <div class="conteudo-foto row">
     
-    <div class="col-3">
+    <div class="col-2">
         <img class="nav-foto" v-on:click="prev()" src="assets/images/backpreto.svg"/>
     </div>
-    <div class="col-6">
+    <div class="col-8">
         <div v-if="page==1">
             <div class="row">
               <div class="item active">
@@ -109,7 +109,7 @@
             </div>
         </div>
     </div>
-    <div class="col-3">
+    <div class="col-2">
        <img class="nav-foto" v-on:click="next()" src="assets/images/next.svg"/>
     </div>
     
