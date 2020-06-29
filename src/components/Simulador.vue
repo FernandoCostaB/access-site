@@ -29,7 +29,7 @@
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
         <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto voce precisa?</h1>
-        <div class="painel-valores"><!--painel-valores1-->
+        <div class="painel-valores animated pulse" id="btn-two"><!--painel-valores1-->
             <div class="row"><!--painel-valores-->
                 <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
                     <h3>R$ 2.000</h3>
@@ -520,7 +520,9 @@
             </div>
             <div class="row">
                 <div class="col-md-8 col-xs-12">
-                   <button class="botao-azul" style="background: #FFCD00; width: 100%; padding: 15px 10px; font-weight: bold; font-size: 1.5rem;" v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
+                   <button class="botao-azul" style="background: #FFCD00; width:
+                    100%; padding: 15px 10px; font-weight: bold; font-size: 1.5rem;" 
+                    v-on:click="setValor(9,0)"> ENVIAR SOLICITAÇÃO</button> 
                 </div>                
             </div>
             <br>
@@ -535,6 +537,12 @@
                      crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </label>                   
                 </div>                
             </div>
+                        
+            <loading :active.sync="isLoadingACBS" 
+            :can-cancel="false" 
+            :color= "colorLoading"
+            :is-full-page="true"></loading>
+
         </div>
 
     </div>
@@ -558,9 +566,15 @@
 </template>
 
 <script>
-    import {TheMask} from 'vue-the-mask'
+    import {TheMask} from 'vue-the-mask';
+    import axios from 'axios';
+    // Import component loading
+    import Loading from 'vue-loading-overlay';
+    // Import stylesheet loading
+    import 'vue-loading-overlay/dist/vue-loading.css';
+
     export default {
-    components: {TheMask},
+    components: {TheMask,Loading},
     name: "Simulador",
     data() {
         return {
@@ -601,6 +615,8 @@
         cpfCnpjValido:1,
         telefoneValido: 1,
         negocioValido: 1,
+        isLoadingACBS:false,
+        colorLoading: '#00B8D7'
         };
     },
     methods: {
@@ -781,10 +797,51 @@
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
         enviarSimulacaoRM(){
-            this.onSelectPage(5);
+            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/ping';
+            let that = this;
+			axios.get(uri)
+                    .then(function (response) {
+                        // handle success
+                        console.log("Enviou RM ", response);
+                        that.onSelectPage(5);
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log("ERRO Enviou RM ", error);
+                    })
+                    .finally(function () {
+                        // always executed
+                    });  
         },
-        finalizarSimulacao(){        
-            this.onSelectPage(13);
+        finalizarSimulacao(){ 
+            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/ping';
+            let that = this;
+            this.isLoadingACBS = true;
+            let json = {
+                'nome': this.valorNome,
+                'email': this.valorContato,
+                'cpfcnpj': this.valorCpfCnpj,
+                'telefone': this.valorTelefone,
+                'telefone2': this.valorTelefone2,
+                'negocio': this.valorNegocio,
+                'emprestimo': this.valorCredito,
+                'parcelas': this.valorParcela,
+                'valorParcela': this.valorParcelaFinal
+            };
+
+			axios.get(uri)
+                    .then(function (response) {
+                        // handle success
+                        console.log("Enviou ACBS ", response, json);
+                         that.isLoadingACBS = false
+                         that.onSelectPage(13);
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log("ERRO Enviou ACBS ", error);
+                        that.isLoadingACBS = false
+                        alert("Erro ao enviar Simulação");
+                    });            
         },
         limparValores(){
             //volta tudo para o padrão
@@ -835,6 +892,7 @@
         }
     }
     };
+    
 </script>
 
 <style scoped>
@@ -987,7 +1045,10 @@
         margin-left: 10px;
         padding: 0 0 0 5%;
         display: flex;
-        position: relative; 
+        position: relative;
+        animation-duration: 2s;
+        animation-delay: 8s;
+        animation-iteration-count: infinite; 
         
     }
 

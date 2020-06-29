@@ -7,42 +7,42 @@
          
             
             <li @click="tel()">
-                <span class="fab-label"> Ligar</span>
-                <div class="fab-icon-holder cor-num">
+                <span class="fab-label cor-call"> Ligar</span>
+                <div class="fab-icon-holder cor-call">
                     <i class="fas fa-phone-alt"></i>
                 </div>
             </li>
 
             <li @click="facebook()">
-                <span class="fab-label"> Facebook</span>
+                <span class="fab-label cor-fb"> Facebook</span>
                 <div class="fab-icon-holder cor-fb">
                     <i class="fab fa-facebook-square"></i>
                 </div>
             </li>
 
             <li @click="email()">
-                <span class="fab-label"> E-mail</span>
+                <span class="fab-label cor-email"> E-mail</span>
                 <div class="fab-icon-holder cor-email">
                     <i class="fas fa-envelope"></i>
                 </div>
             </li>
 
             <li @click="numero()">
-                <span class="fab-label"> Deixe seu Número</span>
-                <div class="fab-icon-holder cor-call">
+                <span class="fab-label cor-num"> Envie 'Me liga'</span>
+                <div class="fab-icon-holder cor-num">
                     <i class="fas fa-mobile-alt"></i>
                 </div>
             </li>
 
             <li @click="chat()">
-                <span class="fab-label">Chat Online</span>
+                <span class="fab-label cor-chat">Chat Online</span>
                 <div class="fab-icon-holder cor-chat">
                     <i class="far fa-comments"></i>
                 </div>
             </li>
 
             <li @click="wts()" >
-                <span class="fab-label"> Whatsapp</span>
+                <span class="fab-label cor-wts"> WhatsApp</span>
                 <div class="fab-icon-holder cor-wts">          
                     <i class="fab fa-whatsapp"></i>
                 </div>
