@@ -1122,7 +1122,7 @@ function redirect1() {
  
         };
 
-//Loader
+//Loader - Loader de entrada do site
 
 var loader = document.getElementById("loader");
 
@@ -1133,28 +1133,3 @@ window.addEventListener("load", function() {
     loader.style.visibility = "hidden";
 });
 
-/*var loader;
-
-function loadNow(opacity){
-    if(opacity <= 0) {
-        displayContent();
-    }
-
-    else{
-        loader.style.opacity = opacity;
-        window.setTimeout(function(){
-            loadNow(opacity - 0.5)
-        }, 100);
-    }
-
-    function displayContent() {
-        loader.style.display = "none"
-        document.getElementById("content").style.display = "block";
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-        loader = document.getElementById("loader");
-        loadNow(1);
-    });
-
-}*/
