@@ -1133,3 +1133,5 @@ window.addEventListener("load", function() {
     loader.style.visibility = "hidden";
 });
 
+//Animacao ao clicar no botao solicite aqui
+
