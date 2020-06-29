@@ -517,6 +517,9 @@ a.text-black:focus {
 .nav-tabs .nav-link {
   border-radius: 100px !important;
 }
+.button-solicite:hover {
+  color: #000000;
+}
 a,
 a:hover {
   color: #149dcc;
