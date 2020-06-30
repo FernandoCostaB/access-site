@@ -219,7 +219,7 @@
             <div class="row" style="margin: 10px 0px;">
                 <div class="col-5 botao-resumo" >
                     <p style="font-size: 15px; margin:0; padding:0;">Valor estimado*</p>
-                    <h4 style="font-weight:bold">R$ {{valorParcelaFinal}}</h4>
+                    <h4 style="font-weight:bold">{{valorParcelaFinal}}</h4>
                 </div> 
 
                 <div class="col-5 botao-resumo animated infinite pulse" style="background: #FFCD00;" v-on:click="onSelectPage(12)">
@@ -578,6 +578,7 @@
     name: "Simulador",
     data() {
         return {
+        url: process.env.VUE_APP_ROOT_API,
         page1: true,
         page2: false,
         page3: false,
@@ -599,7 +600,7 @@
         valorParcela:0,
         valorDia:0,
         valorMotivo: "",
-        valorParcelaFinal: 215,
+        valorParcelaFinal: "*Sujeito e análise crédito",
         valorNome: "",
         valorContato:"",
         valorTelefone: "",
@@ -797,7 +798,7 @@
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
         enviarSimulacaoRD(){
-            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/ping';
+            let uri = this.url + "ping";
             let that = this;
 
             let data_array = [{
@@ -830,7 +831,7 @@
                     });  
         },
         finalizarSimulacao(){ 
-            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/leads';
+            let uri = this.url + "leads";
             let that = this;
             this.isLoadingACBS = true;
             let json = {
@@ -875,7 +876,7 @@
             this.valorParcela=0;
             this.valorDia=0;
             this.valorMotivo= "";
-            this.valorParcelaFinal= 215;
+            this.valorParcelaFinal= "Sujeito análise de crédito";
             this.valorNome= "";
             this.valorContato="";
             this.valorTelefone= "";
