@@ -467,7 +467,7 @@
                 <div class="col-md-8 col-xs-12">
                     <the-mask style="width:100%;"  type="tel"
                     v-bind:class="{ 'b-erro': (cpfCnpjValido == 3 ), '': false }"  
-                    :mask="['###.###.###-##', '##.###.###/####-##']" 
+                    :mask="['###.###.###-##', '##.###.###/####-##']" :masked="true" 
                     v-model="valorCpfCnpj" placeholder="CPF ou CNPJ" />
                     
                 </div>
@@ -727,7 +727,7 @@
                             //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
                             console.log('valorContato: ', this.valorContato);                        
-                            this.enviarSimulacaoRM();                                              
+                            this.enviarSimulacaoRD();                                              
                         }
                         break;
                     case 9: 
@@ -796,21 +796,37 @@
             console.log("valorNegocio ", this.valorNegocio);
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
-        enviarSimulacaoRM(){
+        enviarSimulacaoRD(){
             let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/ping';
             let that = this;
+
+            let data_array = [{
+                    name: 'email',
+                    value: this.valorContato
+                    },
+                    {
+                    name: 'identificador',
+                    value: 'lead1-site-vue'
+                    },
+                    {
+                    name: 'token_rdstation',
+                    value: 'f3b828f52805c8603ffd2ec578c7af1a'
+                    },
+                    {
+                    name: 'nome_Completo',
+                    value: this.valorNome
+                    }
+                ];
+
 			axios.get(uri)
                     .then(function (response) {
                         // handle success
-                        console.log("Enviou RM ", response);
+                        console.log("Enviou RM ", response, data_array);
                         that.onSelectPage(5);
                     })
                     .catch(function (error) {
                         // handle error
                         console.log("ERRO Enviou RM ", error);
-                    })
-                    .finally(function () {
-                        // always executed
                     });  
         },
         finalizarSimulacao(){ 
@@ -844,7 +860,7 @@
                     })
                     .catch(function (error) {
                         // handle error
-                        console.log("ERRO Enviou ACBS ", error);
+                        console.log("ERRO Enviou ACBS ", error, json);
                         that.isLoadingACBS = false
                         alert("Erro ao enviar Simulação");
                     });            
@@ -884,7 +900,7 @@
             if(this.valorTelefone.length == 11) {console.log("passou"); this.telefoneValido =  2;} 
             else {console.log("falhou");this.telefoneValido =  3;}
 
-            if(this.valorCpfCnpj.length == 11 ||  this.valorCpfCnpj.length == 14){
+            if(this.valorCpfCnpj.length == 14 ||  this.valorCpfCnpj.length == 18){
                 this.cpfCnpjValido = 2
             }else{
                 this.cpfCnpjValido = 3
