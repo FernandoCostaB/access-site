@@ -14,9 +14,10 @@
                       <img class="foto-cliente" src="assets/images/eulis.jpg">
                     </div>
                     <div class="col-sm-7 col-xl-12">
-                      <p>Com a AccessCrédito pude investir no meu sonho. Crédito facilitado. Atendimento diferenciado.</p>
-                      <small><span class="p-nome-cliente p-desc-cliente">EULIS SILVA DE LIMA</span>, GERENTE DE LOJA</small>
-                      <small>NOME DA LOJA</small>
+                      <blockquote class="blockquote text-center">
+                          <p class="mb-0">Com a AccessCrédito pude investir no meu sonho. Crédito facilitado. Atendimento diferenciado.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">EULIS SILVA DE LIMA</cite></footer>
+                      </blockquote>
                     </div>
                   </div>
                 </blockquote>
@@ -26,22 +27,20 @@
          <div v-if="page==2">
           <div class="row">
                 <div class="item active">
-                  <blockquote>
+                  <blockquote class="blockquote text-center">
                     <div class="row">
                       <div class="col-sm-5 col-xl-12">
                         <img class="foto-cliente" src="assets/images/raimundo.jpg">
                       </div>
                       <div class="col-sm-7 col-xl-12">
-                        <p>Por ser cliente há muito tempo. A taxa de juros é diferenciada. AccessCrédito me ajudou a investir no meu negócio.</p>
-                        <small><span class="p-nome-cliente p-desc-cliente">RAIMUNDO BARROSO</span>, GERENTE DE LOJA</small>
-                        <small>NOME DA LOJA</small>
+                        <blockquote class="blockquote text-center">
+                          <p class="mb-0">Por ser cliente há muito tempo. A taxa de juros é diferenciada. AccessCrédito me ajudou a investir no meu negócio.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">RAIMUNDO BARROSO</cite></footer>
+                        </blockquote>
                       </div>
                     </div>
                   </blockquote>
                 </div>
-              <!--img class="foto-cliente" src="assets/images/raimundo.jpg"/>
-              <p class="mbr-content-text p-desc-cliente" >Por ser cliente há muito tempo. A taxa de juros é diferenciada. AccessCrédito me ajudou a investir no meu negócio.</p>
-              <p class="p-nome-cliente p-desc-cliente" >RAIMUNDO BARROSO</p-->
           </div>
         </div>
          <div v-if="page==3">
@@ -52,9 +51,10 @@
                       <img class="foto-cliente" src="assets/images/teliane.jpg">
                     </div>
                     <div class="col-sm-7 col-xl-12">
-                      <p>Trabalho com vários bancos. A AccessCrédito tem a facilidade de crédito disponível sem burocracia.</p>
-                      <small><span class="p-nome-cliente p-desc-cliente">TELIANE AMARAL</span>, GERENTE DE LOJA</small>
-                      <small>NOME DA LOJA</small>
+                      <blockquote class="blockquote text-center">
+                          <p class="mb-0">Trabalho com vários bancos. A AccessCrédito tem a facilidade de crédito disponível sem burocracia.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">TELIANE AMARAL</cite></footer>
+                      </blockquote>
                     </div>
                   </div>
                 </blockquote>
@@ -68,9 +68,10 @@
                       <img class="foto-cliente" src="assets/images/marcilene.jpg">
                     </div>
                     <div class="col-sm-7 col-xl-12">
-                      <p>Todo negócio quando você começa precisa sempre de um suporte. E a AccessCrédito foi um pai pra mim. Abriu portas sem muitas burocracias me ajudando a crescer e desenvolver mais rápido.</p>
-                      <small><span class="p-nome-cliente p-desc-cliente">MARCILENE ROCHA</span>, GERENTE DE LOJA</small>
-                      <small>NOME DA LOJA</small>
+                      <blockquote class="blockquote text-center">
+                          <p class="mb-0">Todo negócio quando você começa precisa sempre de um suporte. E a AccessCrédito foi um pai pra mim. Abriu portas sem muitas burocracias me ajudando a crescer e desenvolver mais rápido.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">MARCILENE ROCHA</cite></footer>
+                      </blockquote>
                     </div>
                   </div>
                 </blockquote>
@@ -84,9 +85,10 @@
                       <img class="foto-cliente" src="assets/images/sebastiao.jpg">
                     </div>
                     <div class="col-sm-7 col-xl-12">
-                      <p>Comecei com conserto de relógio, a AccessCrédito ajudou a investir em outro negócio. Hoje eu trabalho com roupas esportivas.</p>
-                      <small><span class="p-nome-cliente p-desc-cliente">SEBASTIÃO FERNANDES</span>, GERENTE DE LOJA</small>
-                      <small>NOME DA LOJA</small>
+                      <blockquote class="blockquote text-center">
+                          <p class="mb-0">Comecei com conserto de relógio, a AccessCrédito ajudou a investir em outro negócio. Hoje eu trabalho com roupas esportivas.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">SEBASTIÃO FERNANDES</cite></footer>
+                      </blockquote>
                     </div>
                   </div>
                 </blockquote>
@@ -100,9 +102,10 @@
                       <img class="foto-cliente" src="assets/images/raimunda.jpg">
                     </div>
                     <div class="col-sm-7 col-xl-12">
-                      <p>Tenho minha banca desde 2010. A AccessCrédito faz parte desse sonho.</p>
-                      <small><span class="p-nome-cliente p-desc-cliente">RAIMUNDA ORENCIO</span>, GERENTE DE LOJA</small>
-                      <small>NOME DA LOJA</small>
+                      <blockquote class="blockquote text-center">
+                          <p class="mb-0">Tenho minha banca desde 2010. A AccessCrédito faz parte desse sonho.</p>
+                          <footer class="blockquote-footer"><cite title="Source Title">RAIMUNDA ORENCIO</cite></footer>
+                      </blockquote>
                     </div>
                   </div>
                 </blockquote>
