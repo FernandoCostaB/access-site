@@ -152,8 +152,8 @@
             </div>
         </div>
       </section>
-
-      <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+        <Count/>
+      <!--<section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">
             <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Nossos Números</h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Aqui um pouco de nossos resultados</h3>
@@ -200,7 +200,7 @@
                 </div>
             </div>
         </div>
-      </section>
+      </section>-->
 
       <section class="cid-rTAHB0AZZx1" id="video3-3p">
         <div class="container text-center">
@@ -378,6 +378,7 @@ import Footer from "@/components/Footer.vue";
 import Gallery from "@/components/Gallery.vue";
 import FloatActionButton from "@/components/FloatActionButton.vue";
 import ScrollButtonDown from "@/components/ScrollButtonDown.vue";
+import Count from "@/components/Count.vue";
 export default {
   name: "Home",
   components: {
@@ -386,7 +387,8 @@ export default {
     Footer,
     Gallery,
     FloatActionButton,
-    ScrollButtonDown
+    ScrollButtonDown,
+    Count
   }
 
 };

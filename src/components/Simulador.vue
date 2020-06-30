@@ -1071,7 +1071,6 @@
         animation-duration: 2s;
         animation-delay: 8s;
         animation-iteration-count: infinite; 
-        
     }
 
     .painel-valores1, .painel-resumo {
