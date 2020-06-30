@@ -20,6 +20,7 @@
                             <h5 class="pb-3">
                     Acesse Nosso Blog</h5>
                           <button class="minhaconta"><a class="nav-link link text-black display-4" href="http://blog.homologacao.accesscredito.com.br/" target="blank">Blog</a></button>
+                            
                     </div>
                         
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
