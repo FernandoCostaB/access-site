@@ -28,7 +28,7 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto voce precisa?</h1>
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto você precisa?</h1>
         <div class="painel-valores animated pulse" id="btn-two"><!--painel-valores1-->
             <div class="row"><!--painel-valores-->
                 <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
