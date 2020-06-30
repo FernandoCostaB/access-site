@@ -137,7 +137,7 @@
                     <div class="col-xs-12 col-md-6 align-left ">
                         <div class="timeline-text-content">
                             <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">Assine o contrato e receba o dinheiro em sua conta</h4>
-                            <p class="mbr-timeline-text mbr-fonts-style display-7">Após seu pedido ser aprovado, assine o contrato em nossa sede e receba o dinheiro logo em seguida. É rápido, fácil e seguro.</p>
+                            <p class="mbr-timeline-text mbr-fonts-style display-7">Após seu pedido ser aprovado, assine o contrato digitalmente no seu próprio celular ou computador e receba o dinheiro logo em seguida. É rápido, fácil e seguro.</p>
                         </div>
                     </div>
                 </div>
@@ -311,7 +311,8 @@
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">
             <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Crédito ao microempreendedor de Manaus</h2>
-            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Nos encontre através dos contatos abaixo</h3>
+            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis
+no botão azul que fica no canto direito abaixo</h3>
     
             <div class="container pt-4 mt-2">
                 <div class="media-container-row">
@@ -347,7 +348,7 @@
                             </div>
                             <div class="card-text">
                                 <a href="https://g.page/accesscredito?share" target="blank"><button class="button_footer2"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                        Rua Curió, N71
+                                        Rua Curió, Nº 71
                                 </h3></button></a>
                                 </div>
                         </div>

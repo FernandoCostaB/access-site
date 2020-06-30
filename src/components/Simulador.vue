@@ -28,8 +28,8 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto voce precisa?</h1>
-        <div class="painel-valores"><!--painel-valores1-->
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto você precisa?</h1>
+        <div class="painel-valores animated pulse" id="btn-two"><!--painel-valores1-->
             <div class="row"><!--painel-valores-->
                 <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
                     <h3>R$ 2.000</h3>
@@ -914,6 +914,7 @@
         }
     }
     };
+    
 </script>
 
 <style scoped>
@@ -1066,7 +1067,10 @@
         margin-left: 10px;
         padding: 0 0 0 5%;
         display: flex;
-        position: relative; 
+        position: relative;
+        animation-duration: 2s;
+        animation-delay: 8s;
+        animation-iteration-count: infinite; 
         
     }
 
