@@ -890,11 +890,11 @@
             if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  2;} 
             else {console.log("falhou");this.emailValido =  3;}
 
-            if(this.valorNome != '' ){
+            if(this.valorNome != '' && this.valorNome.trim().length > 0){
                 this.nomeValido = 2
             }else{
                 this.nomeValido = 3
-            }            
+            }             
         },
         validarCpfCnpjTelefone(){
             if(this.valorTelefone.length == 11) {console.log("passou"); this.telefoneValido =  2;} 
