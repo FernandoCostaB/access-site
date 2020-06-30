@@ -19,7 +19,7 @@
                             <p class="mbr-text"><a href="mailto:sac@accesscredito.com.br" target="blank">sac@accesscredito.com.br&nbsp;</a></p>
                             <h5 class="pb-3">
                     Acesse Nosso Blog</h5>
-                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="http://blog.homologacao.accesscredito.com.br/" target="blank">Blog</a></button>
+                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="https://blog.accesscredito.com.br/" target="blank">Blog</a></button>
                             
                     </div>
                         
