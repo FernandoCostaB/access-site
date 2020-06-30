@@ -38,7 +38,7 @@
                         <div class="media-container-row mbr-white">
                             <div class="col-sm-6 copyright">
                             <p class="mbr-text mbr-fonts-style display-7">
-                                {{ nota_rodape }} - {{ version }} 
+                                {{ nota_rodape }}
                             </p>
                             </div>
                             <div class="col-md-6">

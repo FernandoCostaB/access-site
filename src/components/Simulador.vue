@@ -28,7 +28,7 @@
     </div-->
      
     <div class="sc-fYiAbW hfKksW" v-if="page1">
-        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto voce precisa?</h1>
+        <h1 class="dwRrHP" style="text-align:center; margin: 0 0 15px 0; padding-left:20px">De quanto você precisa?</h1>
         <div class="painel-valores animated pulse" id="btn-two"><!--painel-valores1-->
             <div class="row"><!--painel-valores-->
                 <div class="botao-conteudo-azul" v-on:click="setValor(1,2000)"><!--botao-conteudo-azul-->
@@ -814,22 +814,28 @@
                     });  
         },
         finalizarSimulacao(){ 
-            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/ping';
+            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/leads';
             let that = this;
             this.isLoadingACBS = true;
             let json = {
-                'nome': this.valorNome,
-                'email': this.valorContato,
-                'cpfcnpj': this.valorCpfCnpj,
-                'telefone': this.valorTelefone,
-                'telefone2': this.valorTelefone2,
-                'negocio': this.valorNegocio,
-                'emprestimo': this.valorCredito,
-                'parcelas': this.valorParcela,
-                'valorParcela': this.valorParcelaFinal
+                "Lead":{
+                        "Cliente":{
+                            "cpf": this.valorCpfCnpj,
+                            "nome": this.valorNome,
+                            "email": this.valorContato,
+                            "telefone1": this.valorTelefone,
+                            "telefone2": this.valorTelefone2,
+                            "flag":"lead_site"
+                        },
+                        "Formulario":{
+                            "valor_solicitado": this.valorCredito,
+                            "prazo_solicitado": this.valorParcela,
+                            "tempo_de_negocio": this.valorNegocio
+                        }
+                    }
             };
 
-			axios.get(uri)
+			axios.post(uri, json)
                     .then(function (response) {
                         // handle success
                         console.log("Enviou ACBS ", response, json);
