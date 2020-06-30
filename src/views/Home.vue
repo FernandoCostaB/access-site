@@ -311,8 +311,12 @@
       <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">
             <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Crédito ao microempreendedor de Manaus</h2>
-            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis
-no botão azul que fica no canto direito abaixo</h3>
+            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
+                <p class="text-center">
+                Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis<br>
+                no botão azul que fica no canto direito abaixo.
+                </p>
+            </h3>
     
             <div class="container pt-4 mt-2">
                 <div class="media-container-row">
