@@ -39,7 +39,7 @@
                           <a class="nav-link link text-black display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="http://blog.homologacao.accesscredito.com.br/" target="blank">Blog</a></button>
+                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="https://blog.accesscredito.com.br/" target="blank">Blog</a></button>
                       </li>
                     
                   </ul>

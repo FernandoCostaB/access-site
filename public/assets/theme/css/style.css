@@ -954,15 +954,16 @@ blockquote {
   position: fixed;
   text-align: right;
   z-index: 5000;
-  color: black;
+  color: #ffffff;
   font-size: 32px;
   transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
-  right: 145px; }
+  right: 145px;
+   }
 
 .mbr-arrow-up a {
   background: #FFC900;
-  color: black;
+  color: #ffffff;
   display: inline-block;
   font-weight: 400;
   height: 60px;
@@ -974,6 +975,7 @@ blockquote {
   cursor: pointer;
   text-align: center;
   bottom: 20px;
+  box-shadow:2px 2px 2px 1px rgba(0, 0, 0, 0.5);
   }
   .mbr-arrow-up a:hover {
     background-color: #FFCC00; }
@@ -1045,8 +1047,8 @@ blockquote {
     
 @media (max-width: 500px) {
   .mbr-arrow-up {
-    left: 0; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
-    right: auto; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+    left: 2%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+    right: Auto; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
     display: flex;
     position: fixed;
     width: 75%;
