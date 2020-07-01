@@ -407,11 +407,12 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <form @submit.prevent>
+            <form action="">
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
-                        <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }"  type="text" name="nome_Completo"  
+                        <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }" 
+                         type="text" name="nome_Completo"  
                         v-model="valorNome" placeholder="Nome Completo">
                     </div>
                 </div>
@@ -437,7 +438,8 @@
                 <br>
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
-                    <button class="botao-azul" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
+                    <input  type=submit class="botao-azul" value="Simular" style="background: #FFCD00; width: 100%;" 
+                    />
                     </div>                
                 </div>
             </form>
