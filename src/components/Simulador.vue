@@ -407,7 +407,7 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <form action="">
+            <form @submit.prevent>
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
@@ -438,8 +438,8 @@
                 <br>
                 <div class="row">
                     <div class="col-md-8 col-xs-12">
-                    <input  type=submit class="botao-azul" value="Simular" style="background: #FFCD00; width: 100%;" 
-                    />
+                    <button  type=submit class="botao-azul" style="background: #FFCD00; width: 100%;" 
+                    v-on:click="setValor(8,0)"> Simular </button> 
                     </div>                
                 </div>
             </form>

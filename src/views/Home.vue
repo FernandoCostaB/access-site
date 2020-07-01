@@ -366,6 +366,7 @@
           <Footer></Footer>
       </div>
       <FloatActionButton/>
+      <ScrollToTop/>
   </div>
 </template>
 
@@ -379,6 +380,7 @@ import Gallery from "@/components/Gallery.vue";
 import FloatActionButton from "@/components/FloatActionButton.vue";
 import ScrollButtonDown from "@/components/ScrollButtonDown.vue";
 import Count from "@/components/Count.vue";
+import ScrollToTop from "@/components/ScrollToTop.vue";
 export default {
   name: "Home",
   components: {
@@ -388,7 +390,8 @@ export default {
     Gallery,
     FloatActionButton,
     ScrollButtonDown,
-    Count
+    Count,
+    ScrollToTop
   }
 
 };
