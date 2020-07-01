@@ -407,7 +407,7 @@
 
         <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
         <div class="painel-valores1">
-            <!--form action="#"-->
+            <form @submit.prevent>
 
                 <div class="row"  style="margin-bottom:5px;">
                     <div class="col-md-8 col-xs-12">
@@ -440,7 +440,7 @@
                     <button class="botao-azul" style="background: #FFCD00; width: 100%;" v-on:click="setValor(8,0)"> Simular </button> 
                     </div>                
                 </div>
-            <!--/form-->
+            </form>
         </div>
 
     </div>
@@ -722,13 +722,16 @@
                         console.log('valorDia: ', this.valorDia);
                         this.onSelectPage(4);break;
                     case 8: 
+                         //setValor(8,0)
                         this.validarEmailNome();
                         if( this.nomeValido == 2 && this.emailValido == 2){
                             //this.valorMotivo = this.ValorMotiPersonalizado;
                             //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
-                            console.log('valorContato: ', this.valorContato);                        
-                            this.enviarSimulacaoRD();                                              
+                            console.log('valorContato: ', this.valorContato);  
+                            //nao faz nada, esta usando o codigo de monitoramento do RD                      
+                            //this.enviarSimulacaoRD();      
+                            this.onSelectPage(5);                                        
                         }
                         break;
                     case 9: 
