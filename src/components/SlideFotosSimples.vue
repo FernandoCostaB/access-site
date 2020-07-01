@@ -10,15 +10,18 @@
               <div class="item active">
                 <blockquote>
                   <div class="row">
-                    <div class="col-sm-5 col-xl-12">
+
+                    <div class="col-sm-12 col-xl-12">
                       <img class="foto-cliente" src="assets/images/eulis.jpg">
                     </div>
-                    <div class="col-sm-7 col-xl-12">
+
+                    <div class="col-sm-12 col-xl-12">
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Com a AccessCrédito pude investir no meu sonho. Crédito facilitado. Atendimento diferenciado.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">EULIS SILVA DE LIMA</cite></footer>
                       </blockquote>
                     </div>
+
                   </div>
                 </blockquote>
               </div>
@@ -153,6 +156,8 @@ export default {
 </script>
 
 <style scoped>
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css);
+
    .conteudo-foto{
        margin: 20px 0;
    }
@@ -193,13 +198,20 @@ export default {
   }
   .item blockquote p{
     text-align: justify;
+   font-size: 1rem;
+   font-style: normal;
 
   }
   .item blockquote p:before {
-      content: "\f10d";
-      font-family: 'Fontawesome';
-      float: left;
-      margin-right: 10px;
+      content: '\f10d';
+      left: -1rem;
+      top: 0rem;
+      font-family: 'FontAwesome';
+      position: absolute;
+      color: #999;
+      font-size: 2rem;
+      width: 4rem;
+      height: 4rem;
   }
 
   blockquote small, blockquote .small {
@@ -208,6 +220,12 @@ export default {
       line-height: 1.42857143;
       color: #777;
       text-align: right;
+  }
+
+  .blockquote-footer{
+       font-size: 1rem;
+       font-size: 1rem;
+       font-style: normal;
   }
 </style>
 
