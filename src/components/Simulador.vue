@@ -605,7 +605,7 @@
         valorParcela:0,
         valorDia:0,
         valorMotivo: "",
-        valorParcelaFinal: "*Sujeito e análise crédito",
+        valorParcelaFinal: "*Sujeito à análise de crédito",
         valorNome: "",
         valorContato:"",
         valorTelefone: "",
@@ -885,7 +885,7 @@
             this.valorParcela=0;
             this.valorDia=0;
             this.valorMotivo= "";
-            this.valorParcelaFinal= "Sujeito análise de crédito";
+            this.valorParcelaFinal= "*Sujeito à análise de crédito";
             this.valorNome= "";
             this.valorContato="";
             this.valorTelefone= "";
