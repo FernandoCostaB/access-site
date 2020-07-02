@@ -17,7 +17,7 @@
               <div class="menu-logo">
                   <div class="navbar-brand">
                       <span class="navbar-logo">
-                        <router-link to="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></router-link> </span>
+                        <a href="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></a></span>
                   </div>
               </div>
 

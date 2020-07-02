@@ -5,13 +5,13 @@
                     <div class="media-container-row content text-white">
                         <div class="col-12 col-md-3">
                             <div class="media-wrap">
-                                <a href=""><img class="img-footer" src="/assets/images/logo.jpg" alt="AccessCrédito" title="AccessCrédito"> </a>
+                                <a href=""><img class="img-footer" src="/assets/images/image.png" alt="AccessCrédito" title="AccessCrédito"> </a>
                             </div>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">Endereço</h5>
                             <p class="mbr-text">ACCESSCRÉDITO – CNPJ 13.058.743/0001-64 – R. Curió N71 – Cidade Nova, Manaus - AM | © AccessCrédito</p>
-                            <router-link class="nav-link link text-ouvidoria display-4" to="/contact">OUVIDORIA</router-link>
+                            <a href="/contact" class="nav-link link text-ouvidoria display-4">OUVIDORIA</a>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">

@@ -481,7 +481,7 @@
                                     }
                                     $('html, body').stop().animate({
                                         scrollTop: goTo
-                                    }, 800, 'easeInOutCubic');
+                                    },700, 'easeInOutCubic');
                                 });
                                 break;
                             }
@@ -649,7 +649,7 @@
                     $window = $(window);
                 $scroller.css('display', 'none');
                 $window.scroll(function() {
-                    if ($(this).scrollTop() > 700) { 
+                    if ($(this).scrollTop() > 800) { 
                         $scroller.fadeIn();
                     } else {
                         $scroller.fadeOut();
@@ -658,7 +658,7 @@
                 $scroller.click(function() {
                     $main.animate({
                         scrollTop: 0
-                    }, 500);
+                    }, 800);
                     return false;
                 });
             }
@@ -1133,5 +1133,21 @@ window.addEventListener("load", function() {
     loader.style.visibility = "hidden";
 });
 
-//Animacao ao clicar no botao solicite aqui
+//ScrollToTop contact
 
+$(document).ready(function() {
+    if ($('.mbr-arrow-up').length) {
+        var $scroller = $('#ScrollContact'),
+            $main = $('body,html'),
+            $window = $(window);
+        $scroller.css('display', 'none');
+        $window.scroll(function() {
+            if ($(this).scrollTop() > 100) { 
+                $scroller.fadeIn();
+            } else {
+                $scroller.fadeOut();
+            }
+        });
+       
+    }
+});
