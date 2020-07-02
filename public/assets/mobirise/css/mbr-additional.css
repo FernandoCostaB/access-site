@@ -520,10 +520,12 @@ a.text-black:focus {
 .button-solicite:hover {
   color: #000000;
 }
-a,
-a:hover {
-  color: #ffffff;
+a {
+  color: #149dcc;
 }
+/*a:hover {
+  color: #149dcc;
+}*/
 .mbr-plan-header.bg-primary .mbr-plan-subtitle,
 .mbr-plan-header.bg-primary .mbr-plan-price-desc {
   color: #b4e6f8;
