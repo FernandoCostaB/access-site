@@ -24,7 +24,7 @@
                             </div>
                             <div class="card-text">
                                 <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
-                              <br> +80.000.000 </h3>
+                              +80.000.000 </h3>
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Capital Liberado</h4>
                                 <p class="mbr-content-text mbr-fonts-style display-7">Na AccessCrédito você conta com a facilidade, rapidez e segurança na aprovação e liberação do seu crédito.</p>
                             </div>
@@ -39,7 +39,7 @@
                                 <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
                               1 </h3>
                                 <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Oportunidade para você agora!</h4>
-                                <p class="mbr-content-text mbr-fonts-style display-7">Descubra as vantagens de pedir um empréstimo conosco e aproveitar as menores taxas, menos burocracia e agilidade.</p>
+                                <p class="mbr-content-text mbr-fonts-style display-7">Descubra as vantagens de pedir um empréstimo conosco e aproveitar as menores taxas e menos burocracia.</p>
                             </div>
                         </div>
                     </div>

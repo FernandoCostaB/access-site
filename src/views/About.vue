@@ -22,7 +22,7 @@
     <!--Botao solicite aqui-->
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up animated infinite pulse">
 
-        <a class="button-solicite" style="text-align: center;" href="/">solicite aqui<i class="button-solicite"></i></a>
+        <a class="Scrolldecoration" style="text-align: center;" href="/">solicite aqui<i class="button-solicite"></i></a>
     </div>
     <FloatActionButton/>
   </div>

@@ -551,7 +551,7 @@ section {
 }
 @media only  screen and (max-width:800px){
   .media-container-column{
-    display: -ms-flexbox;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -570,8 +570,10 @@ section {
   -ms-flex-align: stretch;
   align-items: stretch;
   width: 100%;
-
   }
+}
+.form-contact {
+margin-left: 3.5rem;
 }
 .rb{
   display: none;
@@ -650,7 +652,8 @@ section {
 .img-footer{
   padding-left: 0%;
   border-radius: 4px;
-  width: 90%;
+  width: 110%;
+  height: 1px;
 }
 @media only  screen and (max-width:982px){
   .img-footer{ 
@@ -925,6 +928,27 @@ blockquote {
   position: absolute;
   top: -2px;
   font-weight: normal; }
+/*! Scroll to top Contact */
+#ScrollContact a i:before {
+  content: '';
+  position: absolute;
+  height: 40%;
+  top: 25%;
+  background: #fff;
+  width: 0px;
+  left: calc(50% - 1px); }
+#ScrollContact a i:after {
+  content: '';
+  position: absolute;
+  display: none;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  width: 40%;
+  height: 40%;
+  left: 30%;
+  bottom: 30%;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg); }
 
 /*! Scroll to top arrow */
 #scrollToTop a i:before {
@@ -1055,7 +1079,18 @@ blockquote {
     z-index: 12;
     transform: translateX(-50%) rotate(360deg);
     -webkit-transform: translateX(-50%) rotate(360deg); } }
-/*Gradients animation*/
+    @media (max-width: 500px) {
+      .contactScroll {
+        left: 50%; /*Alinhamento do botao solicite aqui, antes aqui era 50%*/
+        right: Auto; /*Alinhamento do botao solicite aqui, antes aqui era Auto*/
+        display: flex;
+        position: fixed;
+        width: 75%;
+        z-index: 12;
+        transform: translateX(-50%) rotate(360deg);
+        -webkit-transform: translateX(-50%) rotate(360deg); } }
+        
+    /*Gradients animation*/
 @keyframes gradient-animation {
   from {
     background-position: 0% 100%;

@@ -522,7 +522,7 @@ a.text-black:focus {
 }
 a,
 a:hover {
-  color: #149dcc;
+  color: #ffffff;
 }
 .mbr-plan-header.bg-primary .mbr-plan-subtitle,
 .mbr-plan-header.bg-primary .mbr-plan-price-desc {
@@ -547,6 +547,13 @@ a:hover {
 /* Scroll to top button*/
 #scrollToTop a {
   border-radius: 100px;
+}
+#ScrollContact a {
+  border-radius: 100px;
+  right: 35px;
+}
+.Scrolldecoration {
+  text-decoration: none;
 }
 .form-control {
   font-family: 'Rubik', sans-serif;
@@ -1877,7 +1884,7 @@ section.lazy-placeholder:after {
   color: #f36;
 }
 .cid-rQcvYOMQLD .media-wrap img {
-  height: 6rem;
+  height: 4rem;
 }
 @media (max-width: 767px) {
   .cid-rQcvYOMQLD .footer-lower .copyright {
@@ -2336,6 +2343,7 @@ section.lazy-placeholder:after {
 }
 .cid-rQY8hBKryH .title {
   margin-bottom: 2rem;
+  margin-left: 2rem;
 }
 .cid-rQY8hBKryH .mbr-section-subtitle {
   color: #767676;
