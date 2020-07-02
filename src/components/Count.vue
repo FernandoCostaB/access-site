@@ -1,4 +1,5 @@
 <template>
+<div id="count">
   <section class="counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <div class="container">
             <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">Nossos Números</h2>
@@ -47,7 +48,7 @@
             </div>
         </div>
       </section>
-
+</div>
 </template>
 
 <script>
