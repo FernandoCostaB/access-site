@@ -57,7 +57,7 @@
                     <h5>Outro Valor</h5>
                 </div>
             </div>
-        </div>
+        </div>        
     </div>
 
 
@@ -399,53 +399,7 @@
 
     </div>
 
-    <div class="sc-fYiAbW hfKksW" v-else-if="page11">
-        <div class="row menu-seta" v-on:click="onSelectPage(2)">
-            <img style="width: 25px;" src="/assets/images/back.svg"/>
-            <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
-        </div>
-
-        <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
-        <div class="painel-valores1">
-            <form @submit.prevent>
-
-                <div class="row"  style="margin-bottom:5px;">
-                    <div class="col-md-8 col-xs-12">
-                        <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }" 
-                         type="text" name="nome_Completo"  
-                        v-model="valorNome" placeholder="Nome Completo">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-8 col-xs-12">                        
-                        <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" 
-                        name="email" type="email" 
-                        v-model="valorContato" placeholder="E-mail">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-8 col-xs-12">
-                        <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(nomeValido == 3) || (emailValido == 3)">
-                            *Você precisa preencher os campos obrigatórios </p>
-                        <p class="p-label p-erro" style="font-size: 11px;"
-                            v-if="(emailValido == 3)">
-                            *Você precisa preencher um e-mail válido</p>
-                    </div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-md-8 col-xs-12">
-                    <button  type=submit class="botao-azul" style="background: #FFCD00; width: 100%;" 
-                    v-on:click="setValor(8,0)"> Simular </button> 
-                    </div>                
-                </div>
-            </form>
-        </div>
-
-    </div>
+    
 
     <div class="sc-fYiAbW hfKksW" v-else-if="page12">
         <div class="row menu-seta" v-on:click="onSelectPage(5)">
@@ -562,6 +516,55 @@
             
         </div>
     </div>
+
+    <div class="sc-fYiAbW hfKksW" v-show="page11">
+        <div class="row menu-seta" v-on:click="onSelectPage(2)">
+            <img style="width: 25px;" src="/assets/images/back.svg"/>
+            <p class="col-9 item-menu-p " style="padding-top:10px;">Voltar</p>
+        </div>
+
+        <h1 class="dwRrHP" style="text-align:left; margin: 0 0 15px 10px;">Preencha abaixo para simular sem compromisso</h1>
+        <div class="painel-valores1">
+            <div class="row"  style="margin-bottom:5px;">
+                <div class="col-md-8 col-xs-12">
+                    <input style="width:100%;" v-bind:class="{ 'b-erro': (nomeValido == 3 ), '': false }" 
+                        type="text" name="nome"  
+                    v-model="valorNome" placeholder="Nome Completo">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-xs-12">                        
+                    <input style="width:100%;" v-bind:class="{ 'b-erro': (emailValido == 3), '': false }" 
+                    name="email" type="email" 
+                    v-model="valorContato" placeholder="E-mail">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                    <p class="p-label p-erro" style="font-size: 11px;"
+                        v-if="(nomeValido == 3) || (emailValido == 3)">
+                        *Você precisa preencher os campos obrigatórios </p>
+                    <p class="p-label p-erro" style="font-size: 11px;"
+                        v-if="(emailValido == 3)">
+                        *Você precisa preencher um e-mail válido</p>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-8 col-xs-12">
+                <button  class="botao-azul" style="background: #FFCD00; width: 100%;" 
+                v-on:click="setValor(8,0)"> Simular </button> 
+                </div>                
+            </div>
+        </div>  
+
+        <loading :active.sync="isLoadingRD" 
+            :can-cancel="false" 
+            :color= "colorLoading"
+            :is-full-page="true"></loading>  
+    </div>
     
 
   </div>
@@ -619,9 +622,15 @@
         telefoneValido: 1,
         negocioValido: 1,
         isLoadingACBS:false,
-        colorLoading: '#00B8D7'
+        colorLoading: '#00B8D7',
+        isLoadingRD: false
         };
     },
+    mounted(){
+        if(window.RDStationForms){
+            new window.RDStationForms('lead1-site-vue-9c2d27ae5893855f5bf6', 'UA-113058013-3').createForm();
+        }      
+   },
     methods: {
         onSelectPage(valor){
 
@@ -727,13 +736,9 @@
                          //setValor(8,0)
                         this.validarEmailNome();
                         if( this.nomeValido == 2 && this.emailValido == 2){
-                            //this.valorMotivo = this.ValorMotiPersonalizado;
-                            //console.log('valorMotivo: ', this.valorMotivo);
                             console.log('valorNome: ', this.valorNome);
-                            console.log('valorContato: ', this.valorContato);  
-                            //nao faz nada, esta usando o codigo de monitoramento do RD                      
-                            //this.enviarSimulacaoRD();      
-                            this.onSelectPage(5);                                        
+                            console.log('valorContato: ', this.valorContato);                       
+                            this.enviarSimulacaoRD();                                        
                         }
                         break;
                     case 9: 
@@ -803,37 +808,36 @@
             console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
         },
         enviarSimulacaoRD(){
-            let uri = this.url + "ping";
             let that = this;
+            let uri = 'https://www.rdstation.com.br/api/1.2/conversions';
 
-            let data_array = [{
-                    name: 'email',
-                    value: this.valorContato
-                    },
-                    {
-                    name: 'identificador',
-                    value: 'lead1-site-vue'
-                    },
-                    {
-                    name: 'token_rdstation',
-                    value: 'f3b828f52805c8603ffd2ec578c7af1a'
-                    },
-                    {
-                    name: 'nome_Completo',
-                    value: this.valorNome
-                    }
-                ];
+            //Ele nao recebe json, ele usa o form-data
+            var bodyFormData = new FormData();
+            bodyFormData.set('email', this.valorContato);
+            bodyFormData.set('identificador', 'lead1-site-vue');
+            bodyFormData.set('token_rdstation', 'f3b828f52805c8603ffd2ec578c7af1a');
+            bodyFormData.set('nome', this.valorNome);
 
-			axios.get(uri)
-                    .then(function (response) {
-                        // handle success
-                        console.log("Enviou RM ", response, data_array);
-                        that.onSelectPage(5);
-                    })
-                    .catch(function (error) {
-                        // handle error
-                        console.log("ERRO Enviou RM ", error);
-                    });  
+            this.isLoadingRD = true;
+
+            axios({
+                method: 'post',
+                url: uri,
+                data: bodyFormData,
+                headers: {'Content-Type': 'multipart/form-data' }
+                })
+                .then(function (response) {
+                    //handle success
+                    console.log("Sucesso ao enviar LEAD ",response);
+                    that.isLoadingRD = false;
+                    that.onSelectPage(5);
+                })
+                .catch(function (response) {
+                    //handle error
+                    console.log("Erro ao enviar LEAD ",response);
+                    that.isLoadingRD = false;
+                });
+
         },
         finalizarSimulacao(){ 
             let uri = this.url + "leads";
