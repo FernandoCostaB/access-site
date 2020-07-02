@@ -626,11 +626,6 @@
         isLoadingRD: false
         };
     },
-    mounted(){
-        if(window.RDStationForms){
-            new window.RDStationForms('lead1-site-vue-9c2d27ae5893855f5bf6', 'UA-113058013-3').createForm();
-        }      
-   },
     methods: {
         onSelectPage(valor){
 
@@ -694,8 +689,8 @@
             this.valorCredito = valor;
             this.valorParcela = qtd; //quantidade de parcela
             this.valorParcelaFinal = parcela; //valor de cada parcela do mes
-            console.log('valorCredito: ', this.valorCredito);
-            console.log('valorParcela: ', this.valorParcela);
+           /* console.log('valorCredito: ', this.valorCredito);
+            console.log('valorParcela: ', this.valorParcela);*/
 
             //mostra o form de usuário email    
             this.onSelectPage(11);
@@ -704,53 +699,53 @@
             switch(tipo){
                     case 1: 
                         this.valorCredito = valor;
-                        console.log('valorCredito: ', this.valorCredito);
+                       /* console.log('valorCredito: ', this.valorCredito);*/
                         this.onSelectPage(2);break;
                     case 2:
                         this.valorParcela = valor;
-                        console.log('valorParcela: ', this.valorParcela);
+                        /*console.log('valorParcela: ', this.valorParcela);*/
                         this.onSelectPage(11);break;
                     case 3:
                         this.valorDia = valor;
-                        console.log('valorDia: ', this.valorDia);
+                        /*console.log('valorDia: ', this.valorDia);*/
                         this.onSelectPage(4);break;
                     case 4:
                         this.valorMotivo = valor;
-                        console.log('valorMotivo: ', this.valorMotivo);
+                       /* console.log('valorMotivo: ', this.valorMotivo);*/
                         this.onSelectPage(5);break;
                     case 5:
                         //setValor(5,0) aqui nao pega a varivel valor
                         this.valorCredito = this.valorPersonalizado;
-                        console.log('valorCredito: ', this.valorCredito);
+                        /*console.log('valorCredito: ', this.valorCredito);*/
                         this.onSelectPage(2);break;
                     case 6:
                         //setValor(6,0) aqui na pega a variavel valor
                         this.valorParcela = this.valorParcPersonalizada;
-                        console.log('valorParcela: ', this.valorParcela);
+                        /*console.log('valorParcela: ', this.valorParcela);*/
                         this.onSelectPage(11);break;
                     case 7:
                         this.valorDia = this.ValorDiaPersonalizado
-                        console.log('valorDia: ', this.valorDia);
+                        /*console.log('valorDia: ', this.valorDia);*/
                         this.onSelectPage(4);break;
                     case 8: 
                          //setValor(8,0)
                         this.validarEmailNome();
                         if( this.nomeValido == 2 && this.emailValido == 2){
-                            console.log('valorNome: ', this.valorNome);
-                            console.log('valorContato: ', this.valorContato);                       
+                            /*console.log('valorNome: ', this.valorNome);
+                            console.log('valorContato: ', this.valorContato); */                      
                             this.enviarSimulacaoRD();                                        
                         }
                         break;
                     case 9: 
                         this.validarCpfCnpjTelefone();
-                        console.log('termoPrivacidade ', this.termoPrivacidade);
+                       /* console.log('termoPrivacidade ', this.termoPrivacidade);*/
                         if(this.telefoneValido == 2 && this.valorNegocio !== '' && this.cpfCnpjValido == 2 
                             && (this.termoPrivacidade == true || this.termoPrivacidade == 'true')){
-                            console.log('valorCpfCnpj: ', this.valorCpfCnpj);
+                            /*console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                             console.log('valorTelefone: ', this.valorTelefone);
                             console.log('valorTelefone2: ', this.valorTelefone2);
                             console.log('valorNegocio: ', this.valorNegocio);
-                            console.log('finalizarSimulacao(): ');
+                            console.log('finalizarSimulacao(): ');*/
                             this.finalizarSimulacao();
                         }break;
             }
@@ -804,8 +799,8 @@
             //valida o campo como certo
             this.negocioValido = 2; 
 
-            console.log("valorNegocio ", this.valorNegocio);
-            console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);
+            /*console.log("valorNegocio ", this.valorNegocio);
+            console.log("op1, op2, op3 ", this.op1+", "+this.op2+", "+this.op3);*/
         },
         enviarSimulacaoRD(){
             let that = this;
@@ -834,10 +829,15 @@
                 })
                 .catch(function (response) {
                     //handle error
-                    console.log("Erro ao enviar LEAD ",response);
                     that.isLoadingRD = false;
+                    if(response.message=="Network Error"){
+                        //se der erro de cors, continua o fluxo
+                        that.onSelectPage(5);
+                    }else{
+                        console.log("Erro ao enviar LEAD ",response);      
+                        alert("Erro ao enviar dados");              
+                    } 
                 });
-
         },
         finalizarSimulacao(){ 
             let uri = this.url + "leads";
@@ -897,8 +897,8 @@
             //validador de email separado para o evento de input do form
              var reg = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/gi
            
-            if(reg.test(this.valorContato)) {console.log("passou"); this.emailValido =  2;} 
-            else {console.log("falhou");this.emailValido =  3;}
+            if(reg.test(this.valorContato)) {/*console.log("passou");*/ this.emailValido =  2;} 
+            else {/*console.log("falhou");*/this.emailValido =  3;}
 
             if(this.valorNome != '' && this.valorNome.trim().length > 0){
                 this.nomeValido = 2
@@ -907,8 +907,8 @@
             }             
         },
         validarCpfCnpjTelefone(){
-            if(this.valorTelefone.length == 11) {console.log("passou"); this.telefoneValido =  2;} 
-            else {console.log("falhou");this.telefoneValido =  3;}
+            if(this.valorTelefone.length == 11) {/*console.log("passou");*/ this.telefoneValido =  2;} 
+            else {/*console.log("falhou");*/this.telefoneValido =  3;}
 
             if(this.valorCpfCnpj.length == 14 ||  this.valorCpfCnpj.length == 18){
                 this.cpfCnpjValido = 2

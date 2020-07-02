@@ -12,7 +12,7 @@
       </div>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="media-container-column col-lg-8" data-form-type="formoid">
+                <div class="media-container-column col-lg-8 form-contact" data-form-type="formoid">
                     <!---Formbuilder Form-->
                     <form action="http://acbs.homologacao.accesscredito.com.br:8989/" method="POST" class="mbr-form form-with-styler" data-form-title="Mobirise Form"><input type="hidden" name="email" data-form-email="true" value="YLChrIK9CgCy149VlR1OZ9jQOpS1NId7TgSUpm7tVFvArZJvSZ0rbRWoZzyDuFbeOrSQk6bJNwLceddlScRxL6rBT9S+V9sQlNqLFAkoJBRvutnIib2BreGweosaOGoa">
                         <div class="row">
@@ -44,11 +44,12 @@
                 </div>
             </div>
         </div>
-    </section>
-    <div id="scrollToTop" class="scrollToTop mbr-arrow-up animated infinite pulse">
+        <div id="ScrollContact" class="scrollToTop mbr-arrow-up contactScroll">
 
-        <a class="button-solicite" style="text-align: center;" href="/">solicite aqui<i class="button-solicite"></i></a>
+        <a class="Scrolldecoration" style="text-align: center;" href="/">solicite aqui<i class="button-solicite"></i></a>
     </div>
+    </section>
+    
     <FloatActionButton/>
   </div>
   
