@@ -520,7 +520,9 @@ a.text-black:focus {
 .button-solicite:hover {
   color: #000000;
 }
-a,
+a {
+  color: #149dcc;
+}
 a:hover {
   color: #ffffff;
 }
