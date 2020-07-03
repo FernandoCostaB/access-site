@@ -488,16 +488,11 @@
                     <label class="p-label" style="font-size: 11px;"
                      v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
                      Li, compreendi e concordo com a 
-                     <router-link to="/politica" target="_blank">Política de Privacidade,</router-link>
+                     <Modal msg="Modal" />
                      bem como a consultar quaisquer informações a meu respeito nos sistemas dos serviços de informações e proteção ao 
                      crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </label>                   
                 </div>                
             </div>
-                        
-            <loading :active.sync="isLoadingACBS" 
-            :can-cancel="false" 
-            :color= "colorLoading"
-            :is-full-page="true"></loading>
 
         </div>
 
@@ -558,14 +553,13 @@
                 v-on:click="setValor(8,0)"> Simular </button> 
                 </div>                
             </div>
-        </div>  
+        </div>   
+    </div>
 
-        <loading :active.sync="isLoadingRD" 
+    <loading :active.sync="isLoading" 
             :can-cancel="false" 
             :color= "colorLoading"
-            :is-full-page="true"></loading>  
-    </div>
-    
+            :is-full-page="true"></loading>      
 
   </div>
 </template>
@@ -577,9 +571,10 @@
     import Loading from 'vue-loading-overlay';
     // Import stylesheet loading
     import 'vue-loading-overlay/dist/vue-loading.css';
+    import Modal from "@/components/Modal.vue";
 
     export default {
-    components: {TheMask,Loading},
+    components: {TheMask,Loading,Modal},
     name: "Simulador",
     data() {
         return {
@@ -621,9 +616,10 @@
         cpfCnpjValido:1,
         telefoneValido: 1,
         negocioValido: 1,
-        isLoadingACBS:false,
         colorLoading: '#00B8D7',
-        isLoadingRD: false
+        isLoading: false,
+        today: "",
+        dayToday:""
         };
     },
     methods: {
@@ -704,7 +700,8 @@
                     case 2:
                         this.valorParcela = valor;
                         /*console.log('valorParcela: ', this.valorParcela);*/
-                        this.onSelectPage(11);break;
+                        //this.onSelectPage(11);break;
+                        this.calcularSimulacao();break;    
                     case 3:
                         this.valorDia = valor;
                         /*console.log('valorDia: ', this.valorDia);*/
@@ -722,7 +719,8 @@
                         //setValor(6,0) aqui na pega a variavel valor
                         this.valorParcela = this.valorParcPersonalizada;
                         /*console.log('valorParcela: ', this.valorParcela);*/
-                        this.onSelectPage(11);break;
+                        //this.onSelectPage(11);break;
+                        this.calcularSimulacao();break;
                     case 7:
                         this.valorDia = this.ValorDiaPersonalizado
                         /*console.log('valorDia: ', this.valorDia);*/
@@ -813,7 +811,7 @@
             bodyFormData.set('token_rdstation', 'f3b828f52805c8603ffd2ec578c7af1a');
             bodyFormData.set('nome', this.valorNome);
 
-            this.isLoadingRD = true;
+            this.isLoading = true;
 
             axios({
                 method: 'post',
@@ -824,12 +822,12 @@
                 .then(function (response) {
                     //handle success
                     console.log("Sucesso ao enviar LEAD ",response);
-                    that.isLoadingRD = false;
+                    that.isLoading = false;
                     that.onSelectPage(5);
                 })
                 .catch(function (response) {
                     //handle error
-                    that.isLoadingRD = false;
+                    that.isLoading = false;
                     if(response.message=="Network Error"){
                         //se der erro de cors, continua o fluxo
                         that.onSelectPage(5);
@@ -842,7 +840,7 @@
         finalizarSimulacao(){ 
             let uri = this.url + "leads";
             let that = this;
-            this.isLoadingACBS = true;
+            this.isLoading = true;
             let json = {
                 "Lead":{
                         "Cliente":{
@@ -864,14 +862,14 @@
 			axios.post(uri, json)
                     .then(function (response) {
                         // handle success
-                        console.log("Enviou ACBS ", response, json);
-                         that.isLoadingACBS = false
+                        console.log("Enviou ACBS ", response);
+                         that.isLoading = false
                          that.onSelectPage(13);
                     })
                     .catch(function (error) {
                         // handle error
                         console.log("ERRO Enviou ACBS ", error, json);
-                        that.isLoadingACBS = false
+                        that.isLoading = false
                         alert("Erro ao enviar Simulação");
                     });            
         },
@@ -921,7 +919,55 @@
             }else{
                 this.negocioValido = 3
             }                        
+        },
+        calcularSimulacao(){ 
+            //let uri = this.url + "disbursements/simulation";
+            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/disbursements/simulation';
+            let that = this;            
+            this.isLoading = true;
+
+            this.pegarDiaAtual();
+            let json = {
+                    "simulation":{
+                        "id":"",
+                        "acbs":true,
+                        "product_id":9,
+                        "requested_amount":this.valorCredito,
+                        "contract_date":this.today,
+                        "payment_day":this.dayToday,
+                        "qty_installments": this.valorParcela,
+                        "fixedDay":true
+                    }
+                }
+
+			axios.post(uri, json)
+                    .then(function (response) {
+                        // handle success
+                        console.log("Sucesso ao calcular ", response);
+                        that.valorParcelaFinal = response.data.valor_parcela;
+                        that.isLoading = false
+                        that.onSelectPage(11);
+                    })
+                    .catch(function (error) {
+                        // handle error
+                        console.log("ERRO ao calcular  ", error, json);
+                        that.isLoading = false
+                        alert("Erro ao calcular Empréstimo");
+                    });     
+        },
+        pegarDiaAtual(){
+            let d = new Date();
+            let month = String(d.getMonth() + 1);
+            let day = String(d.getDate());
+            const year = String(d.getFullYear());
+
+            if (month.length < 2) month = '0' + month;
+            if (day.length < 2) day = '0' + day;
+
+            this.today= day+"/"+month+"/"+year;
+            this.dayToday = day;
         }
+
     }
     };
     
