@@ -487,8 +487,7 @@
                     <input  type="checkbox" v-model="termoPrivacidade" true-value=true false-value=false>
                     <label class="p-label" style="font-size: 11px;"
                      v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
-                     Li, compreendi e concordo com a 
-                     <router-link to="/politica" target="_blank">Política de Privacidade,</router-link>
+                     Li, compreendi e concordo com a <Modal msg="Modal" />
                      bem como a consultar quaisquer informações a meu respeito nos sistemas dos serviços de informações e proteção ao 
                      crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </label>                   
                 </div>                
@@ -577,9 +576,10 @@
     import Loading from 'vue-loading-overlay';
     // Import stylesheet loading
     import 'vue-loading-overlay/dist/vue-loading.css';
+    import Modal from "@/components/Modal.vue";
 
     export default {
-    components: {TheMask,Loading},
+    components: {TheMask,Loading,Modal},
     name: "Simulador",
     data() {
         return {

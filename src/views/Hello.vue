@@ -5,7 +5,7 @@
     <Alert msg="Welcome to Your Vue.js App" />
     <ExemploCreate msg="Welcome to Your Vue.js App" />
     <ExemploList msg="Welcome to Your Vue.js App" />
-    
+    <Modal msg="Modal" />
   </div>
 </template>
 
@@ -15,6 +15,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import Alert from "@/components/Alert.vue";
 import ExemploList from "@/components/ExemploList.vue";
 import ExemploCreate from "@/components/ExemploCreate.vue";
+import Modal from "@/components/Modal.vue";
 
 export default {
   name: "Hello",
@@ -22,7 +23,8 @@ export default {
     HelloWorld,
     Alert,
     ExemploList,
-    ExemploCreate
+    ExemploCreate,
+    Modal
   }
 };
 </script>

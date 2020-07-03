@@ -10,8 +10,8 @@
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">Endereço</h5>
-                            <p class="mbr-text">ACCESSCRÉDITO – CNPJ 13.058.743/0001-64 – R. Curió N71 – Cidade Nova, Manaus - AM | © AccessCrédito</p>
-                            <a href="/contact" class="nav-link link text-ouvidoria display-4">OUVIDORIA</a>
+                            <p class="mbr-text">ACCESSCRÉDITO – CNPJ 13.058.743/0001-64 – R. Curió Nº 71 – Cidade Nova, Manaus - AM | © AccessCrédito</p>
+                            <router-link class="nav-link link text-whith display-4" to="/contact">OUVIDORIA</router-link>
                         </div>
                         <div class="col-12 col-md-3 mbr-fonts-style display-7">
                             <h5 class="pb-3">
