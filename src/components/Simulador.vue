@@ -922,7 +922,7 @@
         },
         calcularSimulacao(){ 
             //let uri = this.url + "disbursements/simulation";
-            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/disbursements/simulation';
+            let uri = 'http://api-acbs.accesscredito.com.br/api/disbursements/simulation';
             let that = this;            
             this.isLoading = true;
 
