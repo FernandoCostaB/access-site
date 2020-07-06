@@ -261,7 +261,7 @@
          </div>
          <br>
          <div class="conteudo-slide">            
-            <input type="range" class="slider" step="500" min="500" v-model="valorPersonalizado" max="20000">          
+            <input type="RANGE" class="slider" step="500" min="500" v-model="valorPersonalizado" max="20000">          
          </div>
          <br>
          <br>
@@ -619,7 +619,8 @@
         colorLoading: '#00B8D7',
         isLoading: false,
         today: "",
-        dayToday:""
+        dayToday:"",
+        produtoId: 9
         };
     },
     methods: {
@@ -922,16 +923,17 @@
         },
         calcularSimulacao(){ 
             //let uri = this.url + "disbursements/simulation";
-            let uri = 'https://acbs.homologacao.accesscredito.com.br:8080/api/disbursements/simulation';
+            let uri = 'http://acbs.homologacao.accesscredito.com.br:8080/api/disbursements/simulation';
             let that = this;            
             this.isLoading = true;
 
+            this.pegarIdProduto();
             this.pegarDiaAtual();
             let json = {
                     "simulation":{
                         "id":"",
                         "acbs":true,
-                        "product_id":9,
+                        "product_id":this.produtoId,
                         "requested_amount":this.valorCredito,
                         "contract_date":this.today,
                         "payment_day":this.dayToday,
@@ -966,6 +968,27 @@
 
             this.today= day+"/"+month+"/"+year;
             this.dayToday = day;
+        },
+        pegarIdProduto(){
+            /*
+            TABELA DE ID PODUTO
+            ACCESS MICRO A -> 9
+            ACCESS MICRO B -> 13
+            ACCESS MICRO C -> 17
+            ACCESS MICRO D -> 21
+            ACCESS ERPP -> 5
+            */
+            if(this.valorCredito >= 500 && this.valorCredito <= 1500){
+                this.produtoId = 9;
+            }else if(this.valorCredito >= 1501 && this.valorCredito <= 4000){
+                this.produtoId = 13;
+            }else if(this.valorCredito >= 4001 && this.valorCredito <= 7000){
+                this.produtoId = 17;
+            }else if(this.valorCredito >= 7001 && this.valorCredito <= 10000){
+                this.produtoId = 21;
+            }else if(this.valorCredito >= 10001 && this.valorCredito <= 20000){
+                this.produtoId = 5;
+            }
         }
 
     }
