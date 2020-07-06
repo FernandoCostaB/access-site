@@ -620,7 +620,8 @@
         isLoading: false,
         today: "",
         dayToday:"",
-        produtoId: 9
+        produtoId: 9,
+        finalSucesso: false
         };
     },
     methods: {
@@ -743,9 +744,8 @@
                             /*console.log('valorCpfCnpj: ', this.valorCpfCnpj);
                             console.log('valorTelefone: ', this.valorTelefone);
                             console.log('valorTelefone2: ', this.valorTelefone2);
-                            console.log('valorNegocio: ', this.valorNegocio);
-                            console.log('finalizarSimulacao(): ');*/
-                            this.finalizarSimulacao();
+                            console.log('valorNegocio: ', this.valorNegocio);*/
+                            this.finalizarCadastro();
                         }break;
             }
         },
@@ -840,8 +840,8 @@
         },
         finalizarSimulacao(){ 
             let uri = this.url + "leads";
+            //let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
             let that = this;
-            this.isLoading = true;
             let json = {
                 "Lead":{
                         "Cliente":{
@@ -860,19 +860,20 @@
                     }
             };
 
-			axios.post(uri, json)
-                    .then(function (response) {
-                        // handle success
-                        console.log("Enviou ACBS ", response);
-                         that.isLoading = false
-                         that.onSelectPage(13);
-                    })
-                    .catch(function (error) {
-                        // handle error
-                        console.log("ERRO Enviou ACBS ", error, json);
-                        that.isLoading = false
-                        alert("Erro ao enviar Simulação");
-                    });            
+            return new Promise( function(resolve) { 
+                axios.post(uri, json)
+                        .then(function (response) {
+                            //handle success
+                            console.log("Enviou ACBS ", response);
+                            that.finalSucesso = true;
+                            resolve(true);
+                        })
+                        .catch(function (error) {
+                            // handle error
+                            console.log("ERRO Enviou ACBS ", error, json); 
+                            resolve(true);                      
+                        }); 
+            });            
         },
         limparValores(){
             //volta tudo para o padrão
@@ -891,6 +892,7 @@
             this.valorTelefone2= "";
             this.valorNegocio= "";
             this.valorCpfCnpj= "";
+            this.finalSucesso = false;
         },
         validarEmailNome(){
             //validador de email separado para o evento de input do form
@@ -989,8 +991,63 @@
             }else if(this.valorCredito >= 10001 && this.valorCredito <= 20000){
                 this.produtoId = 5;
             }
-        }
+        },
+        enviarLeadRD(){
+            let that = this;
+            return new Promise( function(resolve) { 
+               
+                let uri = 'https://www.rdstation.com.br/api/1.2/conversions';
 
+                //Ele nao recebe json, ele usa o form-data
+                var bodyFormData = new FormData();
+                bodyFormData.set('email', that.valorContato);
+                bodyFormData.set('identificador', 'lead2-site-vue');
+                bodyFormData.set('token_rdstation', 'f3b828f52805c8603ffd2ec578c7af1a');
+                bodyFormData.set('nome', that.valorNome);
+                bodyFormData.set('cpfCnpj', that.valorCpfCnpj);
+                bodyFormData.set('telefone', that.valorTelefone);
+                bodyFormData.set('telefone 2', that.valorTelefone2);
+                bodyFormData.set('tempodeNegocio', that.valorNegocio);            
+
+                axios({
+                    method: 'post',
+                    url: uri,
+                    data: bodyFormData,
+                    headers: {'Content-Type': 'multipart/form-data' }
+                    })
+                    .then(function (response) {
+                        //handle success
+                        console.log("Sucesso ao enviar 2o LEAD ",response);                    
+                        that.finalSucesso = true;
+                        resolve(true);
+                    })
+                    .catch(function (response) {
+                        //handle error
+                        if(response.message=="Network Error"){
+                            //se der erro de cors, continua o fluxo
+                        that.finalSucesso = true;
+                        }else{
+                            console.log("Erro ao enviar 2o LEAD ",response);               
+                        } 
+                        resolve(false);
+                    });
+            });            
+        },
+        async finalizarCadastro(){
+            /**
+             * funcao envia o lead tanto para o acbs quanto para o RD
+             */
+            this.isLoading = true;
+            await this.finalizarSimulacao();
+            await this.enviarLeadRD();
+            this.isLoading = false;
+
+            if(this.finalSucesso == true){
+                this.onSelectPage(13);
+            }else {
+                alert("Erro ao enviar Simulação");
+            }
+        }
     }
     };
     
