@@ -839,8 +839,8 @@
                 });
         },
         finalizarSimulacao(){ 
-            //let uri = this.url + "leads";
-            let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
+            let uri = this.url + "leads";
+            //let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
             let that = this;
             let json = {
                 "Lead":{
