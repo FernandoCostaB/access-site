@@ -839,8 +839,8 @@
                 });
         },
         finalizarSimulacao(){ 
-            //let uri = this.url + "leads";
-            let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
+            let uri = this.url + "leads";
+            //let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
             let that = this;
             let json = {
                 "Lead":{
@@ -1039,7 +1039,7 @@
              * funcao envia o lead tanto para o acbs quanto para o RD
              */
             this.isLoading = true;
-            await this.finalizarSimulacao();
+            //await this.finalizarSimulacao();
             await this.enviarLeadRD();
             this.isLoading = false;
 
