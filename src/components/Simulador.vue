@@ -1007,7 +1007,8 @@
                 bodyFormData.set('cpfCnpj', that.valorCpfCnpj);
                 bodyFormData.set('telefone', that.valorTelefone);
                 bodyFormData.set('telefone 2', that.valorTelefone2);
-                bodyFormData.set('tempodeNegocio', that.valorNegocio);            
+                bodyFormData.set('tempodeNegocio', that.valorNegocio);    
+                bodyFormData.set('valorSolicitado', that.valorCredito);          
 
                 axios({
                     method: 'post',
