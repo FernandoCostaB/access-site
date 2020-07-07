@@ -1039,7 +1039,7 @@
              * funcao envia o lead tanto para o acbs quanto para o RD
              */
             this.isLoading = true;
-            //await this.finalizarSimulacao();
+            await this.finalizarSimulacao();
             await this.enviarLeadRD();
             this.isLoading = false;
 
