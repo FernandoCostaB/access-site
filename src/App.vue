@@ -1,7 +1,7 @@
 <template> <!--Adicionando branch-->
 
   <div id="app">   
-    <section id="alerta" style="width:100%; background:red; z-index: 9999;">        
+    <section id="alerta" style="width:100%; background:orange; z-index: 9999;">        
         <p class="color-normal"> <span class="color-negrito">Atenção! </span>
          A AccessCrédito não solicita depósito antecipado para a 
           liberação do empréstimo.</p>
