@@ -1,11 +1,17 @@
 <template> <!--Adicionando branch-->
-  <div id="app">
-    <div id="nav">
-      <!--router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link-->
-    
-      <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e">
-          <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+
+  <div id="app">   
+    <section id="alerta" style="width:100%; background:red; z-index: 9999;">        
+        <p class="color-normal"> <span class="color-negrito">Atenção! </span>
+         A AccessCrédito não solicita depósito antecipado para a 
+          liberação do empréstimo.</p>
+      </section>
+
+    <div id="nav">     
+
+      <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
+          <nav class="navbar navbar-expand beta-menu navbar-dropdown 
+          align-items-center navbar-fixed-top navbar-toggleable-sm" style="margin-top: 10px;">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <div class="hamburger">
                       <span></span>
@@ -60,6 +66,10 @@
   text-align: center;
   color: #2c3e50;
 }
+#alerta{
+  position: fixed;
+  top: 0;
+}
 
 #nav {
   padding: 30px;
@@ -72,4 +82,29 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.color-negrito{
+  color: #fff;
+  font-weight: bold;
+  padding: 0; margin: 0;
+}
+
+.color-normal{
+  color: #fff;
+  font-weight: normal;
+  padding: 0; margin: 0;
+  font-size: calc(4px + 0.8vw);
+}
+/*
+@media screen and (min-width: 301px) {
+  .color-normal,.color-negrito{
+    font-size: 9px;
+  }
+}*/
+/*
+@media screen and (max-width: 320px) {
+  .color-normal,.color-negrito {
+    font-size: 15px;
+  }
+}*/
 </style>
