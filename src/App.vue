@@ -1,11 +1,12 @@
 <template> <!--Adicionando branch-->
 
   <div id="app">   
-    <section id="alerta" style="width:100%; background:orange; z-index: 9999;">        
+    <section id="alerta" style="width:100%; background:orange; z-index: 9999;" v-show="showAlert">        
         <p class="color-normal"> <span class="color-negrito">Atenção! </span>
          A AccessCrédito não solicita depósito antecipado para a 
-          liberação do empréstimo.</p>
-      </section>
+          liberação do empréstimo. <span class="modal_x" v-on:click="showAlert = false"><i class="fas fa-times"></i></span> </p>
+        
+    </section>
 
     <div id="nav">     
 
@@ -57,6 +58,15 @@
     <router-view />
   </div>
 </template>
+<script>
+  export default {
+    data() { 
+      return {
+        showAlert: true
+      }
+    }
+  };
+</script>
 
 <style>
 #app {
@@ -67,6 +77,8 @@
   color: #2c3e50;
 }
 #alerta{
+  width: 100%;
+  padding: 2px;
   position: fixed;
   top: 0;
 }
@@ -93,18 +105,13 @@
   color: #fff;
   font-weight: normal;
   padding: 0; margin: 0;
-  font-size: calc(4px + 0.8vw);
+  font-size: calc(3px + 1vw);
+   line-height: 1;
 }
-/*
-@media screen and (min-width: 301px) {
-  .color-normal,.color-negrito{
-    font-size: 9px;
-  }
-}*/
-/*
-@media screen and (max-width: 320px) {
-  .color-normal,.color-negrito {
-    font-size: 15px;
-  }
-}*/
+.modal_x{
+        position: absolute;
+        margin-top: 0;
+        cursor: pointer;        
+        right: 15px;
+    }
 </style>
