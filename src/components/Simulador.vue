@@ -487,8 +487,7 @@
                     <input  type="checkbox" v-model="termoPrivacidade" true-value=true false-value=false>
                     <label class="p-label" style="font-size: 11px;"
                      v-bind:class="{ 'p-erro': (termoPrivacidade == 'false' ||  termoPrivacidade == false), '': (termoPrivacidade == 'true' ||  termoPrivacidade == true) }">
-                     Li, compreendi e concordo com a 
-                     <Modal msg="Modal" />
+                     Li, compreendi e concordo com a  <a href="#" @click="showModal = true"> Política de Privacidade </a>
                      bem como a consultar quaisquer informações a meu respeito nos sistemas dos serviços de informações e proteção ao 
                      crédito e no Sistema de Informações de Crédito - SCR - do Banco Central do Brasil. </label>                   
                 </div>                
@@ -560,7 +559,7 @@
             :can-cancel="false" 
             :color= "colorLoading"
             :is-full-page="true"></loading>      
-
+    <ModalPolitica v-show="showModal" @close="showModal = false"/>
   </div>
 </template>
 
@@ -571,10 +570,10 @@
     import Loading from 'vue-loading-overlay';
     // Import stylesheet loading
     import 'vue-loading-overlay/dist/vue-loading.css';
-    import Modal from "@/components/Modal.vue";
+    import ModalPolitica from "@/components/ModalPolitica.vue";    
 
     export default {
-    components: {TheMask,Loading,Modal},
+    components: {TheMask,Loading,ModalPolitica},
     name: "Simulador",
     data() {
         return {
@@ -621,7 +620,8 @@
         today: "",
         dayToday:"",
         produtoId: 9,
-        finalSucesso: false
+        finalSucesso: false,
+        showModal:false
         };
     },
     methods: {
@@ -839,8 +839,8 @@
                 });
         },
         finalizarSimulacao(){ 
-            //let uri = this.url + "leads";
-            let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
+            let uri = this.url + "leads";
+            //let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
             let that = this;
             let json = {
                 "Lead":{
