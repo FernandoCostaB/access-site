@@ -840,7 +840,6 @@
         },
         finalizarSimulacao(){ 
             let uri = this.url + "leads";
-            //let uri = 'https://teste-acbs.accesscredito.com.br/api/leads';
             let that = this;
             let json = {
                 "Lead":{
@@ -924,8 +923,7 @@
             }                        
         },
         calcularSimulacao(){ 
-            //let uri = this.url + "disbursements/simulation";
-            let uri = 'https://teste-acbs.accesscredito.com.br/api/disbursements/simulation';
+            let uri = this.url + "disbursements/simulation";
             let that = this;            
             this.isLoading = true;
 
