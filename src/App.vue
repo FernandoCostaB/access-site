@@ -1,11 +1,18 @@
 <template> <!--Adicionando branch-->
-  <div id="app">
-    <div id="nav">
-      <!--router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link-->
-    
-      <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e">
-          <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+
+  <div id="app">   
+    <section id="alerta" style="width:100%; background:orange; z-index: 9999;" v-show="showAlert">        
+        <p class="color-normal"> <span class="color-negrito">Atenção! </span>
+         A AccessCrédito não solicita depósito antecipado para a 
+          liberação do empréstimo. <span class="modal_x" v-on:click="showAlert = false"><i class="fas fa-times"></i></span> </p>
+        
+    </section>
+
+    <div id="nav">     
+
+      <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
+          <nav class="navbar navbar-expand beta-menu navbar-dropdown 
+          align-items-center navbar-fixed-top navbar-toggleable-sm" style="margin-top: 10px;">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <div class="hamburger">
                       <span></span>
@@ -51,6 +58,15 @@
     <router-view />
   </div>
 </template>
+<script>
+  export default {
+    data() { 
+      return {
+        showAlert: true
+      }
+    }
+  };
+</script>
 
 <style>
 #app {
@@ -59,6 +75,12 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+#alerta{
+  width: 100%;
+  padding: 2px;
+  position: fixed;
+  top: 0;
 }
 
 #nav {
@@ -72,4 +94,24 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.color-negrito{
+  color: #fff;
+  font-weight: bold;
+  padding: 0; margin: 0;
+}
+
+.color-normal{
+  color: #fff;
+  font-weight: normal;
+  padding: 0; margin: 0;
+  font-size: calc(3px + 1vw);
+   line-height: 1;
+}
+.modal_x{
+        position: absolute;
+        margin-top: 0;
+        cursor: pointer;        
+        right: 15px;
+    }
 </style>
