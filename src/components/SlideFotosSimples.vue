@@ -19,6 +19,7 @@
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Com a AccessCrédito pude investir no meu sonho. Crédito facilitado. Atendimento diferenciado.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">EULIS SILVA DE LIMA</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Padaria</cite></span>
                       </blockquote>
                     </div>
 
@@ -39,6 +40,7 @@
                         <blockquote class="blockquote text-center">
                           <p class="mb-0">Por ser cliente há muito tempo. A taxa de juros é diferenciada. AccessCrédito me ajudou a investir no meu negócio.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">RAIMUNDO BARROSO</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Açougue</cite></span>
                         </blockquote>
                       </div>
                     </div>
@@ -57,6 +59,7 @@
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Trabalho com vários bancos. A AccessCrédito tem a facilidade de crédito disponível sem burocracia.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">TELIANE AMARAL</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Mercadinho</cite></span>
                       </blockquote>
                     </div>
                   </div>
@@ -74,6 +77,7 @@
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Todo negócio quando você começa precisa sempre de um suporte. E a AccessCrédito foi um pai pra mim. Abriu portas sem muitas burocracias me ajudando a crescer e desenvolver mais rápido.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">MARCILENE ROCHA</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Loja de Variedades</cite></span>
                       </blockquote>
                     </div>
                   </div>
@@ -91,6 +95,7 @@
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Comecei com conserto de relógio, a AccessCrédito ajudou a investir em outro negócio. Hoje eu trabalho com roupas esportivas.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">SEBASTIÃO FERNANDES</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Conserto de Jóias e Venda de Roupas</cite></span>
                       </blockquote>
                     </div>
                   </div>
@@ -108,6 +113,7 @@
                       <blockquote class="blockquote text-center">
                           <p class="mb-0">Tenho minha banca desde 2010. A AccessCrédito faz parte desse sonho.</p>
                           <footer class="blockquote-footer"><cite title="Source Title">RAIMUNDA ORENCIO</cite></footer>
+                          <span style="text-align:center"><cite title="Source Title">Banca de Frutas</cite></span>
                       </blockquote>
                     </div>
                   </div>
