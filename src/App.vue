@@ -12,7 +12,7 @@
 
       <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
           <nav class="navbar navbar-expand beta-menu navbar-dropdown 
-          align-items-center navbar-fixed-top navbar-toggleable-sm" style="margin-top: 10px;">
+          align-items-center navbar-fixed-top navbar-toggleable-sm " v-bind:class="{ 'correcao-top': showAlert, '': false }">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <div class="hamburger">
                       <span></span>
@@ -114,4 +114,7 @@
         cursor: pointer;        
         right: 15px;
     }
+.correcao-top{
+  margin-top: 10px;
+}
 </style>
