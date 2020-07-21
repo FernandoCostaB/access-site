@@ -36,7 +36,9 @@ export default {
   name: "About",
   components: {
     FloatActionButton
-  }
-
+  },
+  mounted() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    },
 };
 </script>
