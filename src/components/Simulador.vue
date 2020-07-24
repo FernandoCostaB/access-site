@@ -1004,7 +1004,7 @@
                
                 let uri = 'https://www.rdstation.com.br/api/1.2/conversions';
 
-                this.getCookie();
+                that.getCookie();
 
                 //Ele nao recebe json, ele usa o form-data
                 var bodyFormData = new FormData();
