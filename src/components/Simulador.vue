@@ -1017,8 +1017,8 @@
                 bodyFormData.set('telefone 2', that.valorTelefone2);
                 bodyFormData.set('tempodeNegocio', that.valorNegocio);    
                 bodyFormData.set('valorSolicitado', that.valorCredito); 
-                bodyFormData.set('traffic_source', this.traffic_source);   
-                bodyFormData.set('traffic_medium', this.traffic_medium);     
+                bodyFormData.set('traffic_source', that.traffic_source);   
+                bodyFormData.set('traffic_medium', that.traffic_medium);     
               
 
                 axios({
