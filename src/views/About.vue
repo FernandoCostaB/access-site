@@ -1,24 +1,59 @@
 <template>
   <div class="about">
-    <section class="engine"><a href="https://mobirise.info/s">free bootstrap theme</a></section><section class="mbr-section content4 cid-rQcKCONXWn" id="content4-13">
-      <div class="container">
-          <div class="media-container-row">
-              <div class="title col-12 col-md-8">
-                  <h2 class="align-center pb-3 mbr-fonts-style display-2">
-                      <br>ACCESSCRÉDITO</h2>
-                      <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-5"><strong>AccessCrédito em Manaus:</strong>
-                      <br><br><div>A AccessCrédito é uma instituição de Microfinanças que tem o objetivo de fomentar o crédito para micro e pequenos empreendedores em Manaus, capital do estado do Amazonas.</div><br><div>
-                      </div><div>
-                      </div><div>Está consolidada em Manaus desde 2011. Durante todo esse tempo vem concedendo crédito e atendendo a milhares de pessoas que já se beneficiaram com a oportunidade.</div><br><div>
-                      </div><div>
-                      </div><div>O microcrédito é uma forma rápida, simples e sem burocracia de conseguir um empréstimo para desenvolver seu próprio negócio e com isso promover também o desenvolvimento da economia local.</div><br><div>
-                      </div><div>
-                      </div><div><strong>Access no mundo:</strong></div><br><div><strong>
-                      </strong></div><div>A rede da Access opera em vários países da Ásia Central e da África, com sua sede administrativa na Alemanha, tem o foco voltado para as micro, pequenas e médias empresas. Atualmente, compreende dez instituições de Microfinanças e está presente em 4 continentes.</div></h3>                                  
-              </div>
-          </div>
+      
+<section class="engine"><a href="https://accesscredito.com.br">AccessCrédito</a></section>
+<section class="cid-s5B7ZyQvOU img-one mbr-fullscreen mbr-parallax-background" id="header2-1">
+    <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(35, 35, 35);"></div>
+    <div class="container align-center">
+        <div class="row justify-content-md-left">
+            <div class="box-text mbr-white col-md-10">
+                
+                </div>
+                <h2 class="p-text mbr-section-title pb-3 align-center mbr-fonts-style display-2"><span class="span-icon mbr-section-title pb-3 align-center mbr-fonts-style display-2"></span>
+                Conheça nossa Instituição</h2>
+        </div>
+    </div>
+</section>
+<section class="img-two counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+        <div class="container">
+            <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2">AccessCrédito em Manaus</h2>
+            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
+                <p class="text-left">
+                Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis<br>
+                no botão azul que fica no canto direito abaixo.
+                </p>
+            </h3>
+            </div>
+      </section>
+      <section class=" counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+          <img class="img-t" src="/assets/images/access-manaus.png" alt="">
+          </section>
+          <section class="img-two counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+        <div class="container">
+            <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2">AccessCrédito no Mundo</h2>
+            <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
+                <p class="text-left">
+                Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis<br>
+                no botão azul que fica no canto direito abaixo.
+                </p>
+            </h3>
+            </div>
+            
+      </section>
+      <section class="img-4 counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+        <img class="img-t" src="/assets/images/access-mundo.png" alt="">
+          </section>
+          <section class="counters1 counters cid-rQ8iTALhmD section-4" id="counters1-w">
+        <div class="container">
+            <h2 class="text-4 mbr-section-title pb-3 align-center mbr-fonts-style display-2">Transformando a Realidade do Empreendedor!</h2>
       </div>
-    </section>
+      </section>
+          <Footer />
+      
+
+      
     <!--Botao solicite aqui-->
     <div id="scrollToTop" class="scrollToTop mbr-arrow-up animated infinite pulse">
 
@@ -31,14 +66,102 @@
 <script>
 // @ is an alias to /src
 import FloatActionButton from "@/components/FloatActionButton.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "About",
   components: {
-    FloatActionButton
-  },
+    FloatActionButton,
+    Footer
+   },
   mounted() {
-        document.body.scrollTop = document.documentElement.scrollTop = 0;
+        document.body.scrollTop = document.documentElement.scrollTop = 0; // Levar a pagina ao topo
     },
 };
 </script>
+<style>
+.img-one {
+    width: 100%;
+    background-image: url(/assets/images/imgsobre.png); 
+    
+    }
+.text-about { 
+    margin-top: 63%;
+    font-size: 50px; 
+    font-weight: 400;
+    text-align: left;
+}
+.p-text { 
+    color: #ffffff;
+    margin-top: 40%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 400;
+}
+.box-text { 
+    align-items: left;
+}   
+.img-icon {
+    padding-left: 22px;
+
+}
+.img-two {
+    background-image: url(/assets/images/mundibg.jpg); 
+    
+    }
+.cid-s5BFixW7a8 { 
+    background: url(/assets/images/mundibg.jpg);
+}
+.text-about-one { 
+    font-size: 50px; 
+    font-weight: 400;
+    color: #353535;
+    margin-bottom: 60%;
+}
+.p-text-one { 
+    color: #353535;
+
+    text-align: left;
+}
+.img-t {
+    width: 100%; 
+    
+    }
+    .header-t { 
+        margin-top: 60px;
+    }
+.img-4 {
+    background-image: url(); 
+    
+    }
+.section-4 {
+    height: 150px; 
+    align-items: center;
+    font-weight: 700;
+    display: flex;
+    }
+.text-4 {
+    font-weight: 400;
+    }
+.text-white {
+    color: #ffffff
+    }
+.span-icon { 
+    width: 64px;
+    height: 64px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background-image: url(/assets/images/line-chart.png); /*Colocando cor com transparencia*/
+    display: flex;
+    align-items: center; /*Alinhando na horizontal*/
+    justify-content: center; /*Alinhando na vertical*/
+}
+
+@media (max-width: 767px) { 
+  .span-icon { 
+    display: none;
+  }
+} 
+
+
+</style>
