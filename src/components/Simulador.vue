@@ -621,7 +621,9 @@
         dayToday:"",
         produtoId: 9,
         finalSucesso: false,
-        showModal:false
+        showModal:false,
+        traffic_source: "",
+        traffic_medium: ""
         };
     },
     methods: {
@@ -805,12 +807,16 @@
             let that = this;
             let uri = 'https://www.rdstation.com.br/api/1.2/conversions';
 
+            this.getCookie();
+
             //Ele nao recebe json, ele usa o form-data
             var bodyFormData = new FormData();
             bodyFormData.set('email', this.valorContato);
             bodyFormData.set('identificador', 'lead1-site-vue');
             bodyFormData.set('token_rdstation', 'f3b828f52805c8603ffd2ec578c7af1a');
             bodyFormData.set('nome', this.valorNome);
+            bodyFormData.set('traffic_source', this.traffic_source);   
+            bodyFormData.set('traffic_medium', this.traffic_medium);   
 
             this.isLoading = true;
 
@@ -924,6 +930,8 @@
         },
         calcularSimulacao(){ 
             let uri = this.url + "disbursements/simulation";
+
+            //let uri = "https://acbs.accesscredito.com.br/api/disbursements/simulation";
             let that = this;            
             this.isLoading = true;
 
@@ -996,6 +1004,8 @@
                
                 let uri = 'https://www.rdstation.com.br/api/1.2/conversions';
 
+                that.getCookie();
+
                 //Ele nao recebe json, ele usa o form-data
                 var bodyFormData = new FormData();
                 bodyFormData.set('email', that.valorContato);
@@ -1006,7 +1016,10 @@
                 bodyFormData.set('telefone', that.valorTelefone);
                 bodyFormData.set('telefone 2', that.valorTelefone2);
                 bodyFormData.set('tempodeNegocio', that.valorNegocio);    
-                bodyFormData.set('valorSolicitado', that.valorCredito);          
+                bodyFormData.set('valorSolicitado', that.valorCredito); 
+                bodyFormData.set('traffic_source', that.traffic_source);   
+                bodyFormData.set('traffic_medium', that.traffic_medium);     
+              
 
                 axios({
                     method: 'post',
@@ -1046,6 +1059,40 @@
             }else {
                 alert("Erro ao enviar Simulação");
             }
+        },
+        getCookie() {
+            // "__trf.src" é o nome do cookie para traffic_source e so existe no site da access em produção
+            var name = "__trf.src=";
+            let valor_cookie = "";
+           
+            var decodedCookie = decodeURIComponent(document.cookie);
+            var ca = decodedCookie.split(';');
+            for(var i = 0; i <ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    //existe cookie com esse nome
+                    valor_cookie =  c.substring(name.length, c.length);
+                }
+            }
+            //nao achou entao set como none, para Desconhecido
+            if(valor_cookie == ""){
+             this.traffic_source = "none";
+             this.traffic_medium = "site_principal";
+             
+            }else{
+                //quando existe cookie, a documentacao pede para mandar vazio o traffic_medium
+                this.traffic_source = valor_cookie;
+                this.traffic_medium = "";
+            }
+            //teste pegando o cookie direto de produção
+            //trafico direto
+            //this.traffic_source = "encoded_eyJmaXJzdF9zZXNzaW9uIjp7InZhbHVlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJleHRyYV9wYXJhbXMiOnt9fSwiY3VycmVudF9zZXNzaW9uIjp7InZhbHVlIjoiKG5vbmUpIiwiZXh0cmFfcGFyYW1zIjp7fX0sImNyZWF0ZWRfYXQiOjE1OTU2MTc2NjE5NDF9";
+            //Busca Orgânica | Google
+            //this.traffic_source = "encoded_eyJmaXJzdF9zZXNzaW9uIjp7InZhbHVlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJleHRyYV9wYXJhbXMiOnt9fSwiY3VycmVudF9zZXNzaW9uIjp7InZhbHVlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8iLCJleHRyYV9wYXJhbXMiOnt9fSwiY3JlYXRlZF9hdCI6MTU5NTYxOTI4MDI0OH0=";
+            //console.log(this.cookie);
         }
     }
     };
