@@ -1,18 +1,13 @@
 <template> <!--Adicionando branch-->
 
   <div id="app">   
-    <section id="alerta" style="width:100%; background:orange; z-index: 9999;" v-show="showAlert">        
-        <p class="color-normal"> <span class="color-negrito">Atenção! </span>
-         A AccessCrédito não solicita depósito antecipado para a 
-          liberação do empréstimo. <span class="modal_x" v-on:click="showAlert = false"><i class="fas fa-times"></i></span> </p>
-        
-    </section>
+    
 
-    <!--<div id="nav">     
+    <div id="">     
 
       <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
-          <nav class="navbar navbar-expand beta-menu navbar-dropdown 
-          align-items-center navbar-fixed-top navbar-toggleable-sm" v-bind:class="{ 'correcao-top': showAlert, '': false }">
+          <nav class="navbar1 navbar-expand beta-menu navbar-dropdown 
+          align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent" v-bind:class="{ 'correcao-top': showAlert, '': false }">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <div class="hamburger">
                       <span></span>
@@ -31,22 +26,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
                       <li class="nav-item">
-                          <router-link class="nav-link link text-black display-4" to="/about">Sobre</router-link>                        
+                          <router-link class="nav-link link text-white display-4" to="/about">Sobre</router-link>                        
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://api.whatsapp.com/send?phone=5592994941733" target="blank"><span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span></a>    
+                          <a class="nav-link link text-white display-4" href="https://api.whatsapp.com/send?phone=5592994941733" target="blank"><span class="socicon-whatsapp socicon mbr-iconfont mbr-iconfont-social"></span></a>    
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://www.facebook.com/accesscreditobrasil" target="blank"><span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span></a>
+                          <a class="nav-link link text-white display-4" href="https://www.facebook.com/accesscreditobrasil" target="blank"><span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://www.instagram.com/accesscredito/" target="blank"><span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span></a>
+                          <a class="nav-link link text-white display-4" href="https://www.instagram.com/accesscredito/" target="blank"><span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link link text-black display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
+                          <a class="nav-link link text-white display-4" href="https://www.youtube.com/channel/UChV1fMiMyuK17_wAGVABcVg" target="blank"><span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span></a>
                       </li>
                       <li class="nav-item">
-                          <button class="minhaconta"><a class="nav-link link text-black display-4" href="https://blog.accesscredito.com.br/" target="blank">Blog</a></button>
+                          <button class="minhaconta"><a class="nav-link link text-white display-4" href="https://blog.accesscredito.com.br/" target="blank">Blog</a></button>
                       </li>
                     
                   </ul>
@@ -54,7 +49,7 @@
           </nav>
       </section>
 
-    </div>-->
+    </div>
     <router-view />
   </div>
 </template>
@@ -116,5 +111,38 @@
     }
 .correcao-top{
   margin-top: 10px;
+}
+.navbar1 {
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-align-items: center;
+    -webkit-justify-content: space-between;
+}
+.navbar1 {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+}
+
+.cid-rQ6Q2NP9fh .navbar1.navbar-short {
+    min-height: 60px;
+    transition: all .2s;
+}
+
+.cid-rQ6Q2NP9fh .navbar1 {
+    background: #353535;
+    transition: none;
+    min-height: 77px;
+    padding: .5rem 0;
+}
+.text-white { 
+    color: #ffffff;
 }
 </style>

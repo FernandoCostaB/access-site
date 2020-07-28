@@ -1,14 +1,9 @@
 <template> <!--Adicionando branch-->
 
   <div id="app">   
-    <section id="alerta" style="width:100%; background:orange; z-index: 9999;" v-show="showAlert">        
-        <p class="color-normal"> <span class="color-negrito">Atenção! </span>
-         A AccessCrédito não solicita depósito antecipado para a 
-          liberação do empréstimo. <span class="modal_x" v-on:click="showAlert = false"><i class="fas fa-times"></i></span> </p>
-        
-    </section>
+    
 
-    <!--<div id="nav">     
+    <div id="nav">     
 
       <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
           <nav class="navbar navbar-expand beta-menu navbar-dropdown 
@@ -54,7 +49,7 @@
           </nav>
       </section>
 
-    </div>-->
+    </div>
     <router-view />
   </div>
 </template>

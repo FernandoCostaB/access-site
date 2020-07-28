@@ -1,5 +1,6 @@
 <template>
-  <div class="contact">      
+  <div class="contact">
+      <NavMenu />      
     <section class="engine"><a href="https://accesscredito.com.br">AccessCrédito</a></section><section class="mbr-section form1 cid-rQY8hBKryH" id="form1-2s">
       <div class="container">
         <div class="row justify-content-center">
@@ -58,11 +59,13 @@
 <script>
 // @ is an alias to /src
 import FloatActionButton from "@/components/FloatActionButton.vue";
+import NavMenu from "@/components/NavMenu.vue";
 
 export default {
   name: "Contact",
   components: {
-    FloatActionButton
+    FloatActionButton,
+    NavMenu
   },
     mounted() {
         document.body.scrollTop = document.documentElement.scrollTop = 0;

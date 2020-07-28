@@ -1,7 +1,6 @@
 <template>
   <div class="about">
-      
-<section class="engine"><a href="https://accesscredito.com.br">AccessCrédito</a></section>
+      <NavAbout />
 <section class="cid-s5B7ZyQvOU img-one mbr-fullscreen mbr-parallax-background" id="header2-1">
     <div class="mbr-overlay" style="opacity: 0.3; background-color: rgb(35, 35, 35);"></div>
     <div class="container align-center">
@@ -15,13 +14,18 @@
     </div>
 </section>
 <section class="img-two counters1 counters cid-rQ8iTALhmD" id="counters1-w">
-    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+    <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(255, 255, 255);"></div>
         <div class="container">
             <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2">AccessCrédito em Manaus</h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
                 <p class="text-left">
-                Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis<br>
-                no botão azul que fica no canto direito abaixo.
+                A AccessCrédito é uma Instituição de Microfinanças que tem como objetivo de fomentar o crédito para o micro e pequenos Empreendedors
+                em Manaus, capital do estado do Amazonas. <br><br>
+                Está consolidada em Manaus desde 2011. Durante todo esse tempo vem concedendo crédito a milhares de pessoas que já
+                se beneficiaram com a oportunidade. <br><br>
+                O microcrédito é uma forma rápida, simples e sem burocracia de conseguir um emprestimo para desenvolver seu propio negócio e 
+                com isso promover também o desenvolvimento da economia local
+                
                 </p>
             </h3>
             </div>
@@ -30,13 +34,14 @@
           <img class="img-t" src="/assets/images/access-manaus.png" alt="">
           </section>
           <section class="img-two counters1 counters cid-rQ8iTALhmD" id="counters1-w">
-    <div class="mbr-overlay" style="opacity: 0.8; background-color: rgb(255, 255, 255);"></div>
+    <div class="mbr-overlay" style="opacity: 0.9; background-color: rgb(255, 255, 255);"></div>
         <div class="container">
             <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2">AccessCrédito no Mundo</h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
                 <p class="text-left">
-                Nos encontre através dos contatos abaixo, ou nos vários canais disponíveis<br>
-                no botão azul que fica no canto direito abaixo.
+                A rede da Access opera em vários paisés da Ásia central e da África, com sua sede administrativa na Alemanha,
+                tem o foco voltado para as micro, pequenas e média empresas.<br>
+                Atualmente, compreende dez Instituição de Microfinanças e está presente em 4 continentes.
                 </p>
             </h3>
             </div>
@@ -67,12 +72,14 @@
 // @ is an alias to /src
 import FloatActionButton from "@/components/FloatActionButton.vue";
 import Footer from "@/components/Footer.vue";
+import NavAbout from "@/components/NavAbout.vue";
 
 export default {
   name: "About",
   components: {
     FloatActionButton,
-    Footer
+    Footer,
+    NavAbout
    },
   mounted() {
         document.body.scrollTop = document.documentElement.scrollTop = 0; // Levar a pagina ao topo
@@ -83,7 +90,7 @@ export default {
 .img-one {
     width: 100%;
     background-image: url(/assets/images/imgsobre.png); 
-    
+
     }
 .text-about { 
     margin-top: 63%;
@@ -121,7 +128,7 @@ export default {
 .p-text-one { 
     color: #353535;
 
-    text-align: left;
+    text-align: center;
 }
 .img-t {
     width: 100%; 
@@ -160,6 +167,12 @@ export default {
 @media (max-width: 767px) { 
   .span-icon { 
     display: none;
+  }
+} 
+@media (max-width: 767px) { 
+  .p-text { 
+    padding-left: 10%;
+    padding-top: 10%;
   }
 } 
 
