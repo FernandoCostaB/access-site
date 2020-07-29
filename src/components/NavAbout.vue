@@ -110,7 +110,7 @@
         right: 15px;
     }
 .correcao-top{
-  margin-top: 10px;
+  margin-top: 0px;
 }
 
 .navbar1 {
@@ -124,8 +124,7 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-    margin-top: 0%;
-    height: 90px;
+    
 }
 
 .cid-rQ6Q2NP9fh .navbar1.navbar-short {
@@ -134,7 +133,7 @@
 }
 
 .cid-rQ6Q2NP9fh .navbar1 {
-    background-color:#353535;
+    background-color:#2e2e2e;
     transition: none;
     min-height: 77px;
     padding: .5rem 0;

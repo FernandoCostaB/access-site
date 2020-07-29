@@ -806,6 +806,7 @@ section.lazy-placeholder:after {
   -webkit-justify-content: flex-end;
   padding-right: 5rem;
   width: auto;
+  padding-top: 0.7%;
 }
 .cid-rQ6Q2NP9fh .navbar-toggleable-sm .navbar-collapse .navbar-nav {
   flex-wrap: wrap;
@@ -1214,8 +1215,7 @@ section.lazy-placeholder:after {
   transition: none;
   min-height: 77px;
   padding: .5rem 0;
-  margin-top: 0%;
-  height: 85px;
+
 }
 .cid-rQ6Q2NP9fh .navbar-dropdown.bg-color.transparent.opened {
   background: #ffffff;
