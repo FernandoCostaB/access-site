@@ -112,12 +112,7 @@
 .correcao-top{
   margin-top: 10px;
 }
-.navbar1 {
-    display: -webkit-flex;
-    -webkit-flex-wrap: wrap;
-    -webkit-align-items: center;
-    -webkit-justify-content: space-between;
-}
+
 .navbar1 {
     position: relative;
     display: -ms-flexbox;
