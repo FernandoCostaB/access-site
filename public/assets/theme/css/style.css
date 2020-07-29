@@ -1875,6 +1875,7 @@ sub,sup{
   } 
   img{
     border-style:none;
+    
   } 
   svg:not(:root)
   {

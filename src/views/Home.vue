@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    <NavMenu />
       <section class="engine">
           <a href="https://accesscredito.com.br">portfolio website templates</a>
       </section>
@@ -381,8 +381,12 @@ import FloatActionButton from "@/components/FloatActionButton.vue";
 import ScrollButtonDown from "@/components/ScrollButtonDown.vue";
 import Count from "@/components/Count.vue";
 import ScrollToTop from "@/components/ScrollToTop.vue";
+import NavMenu from "@/components/NavMenu.vue";
 export default {
   name: "Home",
+  mounted() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0; // Levar a pagina ao topo
+    },
   components: {
     Simulador,
     SlideFotosSimples,
@@ -391,8 +395,9 @@ export default {
     FloatActionButton,
     ScrollButtonDown,
     Count,
-    ScrollToTop
+    ScrollToTop,
+    NavMenu
   }
-
 };
+
 </script>
