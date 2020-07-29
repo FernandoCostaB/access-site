@@ -100,7 +100,7 @@ export default {
 }
 .p-text { 
     color: #ffffff;
-    margin-top: 40%;
+    margin-top: 48%;
     text-align: center;
     font-size: 48px;
     font-weight: 400;
@@ -173,6 +173,12 @@ export default {
   .p-text { 
     padding-left: 10%;
     padding-top: 10%;
+  }
+}
+@media (max-width: 1024px) { 
+  .p-text { 
+    margin-top: 68%;
+    font-size: 40px;
   }
 } 
 
