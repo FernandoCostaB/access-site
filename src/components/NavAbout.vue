@@ -19,7 +19,7 @@
               <div class="menu-logo">
                   <div class="navbar-brand">
                       <span class="navbar-logo">
-                        <a href="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></a></span>
+                        <router-link to="/"><img src="assets/images/logo_branco.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></router-link></span>
                   </div>
               </div>
 
@@ -124,6 +124,8 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
+    margin-top: 0%;
+    height: 90px;
 }
 
 .cid-rQ6Q2NP9fh .navbar1.navbar-short {
@@ -132,7 +134,7 @@
 }
 
 .cid-rQ6Q2NP9fh .navbar1 {
-    background: #353535;
+    background-color:#353535;
     transition: none;
     min-height: 77px;
     padding: .5rem 0;
@@ -140,4 +142,6 @@
 .text-white { 
     color: #ffffff;
 }
+ 
+
 </style>

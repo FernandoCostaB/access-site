@@ -384,6 +384,9 @@ import ScrollToTop from "@/components/ScrollToTop.vue";
 import NavMenu from "@/components/NavMenu.vue";
 export default {
   name: "Home",
+  mounted() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0; // Levar a pagina ao topo
+    },
   components: {
     Simulador,
     SlideFotosSimples,
@@ -395,6 +398,6 @@ export default {
     ScrollToTop,
     NavMenu
   }
-
 };
+
 </script>

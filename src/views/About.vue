@@ -158,7 +158,7 @@ export default {
     height: 64px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    background-image: url(/assets/images/line-chart.png); /*Colocando cor com transparencia*/
+    background-image: url(); /*Icone do header*/
     display: flex;
     align-items: center; /*Alinhando na horizontal*/
     justify-content: center; /*Alinhando na vertical*/
