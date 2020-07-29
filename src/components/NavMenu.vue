@@ -19,7 +19,7 @@
               <div class="menu-logo">
                   <div class="navbar-brand">
                       <span class="navbar-logo">
-                        <a href="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></a></span>
+                        <router-link to="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></router-link></span>
                   </div>
               </div>
 
@@ -112,5 +112,7 @@
 .correcao-top{
   margin-top: 10px;
 }
-
+.navbar-logo {
+  padding-top: 5px;
+}
 </style>
