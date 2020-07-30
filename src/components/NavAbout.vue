@@ -5,7 +5,7 @@
 
     <div id="">     
 
-      <section class="menu cid-rQ6Q2NP9fh" once="menu" id="menu2-e" >          
+      <section class="menu cid-rQ6Q2NP9fh cid-rQ6Q2NP9fh1" once="menu" id="menu2-e" >          
           <nav class="navbar1 navbar-expand beta-menu navbar-dropdown 
           align-items-center navbar-fixed-top navbar-toggleable-sm bg-color transparent" v-bind:class="{ 'correcao-top': showAlert, '': false }">
               <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,6 +141,8 @@
 .text-white { 
     color: #ffffff;
 }
- 
+.cid-rQ6Q2NP9fh1 .navbar-dropdown.bg-color.transparent.opened {
+    background: #353535;
+}
 
 </style>
