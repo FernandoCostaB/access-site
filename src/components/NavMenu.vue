@@ -16,7 +16,7 @@
                       <span></span>
                   </div>
               </button>
-              <div class="menu-logo">
+              <div class="menu-logo menu-logo1">
                   <div class="navbar-brand">
                       <span class="navbar-logo">
                         <router-link to="/"><img src="assets/images/logo.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></router-link></span>
@@ -95,7 +95,9 @@
   font-weight: bold;
   padding: 0; margin: 0;
 }
-
+.menu-logo1 { 
+  padding-top: 6px;
+}
 .color-normal{
   color: #fff;
   font-weight: normal;
@@ -114,5 +116,10 @@
 }
 .navbar-logo {
   padding-top: 5px;
+}
+@media (max-width: 767px) { 
+  .menu-logo1 { 
+    padding-top: 0px;
+  }
 }
 </style>
