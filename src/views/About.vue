@@ -103,7 +103,7 @@ export default {
 .p-text { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
-    margin-top: 45%;
+    margin-top: 37%;
     text-align: center;
     font-size: 48px;
     font-weight: 600;
@@ -181,19 +181,25 @@ export default {
 
 @media (max-width: 767px) { 
   .span-icon { 
-    display: none;
+      width: 64px;
+      height: 64px;
+  }
+}
+@media (max-width: 280px) { 
+  .span-icon { 
+      display: none;
   }
 } 
 @media (max-width: 767px) { 
   .p-text { 
     padding-left: 10%;
-    padding-top: 10%;
+    padding-top: 0%;
   }
 }
 @media (max-width: 1024px) { 
   .p-text { 
-    margin-top: 30%;
-    font-size: 20px;
+    margin-top: 33%;
+    font-size: 22px;
   }
 } 
 
