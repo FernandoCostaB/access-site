@@ -3,9 +3,9 @@
       <NavAbout />
 <section class="img-one cid-s5B7ZyQvOU mbr-parallax-background " id="header2-1">
     <div class="mbr-overlay" style="opacity: 1; background-color: rgb(35, 35, 35);">
-    <div id="fundo-externo">
-        <div id="fundo">
-                <img class="img-one" src="/assets/images/imgsobre2.png" alt="">
+        <div id="fundo-externo">
+            <div id="fundo" style="opacity: 0.9; background-color: rgb(35, 35, 35);">
+                <img class="img-one" src="/assets/images/img-head-site.png" alt="">
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
             </h3>
             </div>
       </section>
-      <section class=" counters1 counters cid-rQ8iTALhmD" id="counters1-w">
+      <section class="img-c counters1 counters cid-rQ8iTALhmD" id="counters1-w">
           <img class="img-t" src="/assets/images/access-manaus.png" alt="">
           </section>
           <section class="img-two counters1 counters cid-rQ8iTALhmD" id="counters1-w">
@@ -54,7 +54,7 @@
       <section class="img-4 counters1 counters cid-rQ8iTALhmD" id="counters1-w">
         <img class="img-t" src="/assets/images/access-mundo.png" alt="">
           </section>
-          <section class="counters1 counters cid-rQ8iTALhmD section-4" id="counters1-w">
+          <section class="text-color counters1 counters cid-rQ8iTALhmD section-4" id="counters1-w">
         <div class="container">
             <h2 class="text-4 mbr-section-title pb-3 align-center mbr-fonts-style display-2">Transformando a Realidade do Empreendedor!</h2>
       </div>
@@ -89,14 +89,16 @@ export default {
 </script>
 <style>
 .img-one {
-    width: 100%;
-    background-image: url(); 
+    width: 100%; 
     }
 .text-about { 
     margin-top: 63%;
     font-size: 50px; 
     font-weight: 400;
     text-align: left;
+}
+.img-c { 
+    padding: 0%;
 }
 .p-text { 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -144,7 +146,7 @@ export default {
         margin-top: 60px;
     }
 .img-4 {
-    background-image: url(); 
+    padding: 0%; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 .section-4 {
@@ -156,6 +158,9 @@ export default {
 .text-4 {
     font-weight: 400;
     }
+.text-color { 
+    background-color: #ffffff;
+}
 .text-white {
     color: #ffffff
     }
