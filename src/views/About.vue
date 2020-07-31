@@ -11,7 +11,7 @@
     </div>
     <div class="container align-center">
         <div class="row justify-content-md-left">
-            <div class="box-text mbr-white col-md-10">
+            <div class="box-text text-left1 mbr-white col-md-10">
                 </div>
                 <h2 class="p-text mbr-section-title pb-3 align-center mbr-fonts-style display-2"><span class="span-icon mbr-section-title pb-3 align-center mbr-fonts-style display-2"></span>
                 Conheça nossa Instituição</h2>
@@ -56,7 +56,7 @@
           </section>
           <section class="text-color counters1 counters cid-rQ8iTALhmD section-4" id="counters1-w">
         <div class="container">
-            <h2 class="text-4 mbr-section-title pb-3 align-center mbr-fonts-style display-2">Transformando a Realidade do Empreendedor!</h2>
+            <h2 class="text-4 mbr-section-title pb-3 align-center mbr-fonts-style display-2">Transformando a realidade do empreendedor!</h2>
       </div>
       </section>
           <Footer />
@@ -108,7 +108,7 @@ export default {
     font-size: 48px;
     font-weight: 600;
 }
-.box-text { 
+.text-left1 { 
     align-items: left;
 }   
 .img-icon {
@@ -143,6 +143,9 @@ export default {
     
     }
     .header-t { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 500;
+        font-size: 40px;
         margin-top: 60px;
     }
 .img-4 {
@@ -156,7 +159,8 @@ export default {
     display: flex;
     }
 .text-4 {
-    font-weight: 400;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
     }
 .text-color { 
     background-color: #ffffff;

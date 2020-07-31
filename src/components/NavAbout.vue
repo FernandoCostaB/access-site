@@ -16,7 +16,7 @@
                       <span></span>
                   </div>
               </button>
-              <div class="menu-logo">
+              <div class="menu-logo menu-logo1">
                   <div class="navbar-brand">
                       <span class="navbar-logo">
                         <router-link to="/"><img src="assets/images/logo_branco.png" alt="AccessCrédito" title="" style="height: 3.8rem;"></router-link></span>
@@ -144,5 +144,12 @@
 .cid-rQ6Q2NP9fh1 .navbar-dropdown.bg-color.transparent.opened {
     background: #353535;
 }
-
+.menu-logo1 { 
+  padding-top: 6px;
+}
+@media (max-width: 767px) { 
+  .menu-logo1 { 
+    padding-top: 0px;
+  }
+}
 </style>
