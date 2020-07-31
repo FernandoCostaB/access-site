@@ -185,7 +185,7 @@ export default {
       height: 64px;
   }
 }
-@media (max-width: 280px) { 
+@media (max-width: 335px) { 
   .span-icon { 
       display: none;
   }
