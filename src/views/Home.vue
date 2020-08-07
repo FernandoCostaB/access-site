@@ -331,20 +331,6 @@
                                 </div>
                         </div>
                     </div>
-    
-    
-                    <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
-                        <div class="panel-item p-3" style="background-color: #EFEFEF;">
-                            <div class="card-img pb-3">
-                                <span class="mbr-iconfont socicon-viber socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
-                            </div>
-                            <div class="card-text">
-                                <a href="tel:923307-4550"><button class="button_footer1"><h3 class="pt-3 pb-3 mbr-fonts-style display-2" style="font-size: 20px;">
-                                        (92)3307-4550
-                                </h3></button></a>
-                                </div>
-                        </div>
-                    </div>
                     <div class="card p-3 align-center col-12 col-md-6 col-lg-4">
                         <div class="panel-item p-3" style="background-color: #EFEFEF;">
                             <div class="card-img pb-3">
