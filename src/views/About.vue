@@ -23,7 +23,7 @@
         <div class="container">
             <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2 text-font">AccessCrédito em Manaus</h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
-                <p class="text-left text-font">
+                <p class="text-left text-font" style="color: #2C3E50">
                 A AccessCrédito é uma Instituição de Microfinanças que tem como objetivo de fomentar o crédito para micro e pequenos empreendedores
                 em Manaus, capital do estado do Amazonas. <br><br>
                 Está consolidada em Manaus desde 2011. Durante todo esse tempo vem concedendo crédito a milhares de pessoas que já
@@ -43,7 +43,7 @@
         <div class="container">
             <h2 class="header-t text-left mbr-section-title pb-3 align-center mbr-fonts-style display-2 text-font">AccessCrédito no Mundo</h2>
             <h3 class="mbr-section-subtitle mbr-fonts-style display-5">
-                <p class="text-left text-font">
+                <p class="text-left text-font" style="color: #2C3E50">
                 A rede da Access opera em vários paisés da Ásia central e da África, com sua sede administrativa na Alemanha,
                 tem o foco voltado para as micro, pequenas e médias empresas.<br>
                 Atualmente, compreende dez Instituições de Microfinanças e está presente em 4 continentes.
