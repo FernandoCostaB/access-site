@@ -31,16 +31,16 @@
                         
                     </div>
                     <div class="footer-lower">
-                        <div class="media-container-row">
+                        <div class="media-container-row mbr-white">
                             <div class="col-sm-12">
+                                <hr>
+                                <p class="text-left"><small>O uso desse site está sujeito às regras descritas na <router-link to="/politica">Política de Privacidade</router-link>.</small></p>
                                 <hr>
                             </div>
                         </div>
                         <div class="media-container-row mbr-white">
                             <div class="col-sm-6 copyright">
-                            <p class="mbr-text mbr-fonts-style display-7">
-                                {{ nota_rodape }}
-                            </p>
+                                <p class="text-left">{{ nota_rodape }}</p>
                             </div>
                             <div class="col-md-6">
                                 <div class="social-list align-right">

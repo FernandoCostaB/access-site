@@ -5,6 +5,7 @@ import About from "../views/About.vue";
 import Contact from "../views/Contact.vue";
 import Politica from "../views/Politica.vue";
 import Hello from "../views/Hello.vue";
+import TermoUso from "../views/TermoUso.vue";
 
 Vue.use(VueRouter);
 
@@ -29,6 +30,11 @@ const routes = [
     path: "/politica",
     name: "Politica",
     component: Politica
+  },
+  {
+    path: "/termo-uso",
+    name: "TermoUso",
+    component: TermoUso
   }
 ];
 

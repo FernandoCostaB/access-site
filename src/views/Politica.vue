@@ -15,7 +15,7 @@
                       ser vendidos, trocados ou divulgados a terceiros.</div><br>
                       <div>A presente política abrange o tratamento que a AccessCrédito 
                       dá às informações capazes de identificar os usuários, sejam as coletadas 
-                      diretamente em seu Site (www.accesscredito.com.br), sejam as armazenadas 
+                      diretamente em seu site <a href="https://www.accesscredito.com.br"> www.accesscredito.com.br </a>, sejam as armazenadas 
                       em suas bases de dados eletrônicos por outros meios de coleta, tais como 
                       cadastros preenchidos em meio físico ou consultas ao serviço de atendimento 
                       telefônico ao cliente.</div><br>
@@ -29,7 +29,7 @@
                       por e-mail ou telefone. Caso alguém entre em contato com você solicitando 
                       informações pessoais, mesmo que se identifique como alguém de 
                       nossa equipe ou de um de nossos parceiros, por favor, desligue o 
-                      telefone e entre em contato com nossa central de atendimento 3307-4880/ 3307-4550, 
+                      telefone e entre em contato com nossa central de atendimento (92)99494-1733, 
                       pois pode tratar-se de uma tentativa de fraude.</div><br>
                       <div>Alertamos também que nunca enviamos e-mails com arquivos anexos que possam
                        ser executados (tais como .exe, .com, .dmg, etc.) e com isso causar algum dano ao seu 
@@ -75,7 +75,7 @@
                       dos Dados, estarão sujeitos às penalidades previstas em nosso processo disciplinar, 
                       sem exclusão das demais medidas legais cabíveis.</div><br>
                       <div>4.2. Todos os dados pessoais coletados serão incorporados ao banco de dados da 
-                      AccessCrédito, sendo seu responsável o mesmo, com sede na Rua Curió nº71 CEP:69095-060.</div><br>
+                      AccessCrédito, sendo seu responsável o mesmo, com sede na Rua Curió nº71, Cidade Nova, Manaus/AM, CEP:69095-060.</div><br>
                       <div>4.3. O usuário garante a veracidade e exatidão dos dados pessoais que fornecer 
                       neste Site, assumindo a correspondente responsabilidade caso não sejam estes verdadeiros. 
                       A AccessCrédito não assume qualquer responsabilidade em caso de inexatidão dos 
@@ -102,7 +102,7 @@
                       <div>Ao utilizar o site da AccessCrédito, será automaticamente manifestada a concordância do 
                       usuário com os termos e condições constantes da presente Política de Proteção e Privacidade.
                        Em caso de perguntas ou sugestões, solicitamos o envio de mensagem através do Fale Conosco 
-                       no Site www.accesscredito.com.br.</div><br>
+                       no site <a href="https://www.accesscredito.com.br"> www.accesscredito.com.br </a>.</div><br>
                       </h3> 
                     
                     <h2 class="align-center pb-3 mbr-fonts-style display-2">
@@ -124,7 +124,10 @@ export default {
   name: "Politica",
   components: {
     FloatActionButton
-  }
+  },
+  mounted() {
+        document.body.scrollTop = document.documentElement.scrollTop = 0;
+    },
 
 };
 </script>
