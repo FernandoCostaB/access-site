@@ -36,7 +36,7 @@
                     por e-mail ou telefone. Caso alguém entre em contato com você solicitando 
                     informações pessoais, mesmo que se identifique como alguém de 
                     nossa equipe ou de um de nossos parceiros, por favor, desligue o 
-                    telefone e entre em contato com nossa central de atendimento 3307-4880/ 3307-4550, 
+                    telefone e entre em contato com nossa central de atendimento (92)99494-1733, 
                     pois pode tratar-se de uma tentativa de fraude.
                     Alertamos também que nunca enviamos e-mails com arquivos anexos que possam
                     ser executados (tais como .exe, .com, .dmg, etc.) e com isso causar algum dano ao seu 
@@ -82,7 +82,7 @@
                     dos Dados, estarão sujeitos às penalidades previstas em nosso processo disciplinar, 
                     sem exclusão das demais medidas legais cabíveis.
                     4.2. Todos os dados pessoais coletados serão incorporados ao banco de dados da 
-                    AccessCrédito, sendo seu responsável o mesmo, com sede na Rua Curió nº71 CEP:69095-060.
+                    AccessCrédito, sendo seu responsável o mesmo, com sede na Rua Curió nº71, Cidade Nova, Manaus/AM, CEP:69095-060.
                     4.3. O usuário garante a veracidade e exatidão dos dados pessoais que fornecer 
                     neste Site, assumindo a correspondente responsabilidade caso não sejam estes verdadeiros. 
                     A AccessCrédito não assume qualquer responsabilidade em caso de inexatidão dos 
