@@ -127,7 +127,7 @@
                     <div class="col-xs-12 col-md-6 align-left">
                         <div class="timeline-text-content">
                             <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">Aguarde a análise dos seus dados</h4> 
-                            <p class="mbr-timeline-text mbr-fonts-style display-7">Seu pedido é analisado e em cinco minutos você recebe uma resposta.<br><br>A AccessCrédito oferece taxas a partir de 2,99%, e essa taxa é personalizada com base no seu perfil.</p>
+                            <p class="mbr-timeline-text mbr-fonts-style display-7">Seu pedido será analisado e em poucos dias você recebe uma resposta.<br><br>A AccessCrédito oferece taxas a partir de 2,99%, e essa taxa é personalizada com base no seu perfil.</p>
                         </div>
                     </div>
                 </div>
