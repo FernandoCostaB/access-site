@@ -1,4 +1,4 @@
-<template> <!--Adicionando branch-->
+<template>
 
   <div id="app">   
     <section id="alerta" style="width:100%; background:orange; z-index: 9999;" v-show="showAlert">        
